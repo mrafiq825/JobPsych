@@ -4,6 +4,34 @@ import useToast from "@/hooks/useToast";
 const DocumentQualityAnalyzer = () => {
   const { showSuccess } = useToast();
 
+  const analyzerHighlights = [
+    {
+      title: "Signal Strength Scoring",
+      description:
+        "Measure clarity, relevance, and decision impact with weighted scoring.",
+      tone: "from-cyan-400 to-emerald-400",
+    },
+    {
+      title: "Gap Detection",
+      description:
+        "Pinpoint weak or missing sections before your document reaches reviewers.",
+      tone: "from-emerald-400 to-lime-400",
+    },
+    {
+      title: "Rewrite Direction",
+      description:
+        "Get tactical recommendations to improve narrative flow and readability.",
+      tone: "from-teal-400 to-cyan-400",
+    },
+  ];
+
+  const qualityChecklist = [
+    "Prioritize outcomes over responsibilities",
+    "Use concise, action-forward sentences",
+    "Keep structure scannable and consistent",
+    "Remove visual clutter and decorative elements",
+  ];
+
   const handleStartAnalysis = () => {
     showSuccess("Redirecting to Document Analysis platform...");
     setTimeout(() => {
@@ -13,76 +41,98 @@ const DocumentQualityAnalyzer = () => {
 
   return (
     <div
-      className="min-h-screen bg-slate-900 flex flex-col relative overflow-hidden"
-      style={{ pointerEvents: "auto" }}
+      className="relative min-h-screen overflow-hidden bg-slate-950 text-slate-100"
+      style={{
+        pointerEvents: "auto",
+        fontFamily: "Space Grotesk, Manrope, system-ui, sans-serif",
+      }}
     >
-      <div className="absolute inset-0 bg-slate-900">
-        <div className="absolute inset-0 opacity-20">
-          <div className="h-full w-full bg-gradient-to-br from-emerald-500/10 to-teal-500/10"></div>
-        </div>
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -left-24 -top-28 h-80 w-80 rounded-full bg-cyan-400/20 blur-3xl" />
+        <div className="absolute right-[-8rem] top-20 h-[28rem] w-[28rem] rounded-full bg-emerald-400/20 blur-3xl" />
+        <div className="absolute bottom-[-8rem] left-1/3 h-80 w-80 rounded-full bg-teal-400/10 blur-3xl" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_15%,rgba(16,185,129,0.14),transparent_30%),radial-gradient(circle_at_88%_22%,rgba(34,211,238,0.14),transparent_28%),linear-gradient(180deg,#020617_0%,#0f172a_42%,#020617_100%)]" />
       </div>
 
-      <header
-        className="relative z-10 bg-slate-800/70 backdrop-blur-xl border-b border-slate-700 shadow-lg"
-        style={{ pointerEvents: "auto" }}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row items-center justify-between py-4 sm:py-6">
-            <div className="flex-shrink-0 mb-4 sm:mb-0">
-              <button
-                onClick={() => (window.location.href = "/")}
-                className="inline-flex items-center gap-2 bg-emerald-600 px-6 py-3 text-white font-semibold rounded-xl shadow-lg hover:bg-emerald-700 transition-all duration-300 transform hover:scale-105 cursor-pointer"
-                style={{
-                  pointerEvents: "auto",
-                  zIndex: 10,
-                  position: "relative",
-                }}
+      <div className="relative z-10 mx-auto flex max-w-7xl flex-col px-4 pb-8 pt-6 sm:px-6 lg:px-8 lg:pb-12">
+        <header className="mb-6 rounded-2xl border border-slate-700/80 bg-slate-900/60 p-4 shadow-2xl backdrop-blur-xl sm:p-6">
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+            <button
+              onClick={() => (window.location.href = "/")}
+              className="group inline-flex w-fit items-center gap-2 rounded-full border border-slate-600 bg-slate-800/90 px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:border-cyan-300 hover:bg-slate-700 cursor-pointer"
+              style={{
+                pointerEvents: "auto",
+                position: "relative",
+                zIndex: 10,
+              }}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-4 w-4 transition-transform duration-300 group-hover:-translate-x-1"
+                viewBox="0 0 20 20"
+                fill="currentColor"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                Back to Home
-              </button>
+                <path
+                  fillRule="evenodd"
+                  d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              Back to Home
+            </button>
+
+            <div className="text-left lg:text-center">
+              <p className="text-[0.65rem] uppercase tracking-[0.3em] text-cyan-300/80">
+                Precision Writing Lab
+              </p>
+              <h1 className="mt-1 text-2xl font-black leading-tight text-white sm:text-3xl">
+                Document Quality Analyzer
+              </h1>
             </div>
 
-            <div className="flex-1 text-center px-4 sm:px-8 mb-4 sm:mb-0">
-              <div className="inline-flex items-center gap-2 bg-slate-800 border border-slate-700 px-6 py-3 rounded-full">
-                <blockquote className="text-sm sm:text-base font-medium text-slate-300 italic">
-                  Optimize your documents for maximum impact and clarity
-                </blockquote>
-              </div>
-            </div>
-
-            <div className="flex-shrink-0 text-center sm:text-right">
-              <div className="flex items-center justify-center sm:justify-end space-x-3">
-                <div className="flex items-center gap-2">
-                  <h1 className="text-xl sm:text-2xl font-bold text-white">
-                    Document Quality Analyzer
-                  </h1>
-                </div>
-              </div>
+            <div className="rounded-xl border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-xs text-cyan-100">
+              Optimize for real review behavior
             </div>
           </div>
-        </div>
-      </header>
+        </header>
 
-      <main className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 flex-1">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 sm:gap-6 max-h-none lg:max-h-[75vh]">
-          <div className="lg:col-span-3">
-            <div className="bg-slate-800/90 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl border border-slate-700 overflow-hidden h-auto min-h-[50vh] sm:min-h-[60vh] lg:h-[70vh] flex flex-col">
-              <div className="bg-gradient-to-r from-emerald-600 to-teal-600 px-4 sm:px-6 py-3 sm:py-4 text-center">
-                <h2 className="text-lg sm:text-xl font-bold text-white flex items-center justify-center gap-2 sm:gap-3">
+        <main className="grid grid-cols-1 gap-5 lg:grid-cols-12 lg:gap-6">
+          <section className="relative overflow-hidden rounded-3xl border border-slate-700/80 bg-slate-900/60 p-6 shadow-2xl backdrop-blur-xl sm:p-8 lg:col-span-8 lg:p-10">
+            <div className="pointer-events-none absolute right-[-4rem] top-[-4rem] h-44 w-44 rounded-full border border-cyan-300/20" />
+            <div className="pointer-events-none absolute bottom-[-5rem] left-[-4rem] h-56 w-56 rounded-full border border-emerald-300/20" />
+
+            <div className="max-w-2xl">
+              <span className="inline-flex items-center gap-2 rounded-full border border-emerald-300/30 bg-emerald-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-200">
+                AI-Guided Optimization
+              </span>
+
+              <h2 className="mt-5 text-3xl font-black leading-tight text-white sm:text-4xl lg:text-5xl">
+                Turn good documents
+                <span className="block bg-gradient-to-r from-cyan-300 via-emerald-300 to-lime-300 bg-clip-text text-transparent">
+                  into interview magnets.
+                </span>
+              </h2>
+
+              <p className="mt-5 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg">
+                Launch the analysis engine to audit structure, tighten language,
+                and elevate impact in one guided flow tailored for high-stakes
+                applications.
+              </p>
+
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+                <button
+                  onClick={handleStartAnalysis}
+                  className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-xl bg-gradient-to-r from-cyan-500 via-emerald-500 to-lime-500 px-6 py-3.5 text-base font-bold text-slate-950 shadow-2xl shadow-emerald-900/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-cyan-500/25 cursor-pointer"
+                  style={{
+                    pointerEvents: "auto",
+                    position: "relative",
+                    zIndex: 10,
+                  }}
+                >
+                  <span className="absolute inset-0 bg-gradient-to-r from-lime-500 via-emerald-500 to-cyan-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  <span className="relative">Start Document Analysis</span>
                   <svg
-                    className="h-5 w-5 sm:h-6 sm:w-6"
+                    className="relative h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -91,282 +141,85 @@ const DocumentQualityAnalyzer = () => {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={2}
-                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      d="M13 7l5 5m0 0l-5 5m5-5H6"
                     />
                   </svg>
-                  Professional Document Analyzer
-                </h2>
-              </div>
+                </button>
 
-              <div className="p-4 sm:p-6 flex-1 flex flex-col min-h-0">
-                <div className="flex-1 flex items-center justify-center">
-                  <div className="text-center max-w-xl mx-auto px-2">
-                    <div className="mb-4 sm:mb-6">
-                      <div className="relative mb-3 sm:mb-4">
-                        <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-full blur-xl opacity-20"></div>
-                        <div className="relative bg-gradient-to-r from-emerald-600 to-teal-600 p-3 sm:p-4 rounded-xl sm:rounded-2xl inline-block">
-                          <svg
-                            className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-white"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={1}
-                              d="M9 12l2 2 4-4m7-4a9 9 0 11-18 0 9 9 0 0118 0z"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-
-                      <h3 className="text-2xl sm:text-3xl font-black text-white mb-2 sm:mb-3 leading-tight">
-                        Perfect Your
-                        <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
-                          Document Quality?
-                        </span>
-                      </h3>
-
-                      <p className="text-slate-300 text-base sm:text-lg mb-4 sm:mb-6 leading-relaxed px-2">
-                        Experience our AI-powered document analysis platform
-                        with content optimization, clarity enhancement, and
-                        impact scoring to ensure your documents shine.
-                      </p>
-                    </div>
-
-                    <button
-                      onClick={handleStartAnalysis}
-                      className="group relative overflow-hidden bg-gradient-to-r from-emerald-600 to-teal-600 px-6 sm:px-8 lg:px-10 py-3 sm:py-4 text-white font-bold rounded-lg sm:rounded-xl shadow-2xl hover:shadow-emerald-500/25 transition-all duration-300 transform hover:scale-105 cursor-pointer text-base sm:text-lg w-full sm:w-auto"
-                      style={{
-                        pointerEvents: "auto",
-                        zIndex: 10,
-                        position: "relative",
-                      }}
-                    >
-                      <div className="absolute inset-0 bg-gradient-to-r from-teal-600 to-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      <div className="relative flex items-center justify-center gap-2 sm:gap-3">
-                        <span>Start Document Analysis</span>
-                        <svg
-                          className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform duration-300"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M13 7l5 5m0 0l-5 5m5-5H6"
-                          />
-                        </svg>
-                      </div>
-                    </button>
-
-                    <p className="text-slate-400 mt-3 sm:mt-4 text-xs sm:text-sm">
-                      Opens in a new tab • Advanced Document Analysis platform
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="space-y-3 sm:space-y-4 max-h-none lg:max-h-[70vh] lg:overflow-y-auto">
-            <div className="bg-slate-800/60 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-xl border border-slate-700 p-3 sm:p-4 hover:shadow-2xl hover:border-emerald-500/30 transition-all duration-300">
-              <h3 className="text-sm sm:text-md font-bold text-emerald-400 mb-2 sm:mb-3 flex items-center gap-2">
-                Why Our Document Analysis Platform?
-              </h3>
-              <div className="space-y-1.5 sm:space-y-2">
-                <div className="flex items-start gap-2 p-1.5 sm:p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 hover:bg-emerald-500/20 transition-all duration-300">
-                  <div className="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full flex items-center justify-center flex-shrink-0">
-                    <span className="text-white font-bold text-xs">1</span>
-                  </div>
-                  <div>
-                    <h4 className="text-white font-semibold text-xs mb-0.5 sm:mb-1">
-                      Content Analysis
-                    </h4>
-                    <p className="text-slate-300 text-xs">
-                      Real-time quality and clarity scoring
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-2 p-1.5 sm:p-2 rounded-lg bg-teal-500/10 border border-teal-500/20 hover:bg-teal-500/20 transition-all duration-300">
-                  <div className="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full flex items-center justify-center flex-shrink-0">
-                    <span className="text-white font-bold text-xs">2</span>
-                  </div>
-                  <div>
-                    <h4 className="text-white font-semibold text-xs mb-0.5 sm:mb-1">
-                      Gap Identification
-                    </h4>
-                    <p className="text-slate-300 text-xs">
-                      Spot missing or weak content areas
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-2 p-1.5 sm:p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 hover:bg-emerald-500/20 transition-all duration-300">
-                  <div className="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full flex items-center justify-center flex-shrink-0">
-                    <span className="text-white font-bold text-xs">3</span>
-                  </div>
-                  <div>
-                    <h4 className="text-white font-semibold text-xs mb-0.5 sm:mb-1">
-                      Impact Enhancement
-                    </h4>
-                    <p className="text-slate-300 text-xs">
-                      Maximize document effectiveness
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-slate-800/60 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-xl border border-slate-700 p-3 sm:p-4 hover:shadow-2xl hover:border-emerald-500/30 transition-all duration-300">
-              <h3 className="text-sm sm:text-md font-bold text-emerald-400 mb-2 sm:mb-3 flex items-center gap-2">
-                Document Quality Tips & Best Practices
-              </h3>
-              <div className="space-y-1.5 sm:space-y-2">
-                <div className="flex items-start space-x-2 p-1.5 sm:p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 hover:bg-emerald-500/20 transition-all duration-300">
-                  <div className="w-4 h-4 sm:w-5 sm:h-5 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <svg
-                      className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-white"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 className="text-white font-semibold text-xs mb-0.5 sm:mb-1">
-                      Clear Structure
-                    </h4>
-                    <p className="text-slate-300 text-xs">
-                      Organize content logically
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-2 p-1.5 sm:p-2 rounded-lg bg-teal-500/10 border border-teal-500/20 hover:bg-teal-500/20 transition-all duration-300">
-                  <div className="w-4 h-4 sm:w-5 sm:h-5 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <svg
-                      className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-white"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 className="text-white font-semibold text-xs mb-0.5 sm:mb-1">
-                      Impact-Driven Content
-                    </h4>
-                    <p className="text-slate-300 text-xs">
-                      Highlight achievements clearly
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-2 p-1.5 sm:p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 hover:bg-emerald-500/20 transition-all duration-300">
-                  <div className="w-4 h-4 sm:w-5 sm:h-5 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <svg
-                      className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-white"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 className="text-white font-semibold text-xs mb-0.5 sm:mb-1">
-                      Consistent Formatting
-                    </h4>
-                    <p className="text-slate-300 text-xs">
-                      No tables or graphics
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-r from-emerald-500/20 to-teal-500/20 border border-emerald-500/30 rounded-lg sm:rounded-xl p-3 sm:p-4">
-              <div className="text-center">
-                <p className="text-white font-semibold text-xs sm:text-sm mb-1 sm:mb-2">
-                  Optimize Your Documents!
-                </p>
-                <p className="text-slate-300 text-xs">
-                  Join thousands with interview-ready resumed
+                <p className="text-sm text-slate-400">
+                  Opens in a new tab with full optimization toolkit.
                 </p>
               </div>
             </div>
 
-            <div className="hidden sm:block bg-slate-800/60 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-emerald-500/30 p-4 sm:p-6 hover:shadow-2xl hover:border-emerald-500/50 transition-all duration-300">
-              <div className="flex items-start space-x-3">
-                <div className="flex-1">
-                  <h4 className="text-xs sm:text-sm font-bold text-emerald-400 mb-2 flex items-center gap-2">
-                    Document Analysis Integrated
-                  </h4>
-                  <p className="text-xs text-slate-300 leading-relaxed mb-3">
-                    Click the "Start Document Analysis" button to open our
-                    advanced document optimization platform in a new tab. Get
-                    real-time analysis, clarity scoring, and enhancement
-                    recommendations for maximum impact.
+            <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
+              {analyzerHighlights.map((item) => (
+                <article
+                  key={item.title}
+                  className="rounded-2xl border border-slate-700/70 bg-slate-900/70 p-4"
+                >
+                  <div
+                    className={`h-1 w-14 rounded-full bg-gradient-to-r ${item.tone}`}
+                  />
+                  <h3 className="mt-3 text-sm font-extrabold text-white">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-xs leading-relaxed text-slate-300">
+                    {item.description}
                   </p>
-                  <div className="flex flex-wrap gap-1 sm:gap-2">
-                    <span className="px-2 sm:px-3 py-1 bg-emerald-500/20 text-emerald-300 text-xs rounded-full border border-emerald-500/30">
-                      Real-time Analysis
-                    </span>
-                    <span className="px-2 sm:px-3 py-1 bg-emerald-500/20 text-emerald-300 text-xs rounded-full border border-emerald-500/30">
-                      Quality Optimized
-                    </span>
-                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <aside className="flex flex-col gap-5 lg:col-span-4">
+            <div className="rounded-3xl border border-slate-700/80 bg-slate-900/60 p-5 shadow-2xl backdrop-blur-xl sm:p-6">
+              <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-cyan-300">
+                Quick Readiness Pulse
+              </h3>
+              <div className="mt-4 space-y-3">
+                <div className="rounded-xl border border-cyan-400/25 bg-cyan-500/10 px-4 py-3">
+                  <p className="text-xs text-cyan-100">Clarity Benchmark</p>
+                  <p className="mt-1 text-2xl font-black text-white">97%</p>
+                </div>
+                <div className="rounded-xl border border-emerald-400/25 bg-emerald-500/10 px-4 py-3">
+                  <p className="text-xs text-emerald-100">Impact Presence</p>
+                  <p className="mt-1 text-2xl font-black text-white">A+</p>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
 
-        <div className="block sm:hidden mt-4">
-          <div className="bg-gradient-to-r from-emerald-500/20 to-teal-500/20 border border-emerald-500/30 rounded-xl p-4">
-            <div className="text-center">
-              <h4 className="text-sm font-bold text-emerald-400 mb-2">
-                Document Analysis Ready?
-              </h4>
-              <p className="text-xs text-slate-300 mb-3">
-                Tap the button above to optimize your document quality and
-                clarity
-              </p>
-              <div className="flex justify-center gap-2">
-                <span className="px-2 py-1 bg-emerald-500/20 text-emerald-300 text-xs rounded-full border border-emerald-500/30">
-                  Real-time Analysis
-                </span>
-                <span className="px-2 py-1 bg-emerald-500/20 text-emerald-300 text-xs rounded-full border border-emerald-500/30">
-                  Quality Focused
-                </span>
-              </div>
+            <div className="rounded-3xl border border-slate-700/80 bg-slate-900/60 p-5 shadow-2xl backdrop-blur-xl sm:p-6">
+              <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-emerald-300">
+                Editing Checklist
+              </h3>
+              <ul className="mt-4 space-y-2">
+                {qualityChecklist.map((tip) => (
+                  <li
+                    key={tip}
+                    className="flex items-start gap-2 rounded-xl border border-slate-700/70 bg-slate-900/70 px-3 py-2.5"
+                  >
+                    <span className="mt-1 inline-flex h-2.5 w-2.5 flex-shrink-0 rounded-full bg-gradient-to-r from-cyan-300 to-emerald-300" />
+                    <span className="text-sm leading-relaxed text-slate-200">
+                      {tip}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
-        </div>
-      </main>
+
+            <div className="rounded-3xl border border-lime-400/25 bg-gradient-to-br from-emerald-500/20 via-cyan-500/15 to-slate-900/70 p-5 shadow-2xl backdrop-blur-xl sm:p-6">
+              <p className="text-base font-bold text-white">
+                Ready for final polish?
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-slate-200">
+                Analyze now and get practical suggestions that improve recruiter
+                readability in minutes.
+              </p>
+            </div>
+          </aside>
+        </main>
+      </div>
     </div>
   );
 };
