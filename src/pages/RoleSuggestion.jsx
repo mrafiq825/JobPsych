@@ -337,20 +337,23 @@ const RoleSuggestion = () => {
   };
 
   return (
-    <div className="relative min-h-screen flex flex-col bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 overflow-x-hidden">
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-violet-900/20 via-cyan-900/10 to-rose-900/20"></div>
+    <div className="relative min-h-screen flex flex-col overflow-x-hidden bg-[#05070f] text-slate-100">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(34,211,238,0.18),transparent_35%),radial-gradient(circle_at_85%_15%,rgba(251,113,133,0.15),transparent_34%),radial-gradient(circle_at_40%_90%,rgba(129,140,248,0.14),transparent_36%)]"></div>
+        <div className="absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-cyan-400/10 to-transparent"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(148,163,184,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(148,163,184,0.08)_1px,transparent_1px)] bg-[size:32px_32px] opacity-10"></div>
       </div>
 
       <header className="sticky top-4 z-30 mx-4 mt-4">
-        <div className="bg-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-2xl shadow-2xl p-4">
-          <div className="container mx-auto flex items-center justify-between gap-4">
+        <div className="relative overflow-hidden rounded-2xl border border-cyan-400/20 bg-slate-900/70 p-4 shadow-[0_12px_50px_rgba(2,6,23,0.55)] backdrop-blur-2xl">
+          <div className="absolute inset-y-0 right-0 w-56 bg-gradient-to-l from-cyan-500/15 to-transparent"></div>
+          <div className="container relative mx-auto flex items-center justify-between gap-4">
             <NavigationButton
               to="/"
-              className="group relative overflow-hidden bg-gradient-to-r from-violet-600 to-cyan-600 px-6 py-3 text-white font-bold rounded-xl shadow-lg hover:shadow-violet-500/25 transition-all duration-300 transform hover:scale-105 cursor-pointer"
+              className="group relative overflow-hidden rounded-xl border border-cyan-300/30 bg-gradient-to-r from-slate-900 via-cyan-900/40 to-slate-900 px-6 py-3 font-bold text-cyan-100 shadow-lg transition-all duration-300 hover:scale-105 hover:border-cyan-200/60 hover:text-white"
               aria-label="Go to Home Dashboard"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-violet-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-rose-500/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
               <div className="relative flex items-center gap-2">
                 <svg
                   className="h-5 w-5 transform group-hover:-translate-x-1 transition-transform duration-300"
@@ -370,9 +373,9 @@ const RoleSuggestion = () => {
 
             <div className="flex items-center gap-3">
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-violet-500 to-cyan-500 rounded-full blur opacity-75 animate-pulse"></div>
-                <div className="relative bg-slate-800/90 backdrop-blur-sm px-6 py-2 rounded-full border border-slate-600/50">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-400 font-bold text-sm">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500 to-rose-500 blur opacity-60"></div>
+                <div className="relative rounded-full border border-cyan-300/25 bg-slate-800/85 px-6 py-2 backdrop-blur-sm">
+                  <span className="bg-gradient-to-r from-cyan-300 to-rose-300 bg-clip-text text-sm font-bold text-transparent">
                     AI-Powered Career Intelligence
                   </span>
                 </div>
@@ -421,63 +424,60 @@ const RoleSuggestion = () => {
         </div>
       </header>
 
-      <main className="flex-1 relative z-10 px-4">
-        <div className="container mx-auto py-12 space-y-12">
-          <div className="relative">
-            <div className="text-center space-y-8">
-              <div className="relative inline-block">
-                <div className="relative bg-slate-900/90 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-12 shadow-2xl">
-                  <div className="space-y-6">
-                    <div className="flex justify-center">
-                      <div className="relative">
-                        <div className="absolute inset-0 bg-gradient-to-r from-violet-500 to-cyan-500 rounded-full blur-lg opacity-50 animate-ping"></div>
-                        <div className="relative bg-gradient-to-r from-violet-600 to-cyan-600 p-4 rounded-full">
-                          <svg
-                            className="h-12 w-12 text-white"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-
-                    <h1
-                      className="text-5xl md:text-7xl font-black tracking-tight"
-                      style={{ fontFamily: "'Tinos', serif" }}
+      <main className="relative z-10 flex-1 px-4">
+        <div className="container mx-auto space-y-12 py-12">
+          <div className="relative overflow-hidden rounded-[2rem] border border-slate-700/60 bg-gradient-to-br from-slate-900/95 via-slate-900/85 to-slate-800/90 p-8 shadow-2xl md:p-12">
+            <div className="absolute -left-20 top-10 h-52 w-52 rounded-full bg-cyan-500/20 blur-3xl"></div>
+            <div className="absolute -right-16 bottom-0 h-52 w-52 rounded-full bg-rose-500/20 blur-3xl"></div>
+            <div className="relative grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+              <div className="space-y-6">
+                <p className="inline-flex items-center gap-2 rounded-full border border-cyan-300/30 bg-cyan-400/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-cyan-200">
+                  Role Match Studio
+                </p>
+                <h1
+                  className="text-4xl font-black leading-[0.95] text-white sm:text-5xl md:text-7xl"
+                  style={{ fontFamily: "'Tinos', serif" }}
+                >
+                  Reimagine Your
+                  <span className="block bg-gradient-to-r from-cyan-300 via-indigo-300 to-rose-300 bg-clip-text text-transparent">
+                    Next Career Move
+                  </span>
+                </h1>
+                <p className="max-w-2xl text-lg leading-relaxed text-slate-300 md:text-xl">
+                  Upload once, then get an AI-guided role map with fit scores,
+                  gap signals, and a roadmap that feels like a personal career
+                  strategist built into your workflow.
+                </p>
+              </div>
+              <div className="rounded-3xl border border-slate-700/70 bg-slate-950/65 p-6 backdrop-blur-xl">
+                <p className="mb-5 text-sm font-semibold uppercase tracking-[0.16em] text-slate-400">
+                  What You Unlock
+                </p>
+                <div className="space-y-3">
+                  {[
+                    "Precision role-fit scoring",
+                    "Personalized growth priorities",
+                    "Interview-ready prep insights",
+                  ].map((item, index) => (
+                    <div
+                      key={item}
+                      className="flex items-start gap-3 rounded-xl border border-slate-700/70 bg-slate-900/80 p-3"
                     >
-                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-cyan-400 to-rose-400 animate-pulse">
-                        Career Path
+                      <span className="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-r from-cyan-500 to-indigo-500 text-xs font-black text-white">
+                        {index + 1}
                       </span>
-                      <br />
-                      <span className="text-white">Exploration Hub</span>
-                    </h1>
-
-                    <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-                      Transform your career with our{" "}
-                      <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-400">
-                        AI-powered
-                      </span>{" "}
-                      role discovery. Get instant role recommendations, skill
-                      gap analysis, and personalized career insights.
-                    </p>
-                  </div>
+                      <p className="text-sm text-slate-200">{item}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
 
           <div className="relative">
-            <div className="relative bg-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-8 shadow-2xl">
+            <div className="relative rounded-3xl border border-slate-700/60 bg-slate-900/80 p-8 shadow-2xl backdrop-blur-xl">
               <div className="text-center mb-8">
-                <div className="inline-flex items-center gap-3 bg-gradient-to-r from-violet-600 to-cyan-600 p-3 rounded-2xl mb-4">
+                <div className="mb-4 inline-flex items-center gap-3 rounded-2xl border border-cyan-300/30 bg-gradient-to-r from-cyan-500/20 to-indigo-500/20 p-3">
                   <svg
                     className="h-8 w-8 text-white"
                     fill="none"
@@ -505,12 +505,12 @@ const RoleSuggestion = () => {
                 {generalTips.map((tip, index) => (
                   <div
                     key={index}
-                    className="group relative overflow-hidden bg-slate-800/60 backdrop-blur-sm border border-slate-600/50 rounded-2xl p-6 hover:border-violet-500/50 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-violet-500/10"
+                    className="group relative overflow-hidden rounded-2xl border border-slate-600/50 bg-slate-800/60 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/45 hover:shadow-xl hover:shadow-cyan-500/10"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-violet-600/5 to-cyan-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-rose-500/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
                     <div className="relative flex items-start gap-4">
                       <div className="flex-shrink-0">
-                        <div className="w-10 h-10 bg-gradient-to-r from-violet-600 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-r from-cyan-600 to-indigo-600 shadow-lg">
                           <span className="text-white font-bold text-sm">
                             {index + 1}
                           </span>
@@ -522,7 +522,7 @@ const RoleSuggestion = () => {
                         </p>
                       </div>
                     </div>
-                    <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-violet-600 to-cyan-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                    <div className="absolute bottom-0 left-0 h-1 origin-left scale-x-0 transform bg-gradient-to-r from-cyan-500 to-rose-500 transition-transform duration-300 group-hover:scale-x-100"></div>
                   </div>
                 ))}
               </div>
@@ -905,219 +905,174 @@ const RoleSuggestion = () => {
           )}
           {roleRecommendations.length > 0 && (
             <div className="relative">
-              <div className="relative bg-slate-900/95 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-10 shadow-2xl">
-                <div className="text-center mb-16">
-                  <div className="inline-flex items-center gap-3 bg-gradient-to-r from-emerald-600 to-teal-600 p-4 rounded-2xl mb-6 shadow-lg shadow-emerald-500/20">
-                    <h2 className="text-4xl font-black text-white">
+              <div className="relative overflow-hidden rounded-3xl border border-slate-700/60 bg-slate-900/95 p-8 shadow-2xl backdrop-blur-xl md:p-10">
+                <div className="pointer-events-none absolute -left-10 top-20 h-52 w-52 rounded-full bg-cyan-500/12 blur-3xl"></div>
+                <div className="pointer-events-none absolute -right-10 bottom-10 h-56 w-56 rounded-full bg-rose-500/12 blur-3xl"></div>
+
+                <div className="relative mb-12 flex flex-col items-start justify-between gap-5 md:flex-row md:items-end">
+                  <div>
+                    <p className="mb-3 inline-flex items-center rounded-full border border-emerald-300/30 bg-emerald-500/10 px-4 py-1 text-xs font-bold uppercase tracking-[0.16em] text-emerald-300">
+                      Role Dossier
+                    </p>
+                    <h2 className="text-3xl font-black text-white md:text-4xl">
                       Career Matches
                     </h2>
+                    <p className="mt-3 max-w-2xl text-slate-300">
+                      Ranked opportunities with contextual fit and growth
+                      signals tailored to your profile.
+                    </p>
                   </div>
-                  <p className="text-slate-300 text-lg max-w-3xl mx-auto leading-relaxed">
-                    Discover the perfect roles tailored to your unique skill set
-                    and experience
-                  </p>
-                  <div className="mt-6 flex justify-center gap-2">
-                    <div className="h-1 w-12 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full"></div>
-                    <div className="h-1 w-8 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full opacity-60"></div>
+                  <div className="rounded-xl border border-slate-700/60 bg-slate-950/65 px-4 py-3 text-sm text-slate-300">
+                    {roleRecommendations.length} roles shortlisted
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
+                <div className="relative space-y-5">
                   {roleRecommendations.map((role, index) => {
                     const isBestMatch = index === 0;
-                    const gradients = [
-                      "from-violet-600 to-purple-600",
-                      "from-cyan-600 to-blue-600",
-                      "from-emerald-600 to-teal-600",
-                      "from-rose-600 to-pink-600",
-                      "from-amber-600 to-orange-600",
+                    const gradientSet = [
+                      "from-cyan-500 via-blue-500 to-indigo-500",
+                      "from-emerald-500 via-teal-500 to-cyan-500",
+                      "from-rose-500 via-orange-500 to-amber-500",
+                      "from-violet-500 via-fuchsia-500 to-rose-500",
                     ];
-                    const gradient = gradients[index % gradients.length];
+                    const gradient = gradientSet[index % gradientSet.length];
+                    const matchScore = Math.max(
+                      0,
+                      Math.min(100, Math.round(role.matchPercentage || 0)),
+                    );
 
                     return (
-                      <div
+                      <article
                         key={index}
-                        className={`group relative overflow-hidden rounded-2xl transition-all duration-500 transform ${
+                        className={`group relative overflow-hidden rounded-2xl border bg-gradient-to-br from-slate-900/90 to-slate-900/70 p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-2xl md:p-7 ${
                           isBestMatch
-                            ? "md:col-span-2 xl:col-span-1 hover:scale-105"
-                            : "hover:scale-105"
+                            ? "border-emerald-400/45 shadow-xl shadow-emerald-500/15"
+                            : "border-slate-700/70"
                         }`}
                       >
                         <div
-                          className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
+                          className={`absolute left-0 top-0 h-full w-1.5 bg-gradient-to-b ${gradient}`}
                         ></div>
 
-                        <div
-                          className={`relative h-full bg-gradient-to-br from-slate-800/80 to-slate-900/95 backdrop-blur-xl border transition-all duration-500 rounded-2xl p-6 flex flex-col ${
-                            isBestMatch
-                              ? "border-emerald-500/40 shadow-2xl shadow-emerald-500/20 ring-2 ring-emerald-400/30"
-                              : "border-slate-700/50 shadow-lg hover:shadow-2xl hover:border-slate-600/80"
-                          }`}
-                        >
-                          <div
-                            className={`absolute top-0 left-0 h-1 w-0 group-hover:w-full bg-gradient-to-r ${gradient} transition-all duration-500 rounded-t-2xl`}
-                          ></div>
+                        {isBestMatch && (
+                          <div className="absolute right-4 top-4 rounded-full border border-emerald-300/45 bg-emerald-500/20 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-emerald-200">
+                            Top Recommendation
+                          </div>
+                        )}
 
-                          {isBestMatch && (
-                            <div className="absolute -top-2 -right-2 z-20">
-                              <div className="relative">
-                                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full blur-lg animate-pulse"></div>
-                                <div className="relative bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-xs font-bold px-4 py-2 rounded-full shadow-xl border border-emerald-300/50 flex items-center gap-1">
-                                  <svg
-                                    className="w-4 h-4"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                  >
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                  </svg>
-                                  Best Match
-                                </div>
-                              </div>
-                            </div>
-                          )}
-
-                          <div className="flex justify-between items-start mb-5">
-                            <div
-                              className={`relative w-14 h-14 bg-gradient-to-br ${gradient} rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-all duration-300 transform group-hover:scale-110`}
+                        <div className="mb-5 flex items-start justify-between gap-4 pr-2 sm:pr-0">
+                          <div>
+                            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">
+                              Candidate Match #{index + 1}
+                            </p>
+                            <h3 className="text-xl font-bold text-white sm:text-2xl">
+                              {role.roleName}
+                            </h3>
+                          </div>
+                          <div className="text-right">
+                            <p
+                              className={`text-3xl font-black ${
+                                matchScore >= 85
+                                  ? "text-emerald-300"
+                                  : matchScore >= 70
+                                    ? "text-cyan-300"
+                                    : "text-amber-300"
+                              }`}
                             >
-                              <svg
-                                className="h-7 w-7 text-white"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth={2}
-                                  d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2m-8 0V6a2 2 0 00-2 2v6.341"
-                                />
-                              </svg>
-                            </div>
-
-                            <div className="text-right">
-                              <div
-                                className={`text-4xl font-black mb-1 ${
-                                  role.matchPercentage >= 85
-                                    ? "text-emerald-400"
-                                    : role.matchPercentage >= 70
-                                      ? "text-cyan-400"
-                                      : "text-amber-400"
-                                }`}
-                              >
-                                {Math.round(role.matchPercentage)}%
-                              </div>
-                              <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
-                                Match
-                              </div>
-                            </div>
-                          </div>
-
-                          <h3 className="text-lg font-bold text-white mb-1 group-hover:text-emerald-300 transition-colors duration-300 line-clamp-2">
-                            {role.roleName}
-                          </h3>
-
-                          <div className="flex gap-2 mb-4">
-                            <span className="inline-block bg-slate-700/50 text-slate-300 text-xs font-semibold px-2 py-1 rounded-lg border border-slate-600/30">
-                              {role.careerLevel}
-                            </span>
-                            <span className="inline-block bg-emerald-500/10 text-emerald-400 text-xs font-semibold px-2 py-1 rounded-lg border border-emerald-500/30">
-                              {role.industryFit}
-                            </span>
-                          </div>
-
-                          <div className="mb-5 p-3 bg-slate-900/50 rounded-lg border border-slate-700/50 group-hover:border-slate-600/75 transition-all duration-300">
-                            <p className="text-slate-300 text-xs leading-relaxed line-clamp-3">
-                              {role.reasoning}
+                              {matchScore}%
+                            </p>
+                            <p className="text-xs uppercase tracking-[0.14em] text-slate-400">
+                              Fit Score
                             </p>
                           </div>
+                        </div>
 
-                          <div className="mb-4">
-                            <div className="flex items-center gap-2 mb-3">
-                              <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
-                              <h4 className="text-xs font-bold text-emerald-400 uppercase tracking-wider">
-                                Matching Skills
-                              </h4>
-                            </div>
+                        <div className="mb-5 h-2 overflow-hidden rounded-full bg-slate-800/90">
+                          <div
+                            className={`h-full rounded-full bg-gradient-to-r ${gradient} transition-all duration-700`}
+                            style={{ width: `${matchScore}%` }}
+                          ></div>
+                        </div>
+
+                        <div className="mb-5 flex flex-wrap gap-2">
+                          <span className="rounded-lg border border-slate-600/70 bg-slate-800/80 px-3 py-1 text-xs font-semibold text-slate-200">
+                            {role.careerLevel}
+                          </span>
+                          <span className="rounded-lg border border-cyan-400/30 bg-cyan-500/10 px-3 py-1 text-xs font-semibold text-cyan-200">
+                            {role.industryFit}
+                          </span>
+                        </div>
+
+                        <div className="mb-5 rounded-xl border border-slate-700/70 bg-slate-950/55 p-4">
+                          <p className="text-sm leading-relaxed text-slate-300">
+                            {role.reasoning}
+                          </p>
+                        </div>
+
+                        <div className="grid gap-4 lg:grid-cols-2">
+                          <section className="rounded-xl border border-emerald-500/25 bg-emerald-500/5 p-4">
+                            <h4 className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-emerald-300">
+                              Matching Skills
+                            </h4>
                             <div className="flex flex-wrap gap-2">
                               {role.requiredSkills &&
                               role.requiredSkills.length > 0 ? (
                                 role.requiredSkills
-                                  .slice(0, 3)
+                                  .slice(0, 4)
                                   .map((skill, skillIndex) => (
                                     <span
                                       key={skillIndex}
-                                      className="bg-emerald-500/15 text-emerald-300 text-xs px-2.5 py-1 rounded-lg border border-emerald-500/30 hover:bg-emerald-500/25 hover:border-emerald-400/50 transition-all duration-200 font-medium truncate"
+                                      className="rounded-md border border-emerald-400/25 bg-emerald-500/15 px-2.5 py-1 text-xs text-emerald-200"
                                     >
-                                      ✓{" "}
-                                      {skill.length > 10
-                                        ? skill.slice(0, 8) + "..."
-                                        : skill}
+                                      {skill}
                                     </span>
                                   ))
                               ) : (
-                                <span className="text-slate-400 text-xs italic">
-                                  No matches detected
+                                <span className="text-xs italic text-slate-400">
+                                  No matching skills detected
                                 </span>
                               )}
-                              {role.requiredSkills &&
-                                role.requiredSkills.length > 3 && (
-                                  <span className="text-slate-400 text-xs font-medium flex items-center">
-                                    +{role.requiredSkills.length - 3} more
-                                  </span>
-                                )}
                             </div>
-                          </div>
-
-                          <div className="mb-5">
-                            <div className="flex items-center gap-2 mb-3">
-                              <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
-                              <h4 className="text-xs font-bold text-amber-400 uppercase tracking-wider">
-                                Growth Areas
-                              </h4>
-                            </div>
-                            <div className="bg-amber-500/8 rounded-lg p-3 border border-amber-500/20">
-                              {role.missingSkills &&
-                              role.missingSkills.length > 0 ? (
-                                <ul className="text-amber-300 text-xs space-y-1.5">
-                                  {role.missingSkills
-                                    .slice(0, 2)
-                                    .map((skill, skillIndex) => (
-                                      <li
-                                        key={skillIndex}
-                                        className="flex items-center gap-2"
-                                      >
-                                        <span className="w-1.5 h-1.5 bg-amber-400 rounded-full flex-shrink-0"></span>
-                                        <span>{skill}</span>
-                                      </li>
-                                    ))}
-                                  {role.missingSkills.length > 2 && (
-                                    <li className="text-slate-400 italic text-xs">
-                                      +{role.missingSkills.length - 2} more
-                                      skills to develop
-                                    </li>
-                                  )}
-                                </ul>
-                              ) : (
-                                <div className="flex items-center gap-2 text-emerald-400 text-xs font-semibold">
-                                  <svg
-                                    className="w-4 h-4"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                  >
-                                    <path
-                                      fillRule="evenodd"
-                                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                      clipRule="evenodd"
-                                    />
-                                  </svg>
-                                  No major gaps!
-                                </div>
+                            {role.requiredSkills &&
+                              role.requiredSkills.length > 4 && (
+                                <p className="mt-2 text-xs text-slate-400">
+                                  +{role.requiredSkills.length - 4} additional
+                                  skills
+                                </p>
                               )}
-                            </div>
-                          </div>
+                          </section>
+
+                          <section className="rounded-xl border border-amber-500/25 bg-amber-500/5 p-4">
+                            <h4 className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-amber-300">
+                              Growth Areas
+                            </h4>
+                            {role.missingSkills &&
+                            role.missingSkills.length > 0 ? (
+                              <ul className="space-y-1.5 text-xs text-amber-100/90">
+                                {role.missingSkills
+                                  .slice(0, 3)
+                                  .map((skill, skillIndex) => (
+                                    <li key={skillIndex} className="flex gap-2">
+                                      <span className="text-amber-300">•</span>
+                                      <span>{skill}</span>
+                                    </li>
+                                  ))}
+                                {role.missingSkills.length > 3 && (
+                                  <li className="text-slate-400 italic">
+                                    +{role.missingSkills.length - 3} more
+                                    development areas
+                                  </li>
+                                )}
+                              </ul>
+                            ) : (
+                              <p className="text-xs font-semibold text-emerald-300">
+                                Excellent alignment. No major gaps flagged.
+                              </p>
+                            )}
+                          </section>
                         </div>
-                      </div>
+                      </article>
                     );
                   })}
                 </div>
@@ -1127,145 +1082,129 @@ const RoleSuggestion = () => {
 
           {resumeData?.careerPath && (
             <div className="relative">
-              <div className="relative bg-slate-900/90 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-8 shadow-2xl">
-                <div className="text-center mb-12">
-                  <div className="inline-flex items-center gap-3 bg-gradient-to-r from-teal-600 to-cyan-600 p-3 rounded-2xl mb-4">
-                    <svg
-                      className="h-8 w-8 text-white"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M13 10V3L4 14h7v7l9-11h-7z"
-                      />
-                    </svg>
-                    <h2 className="text-3xl font-bold text-white">
+              <div className="relative overflow-hidden rounded-3xl border border-slate-700/60 bg-slate-900/90 p-8 shadow-2xl backdrop-blur-xl md:p-10">
+                <div className="pointer-events-none absolute -left-8 top-10 h-44 w-44 rounded-full bg-teal-500/15 blur-3xl"></div>
+                <div className="pointer-events-none absolute -right-8 bottom-6 h-44 w-44 rounded-full bg-cyan-500/15 blur-3xl"></div>
+
+                <div className="relative mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+                  <div>
+                    <p className="mb-3 inline-flex rounded-full border border-teal-300/30 bg-teal-500/10 px-4 py-1 text-xs font-bold uppercase tracking-[0.16em] text-teal-300">
+                      Progress Map
+                    </p>
+                    <h2 className="text-3xl font-black text-white md:text-4xl">
                       Career Roadmap
                     </h2>
+                    <p className="mt-3 max-w-2xl text-slate-300">
+                      A practical route from your current stage to your next
+                      strategic role moves.
+                    </p>
                   </div>
-                  <p className="text-slate-300 text-lg">
-                    Your path to professional growth
-                  </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div className="relative mb-8 grid grid-cols-1 gap-4 md:grid-cols-2">
                   {resumeData.careerPath.current_level && (
-                    <div className="bg-slate-800/60 rounded-xl p-6 border border-slate-600/50">
-                      <h4 className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2">
+                    <div className="rounded-xl border border-slate-700/70 bg-slate-950/60 p-5">
+                      <h4 className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">
                         Current Level
                       </h4>
-                      <p className="text-xl font-bold text-cyan-400">
+                      <p className="text-lg font-bold text-cyan-300">
                         {resumeData.careerPath.current_level}
                       </p>
                     </div>
                   )}
                   {resumeData.careerPath.timeline && (
-                    <div className="bg-slate-800/60 rounded-xl p-6 border border-slate-600/50">
-                      <h4 className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2">
+                    <div className="rounded-xl border border-slate-700/70 bg-slate-950/60 p-5">
+                      <h4 className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">
                         Timeline
                       </h4>
-                      <p className="text-xl font-bold text-teal-400">
+                      <p className="text-lg font-bold text-teal-300">
                         {resumeData.careerPath.timeline}
                       </p>
                     </div>
                   )}
                 </div>
 
-                {resumeData.careerPath.next_roles &&
-                  resumeData.careerPath.next_roles.length > 0 && (
-                    <div>
-                      <h4 className="text-sm font-semibold text-emerald-400 mb-3 flex items-center gap-2">
-                        <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
-                        Recommended Next Roles
-                      </h4>
-                      <ul className="space-y-2">
-                        {resumeData.careerPath.next_roles.map((role, idx) => (
-                          <li
-                            key={idx}
-                            className="flex gap-3 text-sm text-slate-300"
-                          >
-                            <span className="text-emerald-400 flex-shrink-0">
-                              →
-                            </span>
-                            <span>{role}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-
-                {resumeData.careerPath.required_development &&
-                  resumeData.careerPath.required_development.length > 0 && (
-                    <div className="mt-6">
-                      <h4 className="text-sm font-semibold text-amber-400 mb-3 flex items-center gap-2">
-                        <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
-                        Required Development Areas
-                      </h4>
-                      <ul className="space-y-2">
-                        {resumeData.careerPath.required_development.map(
-                          (item, idx) => (
+                <div className="relative grid grid-cols-1 gap-5 lg:grid-cols-2">
+                  {resumeData.careerPath.next_roles &&
+                    resumeData.careerPath.next_roles.length > 0 && (
+                      <section className="rounded-xl border border-emerald-500/25 bg-emerald-500/5 p-5">
+                        <h4 className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-emerald-300">
+                          Recommended Next Roles
+                        </h4>
+                        <ul className="space-y-2">
+                          {resumeData.careerPath.next_roles.map((role, idx) => (
                             <li
                               key={idx}
-                              className="flex gap-3 text-sm text-slate-300"
+                              className="flex gap-2 text-sm text-emerald-100/90"
                             >
-                              <span className="text-amber-400 flex-shrink-0">
-                                •
-                              </span>
-                              <span>{item}</span>
+                              <span className="text-emerald-300">→</span>
+                              <span>{role}</span>
                             </li>
-                          ),
-                        )}
-                      </ul>
-                    </div>
-                  )}
+                          ))}
+                        </ul>
+                      </section>
+                    )}
+
+                  {resumeData.careerPath.required_development &&
+                    resumeData.careerPath.required_development.length > 0 && (
+                      <section className="rounded-xl border border-amber-500/25 bg-amber-500/5 p-5">
+                        <h4 className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-amber-300">
+                          Required Development Areas
+                        </h4>
+                        <ul className="space-y-2">
+                          {resumeData.careerPath.required_development.map(
+                            (item, idx) => (
+                              <li
+                                key={idx}
+                                className="flex gap-2 text-sm text-amber-100/90"
+                              >
+                                <span className="text-amber-300">•</span>
+                                <span>{item}</span>
+                              </li>
+                            ),
+                          )}
+                        </ul>
+                      </section>
+                    )}
+                </div>
               </div>
             </div>
           )}
 
           {resumeData?.preparationPlan && (
             <div className="relative">
-              <div className="relative bg-slate-900/90 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-8 shadow-2xl">
-                <div className="text-center mb-12">
-                  <div className="inline-flex items-center gap-3 bg-gradient-to-r from-orange-600 to-amber-600 p-3 rounded-2xl mb-4">
-                    <svg
-                      className="h-8 w-8 text-white"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <h2 className="text-3xl font-bold text-white">
+              <div className="relative overflow-hidden rounded-3xl border border-slate-700/60 bg-slate-900/90 p-8 shadow-2xl backdrop-blur-xl md:p-10">
+                <div className="pointer-events-none absolute -left-8 top-8 h-44 w-44 rounded-full bg-amber-500/15 blur-3xl"></div>
+                <div className="pointer-events-none absolute -right-8 bottom-10 h-48 w-48 rounded-full bg-orange-500/15 blur-3xl"></div>
+
+                <div className="relative mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+                  <div>
+                    <p className="mb-3 inline-flex rounded-full border border-amber-300/30 bg-amber-500/10 px-4 py-1 text-xs font-bold uppercase tracking-[0.16em] text-amber-300">
+                      Strategy Deck
+                    </p>
+                    <h2 className="text-3xl font-black text-white md:text-4xl">
                       Preparation Plan
                     </h2>
+                    <p className="mt-3 max-w-2xl text-slate-300">
+                      Structured priorities to close skill gaps and improve role
+                      readiness with clear next actions.
+                    </p>
                   </div>
-                  <p className="text-slate-300 text-lg">
-                    Strategic steps for your development
-                  </p>
                 </div>
 
                 {resumeData.preparationPlan.role_fit_score && (
-                  <div className="mb-8">
+                  <div className="mb-8 rounded-2xl border border-amber-500/25 bg-amber-500/5 p-5">
                     <div className="flex justify-between items-center mb-3">
-                      <span className="text-sm font-semibold text-slate-300">
+                      <span className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-300">
                         Role Fit Score
                       </span>
-                      <span className="text-2xl font-black text-orange-400">
+                      <span className="text-3xl font-black text-amber-300">
                         {Math.round(resumeData.preparationPlan.role_fit_score)}%
                       </span>
                     </div>
-                    <div className="w-full bg-slate-700/50 rounded-full h-3 border border-slate-600/30">
+                    <div className="h-3 w-full rounded-full border border-slate-600/30 bg-slate-700/50">
                       <div
-                        className="bg-gradient-to-r from-orange-500 to-amber-500 h-3 rounded-full transition-all duration-500"
+                        className="h-3 rounded-full bg-gradient-to-r from-orange-500 via-amber-400 to-yellow-400 transition-all duration-500"
                         style={{
                           width: `${resumeData.preparationPlan.role_fit_score}%`,
                         }}
@@ -1275,8 +1214,8 @@ const RoleSuggestion = () => {
                 )}
 
                 {resumeData.preparationPlan.role_fit_assessment && (
-                  <div className="bg-slate-800/50 rounded-xl p-4 border border-slate-600/30 mb-6">
-                    <h4 className="text-sm font-semibold text-orange-400 mb-2">
+                  <div className="mb-6 rounded-xl border border-slate-600/30 bg-slate-800/50 p-4">
+                    <h4 className="mb-2 text-sm font-semibold text-orange-300">
                       Assessment
                     </h4>
                     <p className="text-slate-300 text-sm leading-relaxed">
@@ -1287,9 +1226,9 @@ const RoleSuggestion = () => {
 
                 {resumeData.preparationPlan.critical_skill_gaps &&
                   resumeData.preparationPlan.critical_skill_gaps.length > 0 && (
-                    <div className="mb-6">
-                      <h4 className="text-sm font-semibold text-red-400 mb-3 flex items-center gap-2">
-                        <div className="w-2 h-2 bg-red-400 rounded-full"></div>
+                    <div className="mb-6 rounded-xl border border-red-500/25 bg-red-500/5 p-5">
+                      <h4 className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-red-300">
+                        <div className="h-2 w-2 rounded-full bg-red-400"></div>
                         Critical Skill Gaps
                       </h4>
                       <div className="space-y-3">
@@ -1297,14 +1236,14 @@ const RoleSuggestion = () => {
                           (gap, idx) => (
                             <div
                               key={idx}
-                              className="bg-red-500/10 rounded-lg p-4 border border-red-500/20"
+                              className="rounded-lg border border-red-500/25 bg-slate-900/40 p-4"
                             >
                               <div className="flex items-start gap-3">
-                                <span className="text-red-400 flex-shrink-0 font-bold">
+                                <span className="flex-shrink-0 font-bold text-red-300">
                                   !
                                 </span>
                                 <div>
-                                  <h5 className="text-sm font-semibold text-red-300 mb-1">
+                                  <h5 className="mb-1 text-sm font-semibold text-red-200">
                                     {gap.skill}
                                   </h5>
                                   <p className="text-xs text-slate-300 mb-2">
@@ -1324,9 +1263,9 @@ const RoleSuggestion = () => {
                   )}
 
                 {resumeData.preparationPlan.personality_alignment && (
-                  <div className="mb-6">
-                    <h4 className="text-sm font-semibold text-purple-400 mb-3 flex items-center gap-2">
-                      <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                  <div className="mb-6 rounded-xl border border-purple-500/25 bg-purple-500/5 p-5">
+                    <h4 className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-purple-300">
+                      <div className="h-2 w-2 rounded-full bg-purple-400"></div>
                       Personality Alignment
                     </h4>
                     <div className="space-y-4">
@@ -1334,8 +1273,8 @@ const RoleSuggestion = () => {
                         .aligned_traits &&
                         resumeData.preparationPlan.personality_alignment
                           .aligned_traits.length > 0 && (
-                          <div className="bg-purple-500/10 rounded-lg p-4 border border-purple-500/20">
-                            <h5 className="text-xs font-semibold text-purple-400 mb-2 uppercase tracking-wider">
+                          <div className="rounded-lg border border-purple-500/25 bg-slate-900/35 p-4">
+                            <h5 className="mb-2 text-xs font-semibold uppercase tracking-wider text-purple-300">
                               Aligned Traits
                             </h5>
                             <ul className="space-y-1">
@@ -1359,8 +1298,8 @@ const RoleSuggestion = () => {
                         .traits_to_develop &&
                         resumeData.preparationPlan.personality_alignment
                           .traits_to_develop.length > 0 && (
-                          <div className="bg-blue-500/10 rounded-lg p-4 border border-blue-500/20">
-                            <h5 className="text-xs font-semibold text-blue-400 mb-2 uppercase tracking-wider">
+                          <div className="rounded-lg border border-blue-500/25 bg-slate-900/35 p-4">
+                            <h5 className="mb-2 text-xs font-semibold uppercase tracking-wider text-blue-300">
                               Traits to Develop
                             </h5>
                             <ul className="space-y-1">
@@ -1382,8 +1321,8 @@ const RoleSuggestion = () => {
                         )}
                       {resumeData.preparationPlan.personality_alignment
                         .personality_tips && (
-                        <div className="bg-slate-800/50 rounded-lg p-4 border border-slate-600/30">
-                          <h5 className="text-xs font-semibold text-slate-400 mb-2 uppercase tracking-wider">
+                        <div className="rounded-lg border border-slate-600/40 bg-slate-900/45 p-4">
+                          <h5 className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-400">
                             Tips
                           </h5>
                           <p className="text-xs text-slate-300 leading-relaxed">
@@ -1401,9 +1340,9 @@ const RoleSuggestion = () => {
                 {resumeData.preparationPlan.strengths_to_leverage &&
                   resumeData.preparationPlan.strengths_to_leverage.length >
                     0 && (
-                    <div className="mb-6">
-                      <h4 className="text-sm font-semibold text-emerald-400 mb-3 flex items-center gap-2">
-                        <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                    <div className="mb-6 rounded-xl border border-emerald-500/25 bg-emerald-500/5 p-5">
+                      <h4 className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-emerald-300">
+                        <div className="h-2 w-2 rounded-full bg-emerald-400"></div>
                         Strengths to Leverage
                       </h4>
                       <div className="space-y-3">
@@ -1411,9 +1350,9 @@ const RoleSuggestion = () => {
                           (strength, idx) => (
                             <div
                               key={idx}
-                              className="bg-emerald-500/10 rounded-lg p-4 border border-emerald-500/20"
+                              className="rounded-lg border border-emerald-500/25 bg-slate-900/35 p-4"
                             >
-                              <h5 className="text-sm font-semibold text-emerald-300 mb-2">
+                              <h5 className="mb-2 text-sm font-semibold text-emerald-200">
                                 {strength.strength}
                               </h5>
                               <p className="text-xs text-slate-300 leading-relaxed">
@@ -1429,9 +1368,9 @@ const RoleSuggestion = () => {
 
                 {resumeData.preparationPlan.development_areas &&
                   resumeData.preparationPlan.development_areas.length > 0 && (
-                    <div className="mb-6">
-                      <h4 className="text-sm font-semibold text-rose-400 mb-3 flex items-center gap-2">
-                        <div className="w-2 h-2 bg-rose-400 rounded-full"></div>
+                    <div className="mb-6 rounded-xl border border-rose-500/25 bg-rose-500/5 p-5">
+                      <h4 className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-rose-300">
+                        <div className="h-2 w-2 rounded-full bg-rose-400"></div>
                         Development Areas
                       </h4>
                       <div className="space-y-3">
@@ -1439,9 +1378,9 @@ const RoleSuggestion = () => {
                           (area, idx) => (
                             <div
                               key={idx}
-                              className="bg-rose-500/10 rounded-lg p-4 border border-rose-500/20"
+                              className="rounded-lg border border-rose-500/25 bg-slate-900/35 p-4"
                             >
-                              <h5 className="text-sm font-semibold text-rose-300 mb-2">
+                              <h5 className="mb-2 text-sm font-semibold text-rose-200">
                                 {area.weakness}
                               </h5>
                               <p className="text-xs text-slate-300 leading-relaxed">
@@ -1455,38 +1394,40 @@ const RoleSuggestion = () => {
                   )}
 
                 {resumeData.preparationPlan.preparation_timeline && (
-                  <div className="mt-6 space-y-4">
-                    <h4 className="text-sm font-semibold text-amber-400 flex items-center gap-2">
-                      <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
+                  <div className="mt-6 rounded-xl border border-amber-500/25 bg-amber-500/5 p-5">
+                    <h4 className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-amber-300">
+                      <div className="h-2 w-2 rounded-full bg-amber-400"></div>
                       Timeline
                     </h4>
-                    {Object.entries(
-                      resumeData.preparationPlan.preparation_timeline,
-                    ).map(([phase, items]) => (
-                      <div
-                        key={phase}
-                        className="bg-slate-800/30 rounded-lg p-4 border border-slate-600/30"
-                      >
-                        <h5 className="text-sm font-bold text-amber-300 mb-2 capitalize">
-                          {phase.replace(/_/g, " ")}
-                        </h5>
-                        {Array.isArray(items) && (
-                          <ul className="space-y-1">
-                            {items.map((item, idx) => (
-                              <li
-                                key={idx}
-                                className="flex gap-2 text-xs text-slate-300"
-                              >
-                                <span className="text-amber-400 flex-shrink-0">
-                                  ✓
-                                </span>
-                                <span>{item}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        )}
-                      </div>
-                    ))}
+                    <div className="mt-4 space-y-4">
+                      {Object.entries(
+                        resumeData.preparationPlan.preparation_timeline,
+                      ).map(([phase, items]) => (
+                        <div
+                          key={phase}
+                          className="rounded-lg border border-slate-600/40 bg-slate-900/40 p-4"
+                        >
+                          <h5 className="mb-2 text-sm font-bold capitalize text-amber-200">
+                            {phase.replace(/_/g, " ")}
+                          </h5>
+                          {Array.isArray(items) && (
+                            <ul className="space-y-1">
+                              {items.map((item, idx) => (
+                                <li
+                                  key={idx}
+                                  className="flex gap-2 text-xs text-slate-300"
+                                >
+                                  <span className="text-amber-400 flex-shrink-0">
+                                    ✓
+                                  </span>
+                                  <span>{item}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>
@@ -1496,9 +1437,12 @@ const RoleSuggestion = () => {
           {(resumeData?.preparationPlan?.estimated_readiness_timeline ||
             resumeData?.preparationPlan?.motivation_summary) && (
             <div className="relative">
-              <div className="relative bg-slate-900/90 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-8 shadow-2xl">
-                <div className="text-center mb-12">
-                  <div className="inline-flex items-center gap-3 bg-gradient-to-r from-rose-600 to-pink-600 p-3 rounded-2xl mb-4">
+              <div className="relative overflow-hidden rounded-3xl border border-slate-700/60 bg-slate-900/90 p-8 shadow-2xl backdrop-blur-xl md:p-10">
+                <div className="pointer-events-none absolute -left-10 top-8 h-44 w-44 rounded-full bg-rose-500/15 blur-3xl"></div>
+                <div className="pointer-events-none absolute -right-10 bottom-8 h-44 w-44 rounded-full bg-pink-500/15 blur-3xl"></div>
+
+                <div className="relative mb-10">
+                  <div className="mb-4 inline-flex items-center gap-3 rounded-2xl border border-rose-300/30 bg-rose-500/10 p-3">
                     <svg
                       className="h-8 w-8 text-white"
                       fill="none"
@@ -1516,14 +1460,14 @@ const RoleSuggestion = () => {
                       Your Journey
                     </h2>
                   </div>
-                  <p className="text-slate-300 text-lg">
+                  <p className="text-lg text-slate-300">
                     Timeline and motivation for success
                   </p>
                 </div>
 
                 {resumeData.preparationPlan.estimated_readiness_timeline && (
-                  <div className="mb-8 bg-slate-800/60 rounded-xl p-6 border border-slate-600/50">
-                    <h4 className="text-sm font-semibold text-rose-400 mb-3 flex items-center gap-2">
+                  <div className="relative mb-6 rounded-xl border border-rose-500/25 bg-rose-500/5 p-6">
+                    <h4 className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-rose-300">
                       <svg
                         className="h-5 w-5"
                         fill="none"
@@ -1546,8 +1490,8 @@ const RoleSuggestion = () => {
                 )}
 
                 {resumeData.preparationPlan.motivation_summary && (
-                  <div className="bg-gradient-to-r from-rose-500/10 to-pink-500/10 rounded-xl p-6 border border-rose-500/20">
-                    <h4 className="text-sm font-semibold text-pink-400 mb-3 flex items-center gap-2">
+                  <div className="rounded-xl border border-pink-500/25 bg-pink-500/8 p-6">
+                    <h4 className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-pink-300">
                       <svg
                         className="h-5 w-5"
                         fill="none"
@@ -1563,7 +1507,7 @@ const RoleSuggestion = () => {
                       </svg>
                       Your Success Message
                     </h4>
-                    <p className="text-sm text-pink-300 leading-relaxed italic">
+                    <p className="text-sm italic leading-relaxed text-pink-200">
                       "{resumeData.preparationPlan.motivation_summary}"
                     </p>
                   </div>
@@ -1574,9 +1518,12 @@ const RoleSuggestion = () => {
 
           {resumeData?.interview_preparation && (
             <div className="relative">
-              <div className="relative bg-slate-900/90 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-8 shadow-2xl">
-                <div className="text-center mb-12">
-                  <div className="inline-flex items-center gap-3 bg-gradient-to-r from-indigo-600 to-purple-600 p-3 rounded-2xl mb-4">
+              <div className="relative overflow-hidden rounded-3xl border border-slate-700/60 bg-slate-900/90 p-8 shadow-2xl backdrop-blur-xl md:p-10">
+                <div className="pointer-events-none absolute -left-10 top-8 h-44 w-44 rounded-full bg-indigo-500/15 blur-3xl"></div>
+                <div className="pointer-events-none absolute -right-10 bottom-8 h-44 w-44 rounded-full bg-purple-500/15 blur-3xl"></div>
+
+                <div className="relative mb-10">
+                  <div className="mb-4 inline-flex items-center gap-3 rounded-2xl border border-indigo-300/30 bg-indigo-500/10 p-3">
                     <svg
                       className="h-8 w-8 text-white"
                       fill="none"
@@ -1594,7 +1541,7 @@ const RoleSuggestion = () => {
                       Interview Preparation
                     </h2>
                   </div>
-                  <p className="text-slate-300 text-lg">
+                  <p className="text-lg text-slate-300">
                     Key strategies for successful interviews
                   </p>
                 </div>
@@ -1602,9 +1549,9 @@ const RoleSuggestion = () => {
                 {resumeData.interview_preparation.key_points_to_emphasize &&
                   resumeData.interview_preparation.key_points_to_emphasize
                     .length > 0 && (
-                    <div className="mb-8">
-                      <h4 className="text-sm font-semibold text-emerald-400 mb-4 flex items-center gap-2">
-                        <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                    <div className="mb-6 rounded-xl border border-emerald-500/25 bg-emerald-500/5 p-5">
+                      <h4 className="mb-4 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-emerald-300">
+                        <div className="h-2 w-2 rounded-full bg-emerald-400"></div>
                         Key Points to Emphasize
                       </h4>
                       <ul className="space-y-3">
@@ -1612,9 +1559,9 @@ const RoleSuggestion = () => {
                           (point, idx) => (
                             <li
                               key={idx}
-                              className="bg-emerald-500/10 rounded-lg p-4 border border-emerald-500/20"
+                              className="rounded-lg border border-emerald-500/25 bg-slate-900/40 p-4"
                             >
-                              <p className="text-sm text-emerald-300">
+                              <p className="text-sm text-emerald-100">
                                 {point}
                               </p>
                             </li>
@@ -1627,9 +1574,9 @@ const RoleSuggestion = () => {
                 {resumeData.interview_preparation.common_interview_questions &&
                   resumeData.interview_preparation.common_interview_questions
                     .length > 0 && (
-                    <div className="mb-8">
-                      <h4 className="text-sm font-semibold text-cyan-400 mb-4 flex items-center gap-2">
-                        <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
+                    <div className="mb-6 rounded-xl border border-cyan-500/25 bg-cyan-500/5 p-5">
+                      <h4 className="mb-4 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-cyan-300">
+                        <div className="h-2 w-2 rounded-full bg-cyan-400"></div>
                         Common Interview Questions
                       </h4>
                       <div className="space-y-3">
@@ -1637,9 +1584,9 @@ const RoleSuggestion = () => {
                           (question, idx) => (
                             <div
                               key={idx}
-                              className="bg-cyan-500/10 rounded-lg p-4 border border-cyan-500/20"
+                              className="rounded-lg border border-cyan-500/25 bg-slate-900/40 p-4"
                             >
-                              <p className="text-sm text-cyan-300 font-semibold">
+                              <p className="text-sm font-semibold text-cyan-100">
                                 {idx + 1}. {question}
                               </p>
                             </div>
@@ -1650,8 +1597,8 @@ const RoleSuggestion = () => {
                   )}
 
                 {resumeData.interview_preparation.best_answers_outline && (
-                  <div className="bg-slate-800/50 rounded-xl p-4 border border-slate-600/30">
-                    <h4 className="text-sm font-semibold text-purple-400 mb-2">
+                  <div className="rounded-xl border border-purple-500/25 bg-purple-500/5 p-5">
+                    <h4 className="mb-2 text-xs font-bold uppercase tracking-[0.14em] text-purple-300">
                       Answering Strategy
                     </h4>
                     <p className="text-slate-300 text-sm leading-relaxed">
@@ -1666,9 +1613,12 @@ const RoleSuggestion = () => {
           {resumeData?.resume_improvements &&
             resumeData.resume_improvements.length > 0 && (
               <div className="relative">
-                <div className="relative bg-slate-900/90 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-8 shadow-2xl">
-                  <div className="text-center mb-12">
-                    <div className="inline-flex items-center gap-3 bg-gradient-to-r from-green-600 to-emerald-600 p-3 rounded-2xl mb-4">
+                <div className="relative overflow-hidden rounded-3xl border border-slate-700/60 bg-slate-900/90 p-8 shadow-2xl backdrop-blur-xl md:p-10">
+                  <div className="pointer-events-none absolute -left-10 top-8 h-44 w-44 rounded-full bg-emerald-500/15 blur-3xl"></div>
+                  <div className="pointer-events-none absolute -right-10 bottom-8 h-44 w-44 rounded-full bg-green-500/15 blur-3xl"></div>
+
+                  <div className="relative mb-10">
+                    <div className="mb-4 inline-flex items-center gap-3 rounded-2xl border border-emerald-300/30 bg-emerald-500/10 p-3">
                       <svg
                         className="h-8 w-8 text-white"
                         fill="none"
@@ -1686,37 +1636,40 @@ const RoleSuggestion = () => {
                         Resume Enhancements
                       </h2>
                     </div>
-                    <p className="text-slate-300 text-lg">
+                    <p className="text-lg text-slate-300">
                       Section-by-section improvements
                     </p>
                   </div>
 
-                  <div className="space-y-6">
+                  <div className="relative space-y-5">
                     {resumeData.resume_improvements.map((improvement, idx) => (
                       <div
                         key={idx}
-                        className="bg-slate-800/60 rounded-xl p-6 border border-slate-600/50"
+                        className="rounded-xl border border-emerald-500/20 bg-emerald-500/5 p-6"
                       >
-                        <div className="mb-4">
-                          <h4 className="text-sm font-bold text-green-400 mb-2 uppercase tracking-wider">
+                        <div className="mb-4 flex items-start justify-between gap-3">
+                          <h4 className="text-sm font-bold uppercase tracking-[0.14em] text-emerald-300">
                             {improvement.section}
                           </h4>
-                          <div className="flex gap-4 text-xs">
-                            <div>
-                              <span className="text-slate-400">
-                                Current Gap:
-                              </span>
-                              <p className="text-slate-300 mt-1">
-                                {improvement.current_gap}
-                              </p>
-                            </div>
+                          <div className="rounded-full border border-slate-600/60 bg-slate-900/60 px-3 py-1 text-[11px] uppercase tracking-[0.12em] text-slate-300">
+                            Improvement #{idx + 1}
                           </div>
                         </div>
-                        <div className="bg-emerald-500/10 rounded-lg p-4 border border-emerald-500/20">
-                          <h5 className="text-xs font-semibold text-emerald-400 mb-2 uppercase tracking-wider">
+
+                        <div className="mb-4 rounded-lg border border-slate-600/40 bg-slate-900/45 p-4">
+                          <h5 className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">
+                            Current Gap
+                          </h5>
+                          <p className="mt-1 text-sm text-slate-300">
+                            {improvement.current_gap}
+                          </p>
+                        </div>
+
+                        <div className="rounded-lg border border-emerald-500/25 bg-slate-900/45 p-4">
+                          <h5 className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-emerald-300">
                             Recommended Improvement
                           </h5>
-                          <p className="text-sm text-emerald-300 leading-relaxed">
+                          <p className="text-sm leading-relaxed text-emerald-100">
                             {improvement.improvement}
                           </p>
                         </div>
@@ -1729,9 +1682,12 @@ const RoleSuggestion = () => {
 
           {resumeData?.success_metrics && (
             <div className="relative">
-              <div className="relative bg-slate-900/90 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-8 shadow-2xl">
-                <div className="text-center mb-12">
-                  <div className="inline-flex items-center gap-3 bg-gradient-to-r from-yellow-600 to-amber-600 p-3 rounded-2xl mb-4">
+              <div className="relative overflow-hidden rounded-3xl border border-slate-700/60 bg-slate-900/90 p-8 shadow-2xl backdrop-blur-xl md:p-10">
+                <div className="pointer-events-none absolute -left-10 top-8 h-44 w-44 rounded-full bg-yellow-500/15 blur-3xl"></div>
+                <div className="pointer-events-none absolute -right-10 bottom-8 h-44 w-44 rounded-full bg-amber-500/15 blur-3xl"></div>
+
+                <div className="relative mb-10">
+                  <div className="mb-4 inline-flex items-center gap-3 rounded-2xl border border-yellow-300/30 bg-yellow-500/10 p-3">
                     <svg
                       className="h-8 w-8 text-white"
                       fill="none"
@@ -1749,15 +1705,15 @@ const RoleSuggestion = () => {
                       Success Metrics
                     </h2>
                   </div>
-                  <p className="text-slate-300 text-lg">
+                  <p className="text-lg text-slate-300">
                     Milestones for achieving your career goals
                   </p>
                 </div>
 
                 {resumeData.success_metrics.skill_readiness && (
-                  <div className="mb-6 bg-slate-800/60 rounded-xl p-6 border border-slate-600/50">
-                    <h4 className="text-sm font-semibold text-yellow-400 mb-3 flex items-center gap-2">
-                      <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                  <div className="mb-6 rounded-xl border border-yellow-500/25 bg-yellow-500/5 p-6">
+                    <h4 className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-yellow-300">
+                      <div className="h-2 w-2 rounded-full bg-yellow-400"></div>
                       Skill Readiness
                     </h4>
                     <p className="text-sm text-slate-300 leading-relaxed">
@@ -1767,9 +1723,9 @@ const RoleSuggestion = () => {
                 )}
 
                 {resumeData.success_metrics.experience_requirements && (
-                  <div className="mb-6 bg-slate-800/60 rounded-xl p-6 border border-slate-600/50">
-                    <h4 className="text-sm font-semibold text-amber-400 mb-3 flex items-center gap-2">
-                      <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
+                  <div className="mb-6 rounded-xl border border-amber-500/25 bg-amber-500/5 p-6">
+                    <h4 className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-amber-300">
+                      <div className="h-2 w-2 rounded-full bg-amber-400"></div>
                       Experience Requirements
                     </h4>
                     <p className="text-sm text-slate-300 leading-relaxed">
@@ -1781,9 +1737,9 @@ const RoleSuggestion = () => {
                 {resumeData.success_metrics.confidence_checklist &&
                   resumeData.success_metrics.confidence_checklist.length >
                     0 && (
-                    <div className="bg-orange-500/10 rounded-xl p-6 border border-orange-500/20">
-                      <h4 className="text-sm font-semibold text-orange-400 mb-4 flex items-center gap-2">
-                        <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <div className="rounded-xl border border-orange-500/25 bg-orange-500/8 p-6">
+                      <h4 className="mb-4 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-orange-300">
+                        <div className="h-2 w-2 rounded-full bg-orange-400"></div>
                         Confidence Checklist
                       </h4>
                       <ul className="space-y-2">
@@ -1791,9 +1747,9 @@ const RoleSuggestion = () => {
                           (item, idx) => (
                             <li
                               key={idx}
-                              className="flex gap-3 text-sm text-orange-300"
+                              className="flex gap-3 text-sm text-orange-100"
                             >
-                              <span className="text-orange-400 flex-shrink-0 font-bold">
+                              <span className="flex-shrink-0 font-bold text-orange-300">
                                 ✓
                               </span>
                               <span>{item}</span>
@@ -1806,66 +1762,16 @@ const RoleSuggestion = () => {
               </div>
             </div>
           )}
-
-          {renderSpecialError()}
-
-          {alertMessage && (
-            <div
-              className={`fixed top-6 right-6 z-50 min-w-[260px] max-w-xs px-4 py-3 rounded-lg shadow-lg text-base flex items-center gap-3 font-semibold transition-all duration-300
-                ${
-                  alertType === "success"
-                    ? "bg-slate-800 text-emerald-400 border border-emerald-500/30"
-                    : "bg-slate-800 text-red-400 border border-red-500/30"
-                }
-              `}
-              role="alert"
-            >
-              {alertType === "success" ? (
-                <svg
-                  className="h-5 w-5 text-emerald-400"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  className="h-5 w-5 text-red-400"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              )}
-              <span className="flex-1">{alertMessage}</span>
-              <button
-                onClick={handleErrorClose}
-                className="ml-2 text-lg font-bold focus:outline-none text-slate-400 hover:text-slate-200"
-                aria-label="Close alert"
-              >
-                &times;
-              </button>
-            </div>
-          )}
         </div>
 
         <div className="relative">
-          <div className="relative bg-slate-900/90 backdrop-blur-xl border border-slate-700/50 rounded-3xl shadow-2xl overflow-hidden">
-            <div className="p-8">
-              <div className="text-center mb-8">
-                <div className="inline-flex items-center gap-3 bg-gradient-to-r from-cyan-600 to-violet-600 p-3 rounded-2xl mb-4">
+          <div className="relative overflow-hidden rounded-3xl border border-slate-700/60 bg-slate-900/90 shadow-2xl backdrop-blur-xl">
+            <div className="pointer-events-none absolute -left-10 top-8 h-48 w-48 rounded-full bg-cyan-500/15 blur-3xl"></div>
+            <div className="pointer-events-none absolute -right-10 bottom-10 h-48 w-48 rounded-full bg-indigo-500/15 blur-3xl"></div>
+
+            <div className="relative p-8 md:p-10">
+              <div className="mb-8">
+                <div className="mb-4 inline-flex items-center gap-3 rounded-2xl border border-cyan-300/30 bg-cyan-500/10 p-3">
                   <svg
                     className="h-8 w-8 text-white"
                     fill="none"
@@ -1883,18 +1789,18 @@ const RoleSuggestion = () => {
                     Upload & Analyze
                   </h2>
                 </div>
-                <p className="text-slate-300 text-lg max-w-2xl mx-auto">
+                <p className="max-w-2xl text-lg text-slate-300">
                   Enhance your analysis with targeted role and job description
                   matching
                 </p>
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-                <div className="space-y-4">
+                <div className="rounded-2xl border border-slate-700/60 bg-slate-950/45 p-5">
                   <div className="relative group">
                     <label
                       htmlFor="targetRole"
-                      className="text-sm font-bold text-violet-400 mb-3 flex items-center gap-2"
+                      className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-violet-300"
                     >
                       <svg
                         className="h-5 w-5"
@@ -1919,13 +1825,13 @@ const RoleSuggestion = () => {
                         value={targetRole}
                         onChange={(e) => setTargetRole(e.target.value)}
                         placeholder="e.g., Software Engineer, Data Scientist, Product Manager"
-                        className="w-full px-6 py-4 bg-slate-800/60 backdrop-blur-sm border border-slate-600/50 rounded-2xl shadow-lg focus:outline-none focus:ring-2 focus:ring-violet-400/50 focus:border-violet-400/50 text-white text-lg placeholder-slate-400 transition-all duration-300 group-hover:border-violet-500/30"
+                        className="w-full rounded-2xl border border-slate-600/50 bg-slate-800/60 px-6 py-4 text-lg text-white shadow-lg transition-all duration-300 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-violet-400/50 focus:border-violet-400/50 group-hover:border-violet-500/30"
                         disabled={isLoading}
                         autoComplete="off"
                       />
                       <div className="absolute inset-0 bg-gradient-to-r from-violet-600/10 to-cyan-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                     </div>
-                    <p className="mt-3 text-sm text-slate-400 flex items-center gap-2">
+                    <p className="mt-3 flex items-center gap-2 text-sm text-slate-400">
                       <svg
                         className="h-4 w-4 text-violet-400"
                         fill="none"
@@ -1944,11 +1850,11 @@ const RoleSuggestion = () => {
                   </div>
                 </div>
 
-                <div className="space-y-4">
+                <div className="rounded-2xl border border-slate-700/60 bg-slate-950/45 p-5">
                   <div className="relative group">
                     <label
                       htmlFor="jobDescription"
-                      className="text-sm font-bold text-cyan-400 mb-3 flex items-center gap-2"
+                      className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-cyan-300"
                     >
                       <svg
                         className="h-5 w-5"
@@ -1973,13 +1879,13 @@ const RoleSuggestion = () => {
                         onChange={(e) => setJobDescription(e.target.value)}
                         placeholder="Paste the job description here for more accurate role fit analysis..."
                         rows={4}
-                        className="w-full px-6 py-4 bg-slate-800/60 backdrop-blur-sm border border-slate-600/50 rounded-2xl shadow-lg focus:outline-none focus:ring-2 focus:ring-cyan-400/50 focus:border-cyan-400/50 resize-vertical text-white text-lg placeholder-slate-400 transition-all duration-300 group-hover:border-cyan-500/30"
+                        className="w-full resize-vertical rounded-2xl border border-slate-600/50 bg-slate-800/60 px-6 py-4 text-lg text-white shadow-lg transition-all duration-300 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 focus:border-cyan-400/50 group-hover:border-cyan-500/30"
                         disabled={isLoading}
                         autoComplete="off"
                       />
                       <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/10 to-violet-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                     </div>
-                    <p className="mt-3 text-sm text-slate-400 flex items-center gap-2">
+                    <p className="mt-3 flex items-center gap-2 text-sm text-slate-400">
                       <svg
                         className="h-4 w-4 text-cyan-400"
                         fill="none"
@@ -2000,7 +1906,7 @@ const RoleSuggestion = () => {
               </div>
 
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-rose-600/5 to-amber-600/5 rounded-2xl"></div>
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-600/5 to-indigo-600/5"></div>
                 <div className="relative">
                   <ResumeUpload
                     onFileUpload={handleFileUpload}
@@ -2020,9 +1926,11 @@ const RoleSuggestion = () => {
 
               {uploadedFile && !resumeData && (
                 <div className="relative mt-8">
-                  <div className="relative bg-slate-900/90 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-8 shadow-2xl">
+                  <div className="relative overflow-hidden rounded-3xl border border-emerald-500/25 bg-slate-900/90 p-8 shadow-2xl backdrop-blur-xl">
+                    <div className="pointer-events-none absolute -left-10 top-6 h-40 w-40 rounded-full bg-emerald-500/15 blur-3xl"></div>
+                    <div className="pointer-events-none absolute -right-10 bottom-6 h-40 w-40 rounded-full bg-cyan-500/15 blur-3xl"></div>
                     <div className="text-center">
-                      <div className="inline-flex items-center gap-3 bg-gradient-to-r from-emerald-600 to-teal-600 p-3 rounded-2xl mb-6">
+                      <div className="mb-6 inline-flex items-center gap-3 rounded-2xl border border-emerald-300/30 bg-emerald-500/12 p-3">
                         <svg
                           className="h-8 w-8 text-white"
                           fill="none"
@@ -2041,7 +1949,7 @@ const RoleSuggestion = () => {
                         </h3>
                       </div>
 
-                      <p className="text-slate-300 text-lg mb-8 max-w-2xl mx-auto">
+                      <p className="mx-auto mb-8 max-w-2xl text-lg text-slate-300">
                         Your resume "{uploadedFile.name}" has been uploaded
                         successfully. Click the button below to start the
                         AI-powered role-fit analysis and get personalized career
@@ -2051,7 +1959,7 @@ const RoleSuggestion = () => {
                       <button
                         onClick={analyzeResume}
                         disabled={isLoading}
-                        className="group relative overflow-hidden bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 px-12 py-4 text-white font-bold text-xl rounded-2xl shadow-2xl hover:shadow-emerald-500/25 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none cursor-pointer"
+                        className="group relative cursor-pointer overflow-hidden rounded-2xl border border-emerald-300/30 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 px-12 py-4 text-xl font-bold text-white shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-emerald-500/25 disabled:cursor-not-allowed disabled:opacity-50 disabled:transform-none"
                       >
                         <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 via-teal-600 to-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         <div className="relative flex items-center gap-3">
@@ -2162,7 +2070,7 @@ const RoleSuggestion = () => {
                                 </div>
                               </div>
                               <div className="flex-1">
-                                <h3 className="text-white font-semibold text-lg mb-2 bg-gradient-to-r from-white via-indigo-200 to-purple-200 bg-clip-text text-transparent">
+                                <h3 className="mb-2 bg-gradient-to-r from-white via-indigo-200 to-purple-200 bg-clip-text text-lg font-semibold text-transparent">
                                   While You Wait - Chat with our AI Assistant!
                                 </h3>
                                 <p className="text-slate-300 text-sm leading-relaxed mb-4">
