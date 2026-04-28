@@ -1,0 +1,119 @@
+/* Blob animation for background gradients */
+@keyframes blob {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(20px, -50px) scale(1.1);
+  }
+  50% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  75% {
+    transform: translate(50px, 50px) scale(1.05);
+  }
+}
+
+/* Reverse spin animation for middle ring */
+@keyframes spinReverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+/* Enhanced pulse with scale effect */
+@keyframes enhancedPulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(0.95);
+  }
+}
+
+/* Smooth bounce animation */
+@keyframes smoothBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-8px);
+    opacity: 1;
+  }
+}
+
+/* Glow effect animation */
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 10px rgba(99, 102, 241, 0.5),
+      0 0 20px rgba(34, 211, 238, 0.3);
+  }
+  50% {
+    box-shadow:
+      0 0 20px rgba(99, 102, 241, 0.8),
+      0 0 40px rgba(34, 211, 238, 0.6);
+  }
+}
+
+/* Apply animations */
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animate-spin {
+  animation: spin 3s linear infinite;
+}
+
+.animation-reverse-slow {
+  animation: spinReverse 4s linear infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+.animate-pulse {
+  animation: enhancedPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-bounce {
+  animation: smoothBounce 1.4s infinite;
+}
+
+/* Add custom glow to center orb */
+.loading-orb {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Smooth text animation */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-text-animate {
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+}
