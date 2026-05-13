@@ -50,15 +50,11 @@ function Header() {
       {!scrolled && (
         <div
           className="fixed w-full top-0 left-0 z-40 h-[56px] xs:h-[64px] sm:h-[72px] md:h-[80px] pointer-events-none"
-          style={{
-            background:
-              "linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%)",
-            opacity: 1,
-          }}
+          style={{ background: "var(--bg-color)", opacity: 1 }}
         />
       )}
       <header
-        className={`fixed w-full top-0 z-50 py-1 xs:py-2 sm:py-3 transition-all duration-500 ${
+        className={`fixed w-full top-0 z-50 py-1 xs:py-2 sm:py-3 transition-all duration-500 page-force-light ${
           scrolled ? "backdrop-blur-xl" : "bg-transparent"
         }`}
         onMouseEnter={() => setIsHovered(true)}
@@ -69,11 +65,12 @@ function Header() {
             className={`flex items-center justify-between rounded-lg xs:rounded-xl px-2 xs:px-3 sm:px-4 md:px-6 py-2 xs:py-2.5 sm:py-3 transition-all duration-500 relative overflow-hidden
               ${
                 scrolled
-                  ? "bg-gradient-to-r from-slate-800/95 via-slate-900/95 to-slate-800/95 backdrop-blur-xl hover:shadow-2xl border border-slate-700/80 shadow-lg"
-                  : "bg-gradient-to-r from-slate-800/40 via-slate-900/60 to-slate-800/40 backdrop-blur-lg border border-slate-700/30 hover:border-slate-600/50"
+                  ? "backdrop-blur-xl hover:shadow-2xl border border-slate-700/80 shadow-lg"
+                  : "backdrop-blur-lg border border-slate-700/30 hover:border-slate-600/50"
               }
               ${isHovered ? "transform scale-[1.02] shadow-2xl" : ""}
             `}
+            style={{ backgroundColor: "var(--bg-color)" }}
           >
             <div className="absolute inset-0 rounded-lg xs:rounded-xl bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-emerald-500/20 opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
@@ -181,13 +178,16 @@ function Header() {
               {mobileDropdownOpen && (
                 <div
                   id="mobile-nav-dropdown"
-                  className="absolute top-16 xs:top-18 sm:top-20 right-0 w-56 xs:w-64 bg-slate-900 border-2 border-red-500 py-4 z-[100] rounded-xl shadow-2xl"
+                  className="absolute top-16 xs:top-18 sm:top-20 right-0 w-56 xs:w-64 border-2 py-4 z-[100] rounded-xl shadow-2xl"
                   style={{
                     minHeight: "100px",
-                    backgroundColor: "rgba(15, 23, 42, 0.95)",
+                    backgroundColor: "var(--bg-color)",
                   }}
                 >
-                  <div className="text-white text-center mb-2 font-bold">
+                  <div
+                    className="text-center mb-2 font-bold"
+                    style={{ color: "var(--text-color)" }}
+                  >
                     Mobile Menu
                   </div>
 
@@ -212,19 +212,29 @@ function Header() {
 
       {showFeatures && (
         <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/60 backdrop-blur-md px-2 xs:px-4 animate-fade-in">
-          <div className="bg-gradient-to-br from-slate-800/95 via-slate-900/95 to-slate-800/95 rounded-2xl xs:rounded-3xl shadow-2xl p-3 xs:p-4 sm:p-6 lg:p-8 max-w-sm xs:max-w-md sm:max-w-4xl lg:max-w-6xl w-full relative animate-fade-in-up overflow-y-auto max-h-[90vh] border border-slate-700/80 overflow-hidden">
-            <div className="absolute inset-0 rounded-2xl xs:rounded-3xl bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-emerald-500/20 opacity-50 animate-pulse"></div>
+          <div
+            className="rounded-2xl xs:rounded-3xl shadow-2xl p-3 xs:p-4 sm:p-6 lg:p-8 max-w-sm xs:max-w-md sm:max-w-4xl lg:max-w-6xl w-full relative animate-fade-in-up overflow-y-auto max-h-[90vh] border"
+            style={{
+              backgroundColor: "var(--bg-color)",
+              borderColor: "rgba(15,23,42,0.06)",
+            }}
+          >
+            <div className="absolute inset-0 rounded-2xl xs:rounded-3xl bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-emerald-500/20 opacity-20 animate-pulse pointer-events-none"></div>
 
-            <div className="absolute inset-0 rounded-2xl xs:rounded-3xl bg-gradient-to-br from-transparent via-white/5 to-transparent"></div>
+            <div className="absolute inset-0 rounded-2xl xs:rounded-3xl bg-gradient-to-br from-transparent via-white/3 to-transparent pointer-events-none"></div>
 
             <button
-              className="absolute top-3 xs:top-4 right-3 xs:right-4 text-slate-400 hover:text-white text-xl xs:text-2xl font-bold focus:outline-none cursor-pointer z-10 transition-all duration-300 hover:scale-110 hover:rotate-90 bg-slate-700/50 hover:bg-slate-600/50 rounded-full w-8 h-8 xs:w-10 xs:h-10 flex items-center justify-center"
+              className="absolute top-3 xs:top-4 right-3 xs:right-4 text-slate-700 hover:text-slate-900 text-xl xs:text-2xl font-bold focus:outline-none cursor-pointer z-10 transition-all duration-300 hover:scale-110 hover:rotate-90 rounded-full w-8 h-8 xs:w-10 xs:h-10 flex items-center justify-center"
               onClick={() => setShowFeatures(false)}
               aria-label="Close features modal"
+              style={{ backgroundColor: "transparent", border: "none" }}
             >
               &times;
             </button>
-            <h2 className="text-lg xs:text-xl sm:text-2xl lg:text-3xl font-extrabold text-center mb-4 xs:mb-6 sm:mb-8 bg-gradient-to-r from-indigo-300 via-purple-300 to-emerald-300 bg-clip-text text-transparent relative z-10">
+            <h2
+              className="text-lg xs:text-xl sm:text-2xl lg:text-3xl font-extrabold text-center mb-4 xs:mb-6 sm:mb-8 relative z-10"
+              style={{ color: "var(--text-color)" }}
+            >
               Career Readiness & Interview Success
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 xs:gap-4 sm:gap-4 lg:gap-6 relative z-10">

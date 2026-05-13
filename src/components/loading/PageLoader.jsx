@@ -14,7 +14,7 @@ const PageLoader = () => {
   const dotString = ".".repeat(dots);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden relative">
+    <div className="min-h-screen flex items-center justify-center overflow-hidden relative page-force-light">
       {/* Animated background gradient blobs */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"></div>

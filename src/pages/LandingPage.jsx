@@ -7,7 +7,7 @@ import Header from "@components/layout/Header";
 
 const LandingPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-indigo-50 to-white">
+    <div className="min-h-screen page-force-light">
       <Header />
       <HeroSection />
       <FAQSection />

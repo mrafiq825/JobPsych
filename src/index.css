@@ -42,6 +42,9 @@
   --font-tinos: "Tinos", Georgia, serif;
   --font-tinos-weight-regular: 400;
   --font-tinos-weight-bold: 700;
+  --bg-color: #e2dfd2;
+  --text-color: #0f172a;
+  --muted-text-color: rgba(15, 23, 42, 0.7);
 }
 
 /* Apply Tinos to all heading elements globally */
@@ -81,6 +84,10 @@ html,
 body {
   height: 100%;
   min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* WebKit-specific fixes */
@@ -289,7 +296,8 @@ body {
     box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
   }
   50% {
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.8),
+    box-shadow:
+      0 0 20px rgba(59, 130, 246, 0.8),
       0 0 30px rgba(59, 130, 246, 0.4);
   }
 }
@@ -342,7 +350,8 @@ body {
 
 /* Enhanced shadow utilities */
 .shadow-3xl {
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25),
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.25),
     0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
@@ -385,12 +394,15 @@ body {
 @keyframes chatbotGlow {
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3),
+    box-shadow:
+      0 0 20px rgba(59, 130, 246, 0.3),
       0 0 40px rgba(147, 51, 234, 0.2);
   }
   50% {
-    box-shadow: 0 0 30px rgba(59, 130, 246, 0.6),
-      0 0 60px rgba(147, 51, 234, 0.4), 0 0 80px rgba(236, 72, 153, 0.2);
+    box-shadow:
+      0 0 30px rgba(59, 130, 246, 0.6),
+      0 0 60px rgba(147, 51, 234, 0.4),
+      0 0 80px rgba(236, 72, 153, 0.2);
   }
 }
 
@@ -456,3 +468,22 @@ body {
 .animate-slide-up {
   animation: slide-up 0.5s ease-out forwards;
 }
+
+/* Force pages that opt into the light theme to inherit the global background
+   and map common dark utility classes to the new text variables. */
+.page-force-light {
+  background: transparent !important;
+  color: var(--text-color) !important;
+}
+.page-force-light [class*="text-white"],
+.page-force-light [class*="text-slate-100"] {
+  color: var(--text-color) !important;
+}
+.page-force-light [class*="text-slate-300"],
+.page-force-light [class*="text-slate-400"],
+.page-force-light [class*="text-slate-200"],
+.page-force-light [class*="text-gray-300"] {
+  color: var(--muted-text-color) !important;
+}
+/* Leave component backgrounds untouched so panels/cards retain their styling.
+   Root container is transparent so the global body background shows through. */

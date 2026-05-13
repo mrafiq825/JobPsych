@@ -4,8 +4,8 @@ import FAQDropdown from "@components/faq/FAQDropdown";
 
 const FAQSection = () => {
   return (
-    <section className="relative pt-6 pb-10 sm:pt-10 sm:pb-24 bg-slate-900">
-      <div className="absolute inset-0 bg-slate-900">
+    <section className="relative pt-6 pb-10 sm:pt-10 sm:pb-24 page-force-light">
+      <div className="absolute inset-0 bg-transparent">
         <div className="absolute inset-0 opacity-20">
           <div className="h-full w-full bg-gradient-to-br from-indigo-500/10 to-blue-500/10"></div>
         </div>
@@ -30,9 +30,7 @@ const FAQSection = () => {
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Everything you need to know about
             <br />
-            <span className="text-indigo-400">
-              AI-Based Career Readiness and Interview Preparation
-            </span>
+            <span>AI-Based Career Readiness and Interview Preparation</span>
           </h2>
           <p className="mt-6 text-lg leading-8 text-gray-300">
             Get answers to common questions about our comprehensive system:

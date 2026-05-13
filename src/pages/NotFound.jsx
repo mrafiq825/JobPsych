@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const NotFound = () => {
   return (
-    <main className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-900">
-      <div className="absolute inset-0 bg-slate-900">
+    <main className="relative min-h-screen flex items-center justify-center overflow-hidden page-force-light">
+      <div className="absolute inset-0 bg-transparent">
         <div className="absolute inset-0 opacity-20">
           <div className="h-full w-full bg-gradient-to-br from-indigo-500/10 to-blue-500/10"></div>
         </div>

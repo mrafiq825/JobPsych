@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { testimonials } from "@/data/testimonials";
-import {
-  ChevronLeftIcon,
-  ChevronRightIcon,
-} from "@heroicons/react/24/outline";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 
 const TestimonialsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -22,7 +19,7 @@ const TestimonialsSection = () => {
   const handlePrev = () => {
     setAutoScroll(false);
     setCurrentIndex((prev) =>
-      prev === 0 ? testimonials.length - 1 : prev - 1
+      prev === 0 ? testimonials.length - 1 : prev - 1,
     );
   };
 
@@ -36,8 +33,8 @@ const TestimonialsSection = () => {
     setCurrentIndex(index);
   };
   return (
-    <section className="relative pt-6 pb-10 sm:pt-10 sm:pb-24 bg-slate-900">
-      <div className="absolute inset-0 bg-slate-900">
+    <section className="relative pt-6 pb-10 sm:pt-10 sm:pb-24 page-force-light">
+      <div className="absolute inset-0 bg-transparent">
         <div className="absolute inset-0 opacity-20">
           <div className="h-full w-full bg-gradient-to-br from-indigo-500/10 to-blue-500/10"></div>
         </div>
@@ -51,10 +48,15 @@ const TestimonialsSection = () => {
           <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
             See How Our AI-Based System Transforms
             <br />
-            <span className="text-indigo-300">Career Readiness & Interview Success</span>
+            <span className="text-indigo-300">
+              Career Readiness & Interview Success
+            </span>
           </h2>
           <p className="mt-6 text-lg leading-8 text-gray-300">
-            Real stories from professionals who've transformed their careers using our comprehensive AI-Based Career Readiness and Interview Preparation System, featuring Career Path Exploration, Professional Document Analysis, and AI-Assisted Interview Practice.
+            Real stories from professionals who've transformed their careers
+            using our comprehensive AI-Based Career Readiness and Interview
+            Preparation System, featuring Career Path Exploration, Professional
+            Document Analysis, and AI-Assisted Interview Practice.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <div className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-full shadow-lg border border-blue-500/30 transition-all duration-300">
@@ -62,10 +64,10 @@ const TestimonialsSection = () => {
             </div>
 
             <div className="inline-flex items-center px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium rounded-full shadow-lg border border-emerald-500/30 transition-all duration-300">
-              Document Analysis
+              Professional Document Analysis
             </div>
             <div className="inline-flex items-center px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white text-sm font-medium rounded-full shadow-lg border border-purple-500/30 transition-all duration-300">
-              Interview Practice
+              AI-Assisted Interview Practice
             </div>
           </div>
         </div>
@@ -79,11 +81,19 @@ const TestimonialsSection = () => {
                   <div
                     key={index}
                     className={`w-full flex-shrink-0 transition-opacity duration-500 ${
-                      index === currentIndex ? "opacity-100" : "opacity-0 absolute"
+                      index === currentIndex
+                        ? "opacity-100"
+                        : "opacity-0 absolute"
                     }`}
                   >
                     <div className="mx-auto max-w-3xl">
-                      <div className="relative bg-slate-800 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-slate-700 hover:border-indigo-500/50 pt-16">
+                      <div
+                        className="relative rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border pt-16"
+                        style={{
+                          backgroundColor: "var(--bg-color)",
+                          borderColor: "rgba(15,23,42,0.06)",
+                        }}
+                      >
                         <div className="absolute top-4 left-4 right-4 px-3 py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-white text-xs sm:text-sm font-semibold border border-indigo-500/30 text-center">
                           {testimonial.category}
                         </div>
@@ -98,27 +108,43 @@ const TestimonialsSection = () => {
                             />
                           </div>
                           <div>
-                            <h4 className="font-semibold text-white">
+                            <h4
+                              className="font-semibold"
+                              style={{ color: "var(--text-color)" }}
+                            >
                               {testimonial.name}
                             </h4>
-                            <p className="text-sm text-gray-300">{testimonial.role}</p>
-                            <p className="text-sm text-indigo-400">
+                            <p
+                              className="text-sm"
+                              style={{ color: "var(--muted-text-color)" }}
+                            >
+                              {testimonial.role}
+                            </p>
+                            <p
+                              className="text-sm"
+                              style={{ color: "var(--muted-text-color)" }}
+                            >
                               {testimonial.company}
                             </p>
                           </div>
                         </div>
-
-                        <blockquote className="text-gray-300 mb-6 text-lg leading-relaxed">
+                        <blockquote
+                          className="mb-6 text-lg leading-relaxed"
+                          style={{ color: "var(--muted-text-color)" }}
+                        >
                           "{testimonial.quote}"
                         </blockquote>
 
-                        <div className="flex items-center justify-between mt-6 pt-6 border-t border-slate-700">
-                          <div className="bg-emerald-500/20 px-3 py-1 rounded-full border border-emerald-500/30">
+                        <div
+                          className="flex items-center justify-between mt-6 pt-6 border-t"
+                          style={{ borderColor: "rgba(15,23,42,0.06)" }}
+                        >
+                          <div className="bg-emerald-500/20 px-3 py-1 rounded-full border-0">
                             <span className="text-emerald-400 text-sm font-medium">
                               {testimonial.result}
                             </span>
                           </div>
-                          <div className="bg-indigo-500/20 px-3 py-1 rounded-full border border-indigo-500/30">
+                          <div className="bg-indigo-500/20 px-3 py-1 rounded-full border-0">
                             <span className="text-indigo-400 text-sm font-medium">
                               {testimonial.highlight}
                             </span>

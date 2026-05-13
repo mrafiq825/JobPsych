@@ -41,7 +41,7 @@ const DocumentQualityAnalyzer = () => {
 
   return (
     <div
-      className="relative min-h-screen overflow-hidden bg-slate-950 text-slate-100"
+      className="relative min-h-screen overflow-hidden page-force-light"
       style={{
         pointerEvents: "auto",
         fontFamily: "Space Grotesk, Manrope, system-ui, sans-serif",
@@ -51,15 +51,15 @@ const DocumentQualityAnalyzer = () => {
         <div className="absolute -left-24 -top-28 h-80 w-80 rounded-full bg-cyan-400/20 blur-3xl" />
         <div className="absolute right-[-8rem] top-20 h-[28rem] w-[28rem] rounded-full bg-emerald-400/20 blur-3xl" />
         <div className="absolute bottom-[-8rem] left-1/3 h-80 w-80 rounded-full bg-teal-400/10 blur-3xl" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_15%,rgba(16,185,129,0.14),transparent_30%),radial-gradient(circle_at_88%_22%,rgba(34,211,238,0.14),transparent_28%),linear-gradient(180deg,#020617_0%,#0f172a_42%,#020617_100%)]" />
+        <div className="absolute inset-0 bg-transparent" />
       </div>
 
       <div className="relative z-10 mx-auto flex max-w-7xl flex-col px-4 pb-8 pt-6 sm:px-6 lg:px-8 lg:pb-12">
-        <header className="mb-6 rounded-2xl border border-slate-700/80 bg-slate-900/60 p-4 shadow-2xl backdrop-blur-xl sm:p-6">
+        <header className="mb-6 rounded-2xl border border-slate-700/80 p-4 shadow-2xl backdrop-blur-xl sm:p-6">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
             <button
               onClick={() => (window.location.href = "/")}
-              className="group inline-flex w-fit items-center gap-2 rounded-full border border-slate-600 bg-slate-800/90 px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:border-cyan-300 hover:bg-slate-700 cursor-pointer"
+              className="group inline-flex w-fit items-center gap-2 rounded-full border border-slate-600 px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:border-cyan-300 hover:bg-slate-700 cursor-pointer"
               style={{
                 pointerEvents: "auto",
                 position: "relative",
@@ -82,7 +82,7 @@ const DocumentQualityAnalyzer = () => {
             </button>
 
             <div className="text-left lg:text-center">
-              <p className="text-[0.65rem] uppercase tracking-[0.3em] text-cyan-300/80">
+              <p className="text-[0.65rem] uppercase tracking-[0.3em]">
                 Precision Writing Lab
               </p>
               <h1 className="mt-1 text-2xl font-black leading-tight text-white sm:text-3xl">
@@ -90,19 +90,19 @@ const DocumentQualityAnalyzer = () => {
               </h1>
             </div>
 
-            <div className="rounded-xl border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-xs text-cyan-100">
+            <div className="rounded-xl border border-cyan-400/30  px-4 py-2 text-xs ">
               Optimize for real review behavior
             </div>
           </div>
         </header>
 
         <main className="grid grid-cols-1 gap-5 lg:grid-cols-12 lg:gap-6">
-          <section className="relative overflow-hidden rounded-3xl border border-slate-700/80 bg-slate-900/60 p-6 shadow-2xl backdrop-blur-xl sm:p-8 lg:col-span-8 lg:p-10">
+          <section className="relative overflow-hidden rounded-3xl border border-slate-700/80 p-6 shadow-2xl backdrop-blur-xl sm:p-8 lg:col-span-8 lg:p-10">
             <div className="pointer-events-none absolute right-[-4rem] top-[-4rem] h-44 w-44 rounded-full border border-cyan-300/20" />
             <div className="pointer-events-none absolute bottom-[-5rem] left-[-4rem] h-56 w-56 rounded-full border border-emerald-300/20" />
 
             <div className="max-w-2xl">
-              <span className="inline-flex items-center gap-2 rounded-full border border-emerald-300/30 bg-emerald-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-200">
+              <span className="inline-flex items-center gap-2 rounded-full border border-emerald-300/30  px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em]">
                 AI-Guided Optimization
               </span>
 
@@ -156,10 +156,10 @@ const DocumentQualityAnalyzer = () => {
               {analyzerHighlights.map((item) => (
                 <article
                   key={item.title}
-                  className="rounded-2xl border border-slate-700/70 bg-slate-900/70 p-4"
+                  className="rounded-2xl border border-slate-700/70 p-4"
                 >
                   <div
-                    className={`h-1 w-14 rounded-full bg-gradient-to-r ${item.tone}`}
+                    className={`h-1 w-14 rounded-full bg-gradie ${item.tone}`}
                   />
                   <h3 className="mt-3 text-sm font-extrabold text-white">
                     {item.title}
@@ -173,31 +173,31 @@ const DocumentQualityAnalyzer = () => {
           </section>
 
           <aside className="flex flex-col gap-5 lg:col-span-4">
-            <div className="rounded-3xl border border-slate-700/80 bg-slate-900/60 p-5 shadow-2xl backdrop-blur-xl sm:p-6">
-              <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-cyan-300">
+            <div className="rounded-3xl border border-slate-700/80 p-5 shadow-2xl backdrop-blur-xl sm:p-6">
+              <h3 className="text-sm font-bold uppercase tracking-[0.16em]">
                 Quick Readiness Pulse
               </h3>
               <div className="mt-4 space-y-3">
                 <div className="rounded-xl border border-cyan-400/25 bg-cyan-500/10 px-4 py-3">
-                  <p className="text-xs text-cyan-100">Clarity Benchmark</p>
+                  <p className="text-xs">Clarity Benchmark</p>
                   <p className="mt-1 text-2xl font-black text-white">97%</p>
                 </div>
                 <div className="rounded-xl border border-emerald-400/25 bg-emerald-500/10 px-4 py-3">
-                  <p className="text-xs text-emerald-100">Impact Presence</p>
+                  <p className="text-xs">Impact Presence</p>
                   <p className="mt-1 text-2xl font-black text-white">A+</p>
                 </div>
               </div>
             </div>
 
-            <div className="rounded-3xl border border-slate-700/80 bg-slate-900/60 p-5 shadow-2xl backdrop-blur-xl sm:p-6">
-              <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-emerald-300">
+            <div className="rounded-3xl border border-slate-700/80 p-5 shadow-2xl backdrop-blur-xl sm:p-6">
+              <h3 className="text-sm font-bold uppercase tracking-[0.16em]">
                 Editing Checklist
               </h3>
               <ul className="mt-4 space-y-2">
                 {qualityChecklist.map((tip) => (
                   <li
                     key={tip}
-                    className="flex items-start gap-2 rounded-xl border border-slate-700/70 bg-slate-900/70 px-3 py-2.5"
+                    className="flex items-start gap-2 rounded-xl border border-slate-700/70 px-3 py-2.5"
                   >
                     <span className="mt-1 inline-flex h-2.5 w-2.5 flex-shrink-0 rounded-full bg-gradient-to-r from-cyan-300 to-emerald-300" />
                     <span className="text-sm leading-relaxed text-slate-200">
@@ -208,7 +208,7 @@ const DocumentQualityAnalyzer = () => {
               </ul>
             </div>
 
-            <div className="rounded-3xl border border-lime-400/25 bg-gradient-to-br from-emerald-500/20 via-cyan-500/15 to-slate-900/70 p-5 shadow-2xl backdrop-blur-xl sm:p-6">
+            <div className="rounded-3xl border border-lime-400/25 bg-gradient-to-br from-emerald-500/20 via-cyan-500/15  p-5 shadow-2xl backdrop-blur-xl sm:p-6">
               <p className="text-base font-bold text-white">
                 Ready for final polish?
               </p>

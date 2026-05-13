@@ -83,7 +83,7 @@ function ResumeUpload({
         "Invalid file type:",
         file.type,
         "Extension:",
-        fileExtension
+        fileExtension,
       );
     }
   };
@@ -114,9 +114,9 @@ function ResumeUpload({
   };
 
   return (
-    <div className="max-w-xl mx-auto bg-slate-700/80 p-6 rounded-xl shadow-lg border border-slate-600">
+    <div className="max-w-xl mx-auto p-6 rounded-xl shadow-lg border border-slate-600">
       <h2 className="text-2xl font-semibold text-white mb-6 text-center">
-        Review Candidate Resume
+        Review Your Resume with AI-Powered Insights
       </h2>
 
       {isPremium && (
@@ -139,10 +139,10 @@ function ResumeUpload({
       <div
         className={`relative p-10 border-2 border-dashed rounded-xl text-center cursor-pointer ${
           isLoading
-            ? "bg-slate-600/30 border-slate-500 cursor-not-allowed"
+            ? " border-slate-500 cursor-not-allowed"
             : selectedFile
-            ? "bg-indigo-500/20 border-indigo-400"
-            : "border-slate-500 hover:border-indigo-400 hover:bg-indigo-500/10"
+              ? " border-indigo-400"
+              : "border-slate-500 hover:border-indigo-400 hover:bg-indigo-500/10"
         }`}
         onClick={openFileDialog}
         onDrop={handleDrop}

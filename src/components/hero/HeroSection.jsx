@@ -19,7 +19,8 @@ const HeroSection = ({ resumeData }) => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-900"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden page-force-light"
+      style={{ backgroundColor: "var(--bg-color)" }}
     >
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-indigo-500/5 rounded-full blur-3xl animate-pulse"></div>
@@ -35,7 +36,7 @@ const HeroSection = ({ resumeData }) => {
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 pt-16 pb-8 sm:pt-24 sm:pb-12 md:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl text-center">
-          <div className="mb-8 inline-flex items-center gap-3 px-6 py-3 rounded-full bg-slate-800/50 border border-indigo-500/20 text-slate-300 text-xs font-semibold tracking-widest uppercase hover:border-indigo-500/50 backdrop-blur-sm transition-all duration-300 hover:bg-slate-800/70">
+          <div className="mb-8 inline-flex items-center gap-3 px-6 py-3 rounded-full border border-indigo-500/20 text-slate-300 text-xs font-semibold tracking-widest uppercase hover:border-indigo-500/50 backdrop-blur-sm transition-all duration-300 hover:bg-slate-800/70">
             <SparklesIcon
               className="h-4 w-4 text-indigo-400 animate-spin"
               style={{ animationDuration: "3s" }}
@@ -50,7 +51,7 @@ const HeroSection = ({ resumeData }) => {
           <h1 className="relative mb-8 text-6xl sm:text-7xl md:text-8xl font-black tracking-tighter leading-tight">
             <div className="relative inline-block">
               <span className="text-white">AI-Based </span>
-              <span className="relative inline-block text-indigo-300 ml-2">
+              <span className="relative inline-block  ml-2">
                 Career Readiness and Interview Preparation System
                 <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-indigo-400 to-transparent rounded-full"></div>
               </span>
@@ -108,15 +109,12 @@ const HeroSection = ({ resumeData }) => {
               return (
                 <div
                   key={card.title}
-                  className={`group relative overflow-hidden p-8 rounded-2xl border ${
-                    card.borderColor
-                  } ${
-                    card.hoverBorder
-                  } transition-all duration-300 backdrop-blur-sm cursor-pointer ${
+                  className={`group relative overflow-hidden p-8 rounded-2xl border ${card.borderColor} ${card.hoverBorder} transition-all duration-300 backdrop-blur-sm cursor-pointer ${
                     activeCard === card.index
-                      ? "bg-slate-800/80 border-opacity-100 shadow-2xl scale-105"
-                      : "bg-slate-800/40 border-opacity-50 hover:bg-slate-800/60 hover:shadow-xl"
+                      ? "border-opacity-100 shadow-2xl scale-105"
+                      : "border-opacity-50 hover:shadow-xl"
                   }`}
+                  style={{ backgroundColor: "var(--bg-color)" }}
                   onMouseEnter={() => setActiveCard(card.index)}
                 >
                   <div
@@ -128,10 +126,16 @@ const HeroSection = ({ resumeData }) => {
                   ></div>
 
                   <div className="relative z-10">
-                    <h3 className="text-xl font-bold text-white mb-3 text-left group-hover:text-indigo-300 transition-colors duration-300">
+                    <h3
+                      className="text-xl font-bold mb-3 text-left group-hover:text-indigo-300 transition-colors duration-300"
+                      style={{ color: "var(--text-color)" }}
+                    >
                       {card.title}
                     </h3>
-                    <p className="text-slate-300 text-sm leading-relaxed text-left group-hover:text-slate-200 transition-colors duration-300">
+                    <p
+                      className="text-sm leading-relaxed text-left group-hover:text-slate-200 transition-colors duration-300"
+                      style={{ color: "var(--muted-text-color)" }}
+                    >
                       {card.description}
                     </p>
                   </div>

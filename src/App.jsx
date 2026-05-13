@@ -7,7 +7,7 @@ import CookieConsentBanner from "./components/privacy/CookieConsentBanner";
 const App = () => {
   return (
     <div
-      className="min-h-screen bg-gray-50 relative"
+      className="min-h-screen relative page-force-light"
       style={{ minHeight: "100vh", height: "auto" }}
     >
       <div className="absolute inset-0 z-0">

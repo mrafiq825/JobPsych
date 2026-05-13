@@ -48,7 +48,7 @@ const CookieConsentBanner = () => {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 animate-slide-up">
-      <div className="absolute inset-0 bg-slate-900/20 backdrop-blur-sm"></div>{" "}
+      <div className="absolute inset-0 bg-transparent backdrop-blur-sm"></div>{" "}
       <div className="relative bg-gradient-to-r from-slate-800/95 via-slate-800/98 to-slate-900/95 backdrop-blur-xl border-t border-slate-700/50 shadow-2xl">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent"></div>
         <div className="absolute -top-20 left-1/4 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl"></div>

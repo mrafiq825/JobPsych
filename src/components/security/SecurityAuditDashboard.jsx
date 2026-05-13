@@ -69,7 +69,7 @@ const SecurityAuditDashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 page-force-light">
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-500/30 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl animate-pulse delay-1000"></div>
@@ -116,7 +116,7 @@ const SecurityAuditDashboard = () => {
                 </h3>
                 <span
                   className={`inline-block px-3 py-1 rounded-full text-sm font-medium border ${getStatusColor(
-                    securityStatus?.https
+                    securityStatus?.https,
                   )}`}
                 >
                   {securityStatus?.https ? "Secure" : "Insecure"}
@@ -134,7 +134,7 @@ const SecurityAuditDashboard = () => {
                 </h3>
                 <span
                   className={`inline-block px-3 py-1 rounded-full text-sm font-medium border ${getStatusColor(
-                    securityStatus?.csp
+                    securityStatus?.csp,
                   )}`}
                 >
                   {securityStatus?.csp ? "Configured" : "Missing"}
@@ -154,7 +154,7 @@ const SecurityAuditDashboard = () => {
                 <span
                   className={`inline-block px-3 py-1 rounded-full text-sm font-medium border ${getStatusColor(
                     Object.keys(securityStatus?.securityHeaders || {}).length >
-                      0
+                      0,
                   )}`}
                 >
                   {Object.keys(securityStatus?.securityHeaders || {}).length}{" "}
@@ -256,7 +256,7 @@ const SecurityAuditDashboard = () => {
                           <div className="flex items-center gap-2 flex-wrap">
                             <span
                               className={`px-2 py-1 rounded text-xs font-medium border ${getSeverityColor(
-                                event.severity
+                                event.severity,
                               )}`}
                             >
                               {event.severity}

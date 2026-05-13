@@ -3,9 +3,12 @@ import NavigationButton from "@components/buttons/NavigationButton";
 
 const Footer = () => {
   return (
-    <footer className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 border-t border-slate-700/50">
+    <footer
+      className="relative page-force-light border-t"
+      style={{ borderColor: "rgba(15,23,42,0.06)" }}
+    >
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/5 via-purple-500/5 to-blue-500/5"></div>
+        <div className="absolute inset-0 bg-transparent"></div>
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-indigo-500/30 to-transparent"></div>
         <div className="absolute top-10 left-10 w-32 h-32 bg-indigo-500/5 rounded-full blur-xl"></div>
         <div className="absolute bottom-10 right-10 w-40 h-40 bg-purple-500/5 rounded-full blur-xl"></div>
@@ -14,7 +17,10 @@ const Footer = () => {
 
       <div className="relative z-10 mx-auto max-w-7xl overflow-hidden px-6 py-16 sm:py-20 lg:px-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3 mb-16">
-          <div className="bg-slate-800/40 backdrop-blur-sm rounded-xl p-6 border border-slate-700/50 hover:border-indigo-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/10">
+          <div
+            className="backdrop-blur-sm rounded-xl p-6 border hover:border-indigo-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/10"
+            style={{ borderColor: "rgba(15,23,42,0.06)" }}
+          >
             <div className="flex items-center mb-4">
               <h3 className="text-lg font-semibold text-white">
                 About JobPsych
@@ -34,7 +40,10 @@ const Footer = () => {
               </span>
             </p>
           </div>
-          <div className="bg-slate-800/40 backdrop-blur-sm rounded-xl p-6 border border-slate-700/50 hover:border-emerald-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10">
+          <div
+            className="backdrop-blur-sm rounded-xl p-6 border hover:border-emerald-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10"
+            style={{ borderColor: "rgba(15,23,42,0.06)" }}
+          >
             <div className="flex items-center mb-4">
               <h3 className="text-lg font-semibold text-white">Core Modules</h3>
             </div>
@@ -53,7 +62,10 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="bg-slate-800/40 backdrop-blur-sm rounded-xl p-6 border border-slate-700/50 hover:border-blue-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10">
+          <div
+            className="backdrop-blur-sm rounded-xl p-6 border hover:border-blue-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10"
+            style={{ borderColor: "rgba(15,23,42,0.06)" }}
+          >
             <div className="flex items-center mb-4">
               <h3 className="text-lg font-semibold text-white">
                 Explore Modules
@@ -77,7 +89,7 @@ const Footer = () => {
                 <NavigationButton
                   key={index}
                   to={item.to}
-                  className="group flex items-center w-full p-3 bg-slate-700/30 hover:bg-slate-600/40 rounded-lg border border-slate-600/30 hover:border-indigo-500/50 transition-all duration-300 text-gray-300 hover:text-white cursor-pointer"
+                  className="group flex items-center w-full p-3  hover:bg-slate-600/40 rounded-lg border border-slate-600/30 hover:border-indigo-500/50 transition-all duration-300 text-gray-300 hover:text-white cursor-pointer"
                 >
                   <span className="text-lg mr-3">{item.icon}</span>
                   <span className="text-sm font-medium">{item.label}</span>
@@ -100,7 +112,10 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-slate-700/50 pt-8">
+        <div
+          className="border-t pt-8"
+          style={{ borderColor: "rgba(15,23,42,0.06)" }}
+        >
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center space-x-6 mb-4 md:mb-0">
               <div className="flex items-center space-x-2">
