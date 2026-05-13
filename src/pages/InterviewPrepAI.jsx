@@ -62,7 +62,7 @@ const InterviewPrepAI = () => {
           <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
             <button
               onClick={() => (window.location.href = "/")}
-              className="group inline-flex w-fit items-center gap-2 rounded-full border border-slate-600 px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:border-cyan-300 hover:bg-slate-700 cursor-pointer"
+              className="group inline-flex w-fit items-center gap-2 rounded-full border border-slate-600 px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:border-cyan-300 cursor-pointer"
               style={{
                 pointerEvents: "auto",
                 position: "relative",
@@ -105,7 +105,7 @@ const InterviewPrepAI = () => {
             <div className="pointer-events-none absolute bottom-[-5rem] left-[-4rem] h-56 w-56 rounded-full border border-emerald-300/20" />
 
             <div className="max-w-2xl">
-              <span className="inline-flex items-center gap-2 rounded-full border border-emerald-300/30 bg-emerald-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em]">
+              <span className="inline-flex items-center gap-2 rounded-full border border-emerald-300/30 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em]">
                 AI-Guided Rehearsal
               </span>
 
@@ -161,9 +161,7 @@ const InterviewPrepAI = () => {
                   key={item.title}
                   className="rounded-2xl border border-slate-700/70 p-4"
                 >
-                  <div
-                    className={`h-1 w-14 rounded-full bg-gradient-to-r ${item.tone}`}
-                  />
+                  <div className={`h-1 w-14 rounded-full ${item.tone}`} />
                   <h3 className="mt-3 text-sm font-extrabold text-white">
                     {item.title}
                   </h3>

@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from "react";
 import { formatErrorMessage, getErrorCategory } from "@utils/errorHandler";
 import { generalTips } from "@data/candidateTips";
 import ResumeUpload from "@components/resume/ResumeUpload";
-import NavigationButton from "@components/buttons/NavigationButton";
 import NetworkError from "@components/error/NetworkError";
 import LoadingError from "@components/error/LoadingError";
 import { ToastContext } from "@components/toast/ToastContext";
@@ -344,80 +343,44 @@ const RoleSuggestion = () => {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(148,163,184,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(148,163,184,0.08)_1px,transparent_1px)] bg-[size:32px_32px] opacity-10"></div>
       </div>
 
-      <header className="sticky top-4 z-30 mx-4 mt-4">
-        <div className="relative overflow-hidden rounded-2xl border border-cyan-400/20 p-4 shadow-[0_12px_50px_rgba(2,6,23,0.55)] backdrop-blur-2xl">
-          <div className="absolute inset-y-0 right-0 w-56 bg-gradient-to-l from-cyan-500/15 to-transparent"></div>
-          <div className="container relative mx-auto flex items-center justify-between gap-4">
-            <NavigationButton
-              to="/"
-              className="group relative overflow-hidden rounded-xl border border-cyan-300/30  text-cyan-100 shadow-lg transition-all duration-300 hover:scale-105 hover:border-cyan-200/60 hover:text-white"
-              aria-label="Go to Home Dashboard"
+      <header className="mb-6 rounded-2xl border border-slate-700/80 p-4 shadow-2xl backdrop-blur-xl sm:p-6">
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+          <button
+            onClick={() => (window.location.href = "/")}
+            className="group inline-flex w-fit items-center gap-2 rounded-full border border-slate-600 px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:border-cyan-300 cursor-pointer"
+            style={{
+              pointerEvents: "auto",
+              position: "relative",
+              zIndex: 10,
+            }}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-4 w-4 transition-transform duration-300 group-hover:-translate-x-1"
+              viewBox="0 0 20 20"
+              fill="currentColor"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-rose-500/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
-              <div className="relative flex items-center gap-2">
-                <svg
-                  className="h-5 w-5 transform group-hover:-translate-x-1 transition-transform duration-300"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span className="hidden sm:inline">Back to Home</span>
-                <span className="sm:hidden">Home</span>
-              </div>
-            </NavigationButton>
+              <path
+                fillRule="evenodd"
+                d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
+            Back to Home
+          </button>
 
-            <div className="flex items-center gap-3">
-              <div className="relative">
-                <div className="absolute inset-0 rounded-full  blur opacity-60"></div>
-                <div className="relative rounded-full border border-cyan-300/25  px-6 py-2 backdrop-blur-sm">
-                  <span>AI-Powered Career Intelligence</span>
-                </div>
-              </div>
+          <div className="text-left lg:text-center">
+            <p className="text-[0.65rem] uppercase tracking-[0.3em]">
+              AI-Powered Role Fit Analysis
+            </p>
+            <h1 className="mt-1 text-2xl font-black leading-tight text-white sm:text-3xl">
+              Role Match Studio
+            </h1>
+          </div>
 
-              {resumeData && (
-                <button
-                  onClick={() => {
-                    clearPersistedData();
-                    setResumeData(null);
-                    setRoleRecommendations([]);
-                    setUploadedFile(null);
-                    setTargetRole("");
-                    setJobDescription("");
-                    setAlertMessage("All data cleared successfully!");
-                    setAlertType("success");
-                    setTimeout(() => {
-                      setAlertMessage("");
-                      setAlertType("");
-                    }, 3000);
-                  }}
-                  className="group relative overflow-hidden px-4 py-2 text-sm font-bold rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105  cursor-pointer"
-                  title="Clear all analysis data"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-rose-600/10 to-pink-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative flex items-center gap-2">
-                    <svg
-                      className="h-4 w-4"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                      />
-                    </svg>
-                    <span className="hidden sm:inline">Clear</span>
-                  </div>
-                </button>
-              )}
-            </div>
+          <div className="rounded-xl border border-cyan-400/30  px-4 py-2 text-xs ">
+            Upload your resume to get AI-powered role fit insights and
+            personalized career recommendations
           </div>
         </div>
       </header>
@@ -429,7 +392,7 @@ const RoleSuggestion = () => {
             <div className="absolute -right-16 bottom-0 h-52 w-52 rounded-full bg-rose-500/20 blur-3xl"></div>
             <div className="relative grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
               <div className="space-y-6">
-                <p className="inline-flex items-center gap-2 rounded-full border border-cyan-300/30  px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-cyan-200">
+                <p className="inline-flex items-center gap-2 rounded-full border border-cyan-300/30  px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] ">
                   Role Match Studio
                 </p>
                 <h1
@@ -441,14 +404,14 @@ const RoleSuggestion = () => {
                     Next Career Move
                   </span>
                 </h1>
-                <p className="max-w-2xl text-lg leading-relaxed text-slate-700 md:text-xl">
+                <p className="max-w-2xl text-lg leading-relaxed text-body md:text-xl">
                   Upload once, then get an AI-guided role map with fit scores,
                   gap signals, and a roadmap that feels like a personal career
                   strategist built into your workflow.
                 </p>
               </div>
               <div className="rounded-3xl border border-slate-700/70 p-6 backdrop-blur-xl">
-                <p className="mb-5 text-sm font-semibold uppercase tracking-[0.16em] text-slate-500">
+                <p className="mb-5 text-sm font-semibold uppercase tracking-[0.16em] text-secondary">
                   What You Unlock
                 </p>
                 <div className="space-y-3">
@@ -464,7 +427,7 @@ const RoleSuggestion = () => {
                       <span className="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-r from-cyan-500 to-indigo-500 text-xs font-black text-white">
                         {index + 1}
                       </span>
-                      <p className="text-sm text-slate-600">{item}</p>
+                      <p className="text-sm text-secondary">{item}</p>
                     </div>
                   ))}
                 </div>
@@ -493,7 +456,7 @@ const RoleSuggestion = () => {
                     Career Exploration Tips
                   </h2>
                 </div>
-                <p className="text-slate-700 text-lg max-w-2xl mx-auto">
+                <p className="text-body text-lg max-w-2xl mx-auto">
                   Boost your role discovery with proven strategies from top
                   career experts
                 </p>
@@ -515,7 +478,7 @@ const RoleSuggestion = () => {
                         </div>
                       </div>
                       <div className="flex-1">
-                        <p className="text-slate-600 leading-relaxed group-hover:text-white transition-colors duration-300">
+                        <p className="text-body leading-relaxed group-hover:text-white transition-colors duration-300">
                           {tip}
                         </p>
                       </div>
@@ -594,7 +557,7 @@ const RoleSuggestion = () => {
                         </span>
                       </h3>
 
-                      <p className="text-xl text-slate-700 max-w-2xl mx-auto leading-relaxed">
+                      <p className="text-xl text-body max-w-2xl mx-auto leading-relaxed">
                         Upload your resume and unlock personalized career
                         insights powered by advanced AI analysis
                       </p>
@@ -627,7 +590,7 @@ const RoleSuggestion = () => {
                       Career Readiness Score
                     </h2>
                   </div>
-                  <p className="text-slate-700 text-lg">
+                  <p className="text-body text-lg">
                     Your role fit readiness breakdown
                   </p>
                 </div>
@@ -668,7 +631,7 @@ const RoleSuggestion = () => {
                           {Math.round(score.value)}
                         </div>
                       </div>
-                      <div className="text-sm font-semibold text-slate-700">
+                      <div className="text-sm font-semibold text-secondary">
                         {score.label}
                       </div>
                     </div>
@@ -680,7 +643,7 @@ const RoleSuggestion = () => {
                     <h4 className="text-sm font-semibold text-blue-400 mb-2">
                       Analysis
                     </h4>
-                    <p className="text-slate-700 text-sm leading-relaxed">
+                    <p className="text-body text-sm leading-relaxed">
                       {resumeData.resumeScore.reasoning}
                     </p>
                   </div>
@@ -698,7 +661,7 @@ const RoleSuggestion = () => {
                           (strength, idx) => (
                             <li
                               key={idx}
-                              className="flex gap-3 text-sm text-slate-700"
+                              className="flex gap-3 text-sm text-body"
                             >
                               <span className="text-emerald-400 flex-shrink-0">
                                 ✓
@@ -723,7 +686,7 @@ const RoleSuggestion = () => {
                           (weakness, idx) => (
                             <li
                               key={idx}
-                              className="flex gap-3 text-sm text-slate-700"
+                              className="flex gap-3 text-sm text-body"
                             >
                               <span className="text-amber-400 flex-shrink-0">
                                 ⚠
@@ -748,7 +711,7 @@ const RoleSuggestion = () => {
                           (suggestion, idx) => (
                             <li
                               key={idx}
-                              className="flex gap-3 text-sm text-slate-700"
+                              className="flex gap-3 text-sm text-body"
                             >
                               <span className="text-cyan-400 flex-shrink-0">
                                 →
@@ -786,7 +749,7 @@ const RoleSuggestion = () => {
                       Personality Profile
                     </h2>
                   </div>
-                  <p className="text-slate-700 text-lg">
+                  <p className="text-body text-lg">
                     Your work style and professional traits
                   </p>
                 </div>
@@ -797,7 +760,7 @@ const RoleSuggestion = () => {
                       ([trait, score]) => (
                         <div key={trait}>
                           <div className="flex justify-between items-center mb-2">
-                            <span className="text-sm font-semibold text-slate-700 capitalize">
+                            <span className="text-sm font-semibold text-secondary capitalize">
                               {trait}
                             </span>
                             <span className="text-xs font-bold text-cyan-400">
@@ -821,7 +784,7 @@ const RoleSuggestion = () => {
                     <h4 className="text-sm font-semibold text-pink-400 mb-2">
                       Work Style
                     </h4>
-                    <p className="text-slate-700 text-sm">
+                    <p className="text-body text-sm">
                       {resumeData.personalityInsights.work_style}
                     </p>
                   </div>
@@ -893,7 +856,7 @@ const RoleSuggestion = () => {
                     <h4 className="text-sm font-semibold text-rose-400 mb-2">
                       Analysis
                     </h4>
-                    <p className="text-slate-700 text-sm leading-relaxed">
+                    <p className="text-body text-sm leading-relaxed">
                       {resumeData.personalityInsights.analysis}
                     </p>
                   </div>
@@ -909,18 +872,18 @@ const RoleSuggestion = () => {
 
                 <div className="relative mb-12 flex flex-col items-start justify-between gap-5 md:flex-row md:items-end">
                   <div>
-                    <p className="mb-3 inline-flex items-center rounded-full border border-emerald-300/30 bg-emerald-500/10 px-4 py-1 text-xs font-bold uppercase tracking-[0.16em] text-emerald-300">
+                    <p className="mb-3 inline-flex items-center rounded-full border border-emerald-300/30 bg-emerald-500/10 px-4 py-1 text-xs font-bold uppercase tracking-[0.16em] ">
                       Role Dossier
                     </p>
                     <h2 className="text-3xl font-black text-white md:text-4xl">
                       Career Matches
                     </h2>
-                    <p className="mt-3 max-w-2xl text-slate-700">
+                    <p className="mt-3 max-w-2xl text-body">
                       Ranked opportunities with contextual fit and growth
                       signals tailored to your profile.
                     </p>
                   </div>
-                  <div className="rounded-xl border border-slate-700/60 px-4 py-3 text-sm text-slate-700">
+                  <div className="rounded-xl border border-slate-700/60 px-4 py-3 text-sm text-secondary">
                     {roleRecommendations.length} roles shortlisted
                   </div>
                 </div>
@@ -954,14 +917,14 @@ const RoleSuggestion = () => {
                         ></div>
 
                         {isBestMatch && (
-                          <div className="absolute right-4 top-4 rounded-full border border-emerald-300/45 bg-emerald-500/20 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-emerald-200">
+                          <div className="absolute right-4 top-4 rounded-full border border-emerald-300/45 bg-emerald-500/20 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em]">
                             Top Recommendation
                           </div>
                         )}
 
                         <div className="mb-5 flex items-start justify-between gap-4 pr-2 sm:pr-0">
                           <div>
-                            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
+                            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-secondary">
                               Candidate Match #{index + 1}
                             </p>
                             <h3 className="text-xl font-bold text-white sm:text-2xl">
@@ -980,7 +943,7 @@ const RoleSuggestion = () => {
                             >
                               {matchScore}%
                             </p>
-                            <p className="text-xs uppercase tracking-[0.14em] text-slate-500">
+                            <p className="text-xs uppercase tracking-[0.14em] text-secondary">
                               Fit Score
                             </p>
                           </div>
@@ -994,23 +957,23 @@ const RoleSuggestion = () => {
                         </div>
 
                         <div className="mb-5 flex flex-wrap gap-2">
-                          <span className="rounded-lg border border-slate-600/70 px-3 py-1 text-xs font-semibold text-slate-600">
+                          <span className="rounded-lg border border-slate-600/70 px-3 py-1 text-xs font-semibold text-secondary">
                             {role.careerLevel}
                           </span>
-                          <span className="rounded-lg border border-cyan-400/30 bg-cyan-500/10 px-3 py-1 text-xs font-semibold text-cyan-200">
+                          <span className="rounded-lg border border-cyan-400/30 bg-cyan-500/10 px-3 py-1 text-xs font-semibold">
                             {role.industryFit}
                           </span>
                         </div>
 
                         <div className="mb-5 rounded-xl border border-slate-700/70 p-4">
-                          <p className="text-sm leading-relaxed text-slate-700">
+                          <p className="text-sm leading-relaxed text-body">
                             {role.reasoning}
                           </p>
                         </div>
 
                         <div className="grid gap-4 lg:grid-cols-2">
                           <section className="rounded-xl border border-emerald-500/25 bg-emerald-500/5 p-4">
-                            <h4 className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-emerald-300">
+                            <h4 className="mb-3 text-xs font-bold uppercase tracking-[0.14em]">
                               Matching Skills
                             </h4>
                             <div className="flex flex-wrap gap-2">
@@ -1021,20 +984,20 @@ const RoleSuggestion = () => {
                                   .map((skill, skillIndex) => (
                                     <span
                                       key={skillIndex}
-                                      className="rounded-md border border-emerald-400/25 bg-emerald-500/15 px-2.5 py-1 text-xs text-emerald-200"
+                                      className="rounded-md border border-emerald-400/25 bg-emerald-500/15 px-2.5 py-1 text-xs"
                                     >
                                       {skill}
                                     </span>
                                   ))
                               ) : (
-                                <span className="text-xs italic text-slate-500">
+                                <span className="text-xs italic text-secondary">
                                   No matching skills detected
                                 </span>
                               )}
                             </div>
                             {role.requiredSkills &&
                               role.requiredSkills.length > 4 && (
-                                <p className="mt-2 text-xs text-slate-500">
+                                <p className="mt-2 text-xs text-secondary">
                                   +{role.requiredSkills.length - 4} additional
                                   skills
                                 </p>
@@ -1047,17 +1010,17 @@ const RoleSuggestion = () => {
                             </h4>
                             {role.missingSkills &&
                             role.missingSkills.length > 0 ? (
-                              <ul className="space-y-1.5 text-xs text-amber-100/90">
+                              <ul className="space-y-1.5 text-xs">
                                 {role.missingSkills
                                   .slice(0, 3)
                                   .map((skill, skillIndex) => (
                                     <li key={skillIndex} className="flex gap-2">
-                                      <span className="text-amber-300">•</span>
+                                      <span>•</span>
                                       <span>{skill}</span>
                                     </li>
                                   ))}
                                 {role.missingSkills.length > 3 && (
-                                  <li className="text-slate-500 italic">
+                                  <li className="text-secondary italic">
                                     +{role.missingSkills.length - 3} more
                                     development areas
                                   </li>
@@ -1086,13 +1049,13 @@ const RoleSuggestion = () => {
 
                 <div className="relative mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
                   <div>
-                    <p className="mb-3 inline-flex rounded-full border border-teal-300/30 bg-teal-500/10 px-4 py-1 text-xs font-bold uppercase tracking-[0.16em] text-teal-300">
+                    <p className="mb-3 inline-flex rounded-full border border-teal-300/30 bg-teal-500/10 px-4 py-1 text-xs font-bold uppercase tracking-[0.16em] ">
                       Progress Map
                     </p>
                     <h2 className="text-3xl font-black text-white md:text-4xl">
                       Career Roadmap
                     </h2>
-                    <p className="mt-3 max-w-2xl text-slate-700">
+                    <p className="mt-3 max-w-2xl text-body">
                       A practical route from your current stage to your next
                       strategic role moves.
                     </p>
@@ -1102,7 +1065,7 @@ const RoleSuggestion = () => {
                 <div className="relative mb-8 grid grid-cols-1 gap-4 md:grid-cols-2">
                   {resumeData.careerPath.current_level && (
                     <div className="rounded-xl border border-slate-700/70 p-5">
-                      <h4 className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
+                      <h4 className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-secondary">
                         Current Level
                       </h4>
                       <p className="text-lg font-bold text-cyan-300">
@@ -1112,7 +1075,7 @@ const RoleSuggestion = () => {
                   )}
                   {resumeData.careerPath.timeline && (
                     <div className="rounded-xl border border-slate-700/70 p-5">
-                      <h4 className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
+                      <h4 className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-secondary">
                         Timeline
                       </h4>
                       <p className="text-lg font-bold text-teal-300">
@@ -1133,7 +1096,7 @@ const RoleSuggestion = () => {
                           {resumeData.careerPath.next_roles.map((role, idx) => (
                             <li
                               key={idx}
-                              className="flex gap-2 text-sm text-emerald-100/90"
+                              className="flex gap-2 text-sm text-body"
                             >
                               <span className="text-emerald-300">→</span>
                               <span>{role}</span>
@@ -1154,7 +1117,7 @@ const RoleSuggestion = () => {
                             (item, idx) => (
                               <li
                                 key={idx}
-                                className="flex gap-2 text-sm text-amber-100/90"
+                                className="flex gap-2 text-sm text-body"
                               >
                                 <span className="text-amber-300">•</span>
                                 <span>{item}</span>
@@ -1177,13 +1140,13 @@ const RoleSuggestion = () => {
 
                 <div className="relative mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
                   <div>
-                    <p className="mb-3 inline-flex rounded-full border border-amber-300/30 bg-amber-500/10 px-4 py-1 text-xs font-bold uppercase tracking-[0.16em] text-amber-300">
+                    <p className="mb-3 inline-flex rounded-full border border-amber-300/30 bg-amber-500/10 px-4 py-1 text-xs font-bold uppercase tracking-[0.16em]">
                       Strategy Deck
                     </p>
                     <h2 className="text-3xl font-black text-white md:text-4xl">
                       Preparation Plan
                     </h2>
-                    <p className="mt-3 max-w-2xl text-slate-700">
+                    <p className="mt-3 max-w-2xl text-body">
                       Structured priorities to close skill gaps and improve role
                       readiness with clear next actions.
                     </p>
@@ -1193,7 +1156,7 @@ const RoleSuggestion = () => {
                 {resumeData.preparationPlan.role_fit_score && (
                   <div className="mb-8 rounded-2xl border border-amber-500/25 bg-amber-500/5 p-5">
                     <div className="flex justify-between items-center mb-3">
-                      <span className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-700">
+                      <span className="text-xs font-semibold uppercase tracking-[0.14em] text-secondary">
                         Role Fit Score
                       </span>
                       <span className="text-3xl font-black text-amber-300">
@@ -1216,7 +1179,7 @@ const RoleSuggestion = () => {
                     <h4 className="mb-2 text-sm font-semibold text-orange-300">
                       Assessment
                     </h4>
-                    <p className="text-slate-700 text-sm leading-relaxed">
+                    <p className="text-body text-sm leading-relaxed">
                       {resumeData.preparationPlan.role_fit_assessment}
                     </p>
                   </div>
@@ -1244,11 +1207,11 @@ const RoleSuggestion = () => {
                                   <h5 className="mb-1 text-sm font-semibold text-red-200">
                                     {gap.skill}
                                   </h5>
-                                  <p className="text-xs text-slate-700 mb-2">
+                                  <p className="text-xs text-body mb-2">
                                     <strong>Importance:</strong>{" "}
                                     {gap.importance}
                                   </p>
-                                  <p className="text-xs text-slate-500 leading-relaxed">
+                                  <p className="text-xs text-secondary leading-relaxed">
                                     {gap.how_to_develop}
                                   </p>
                                 </div>
@@ -1278,10 +1241,7 @@ const RoleSuggestion = () => {
                             <ul className="space-y-1">
                               {resumeData.preparationPlan.personality_alignment.aligned_traits.map(
                                 (trait, idx) => (
-                                  <li
-                                    key={idx}
-                                    className="flex gap-2 text-xs text-purple-300"
-                                  >
+                                  <li key={idx} className="flex gap-2 text-xs">
                                     <span className="text-purple-400 flex-shrink-0">
                                       ✓
                                     </span>
@@ -1303,10 +1263,7 @@ const RoleSuggestion = () => {
                             <ul className="space-y-1">
                               {resumeData.preparationPlan.personality_alignment.traits_to_develop.map(
                                 (trait, idx) => (
-                                  <li
-                                    key={idx}
-                                    className="flex gap-2 text-xs text-blue-300"
-                                  >
+                                  <li key={idx} className="flex gap-2 text-xs">
                                     <span className="text-blue-400 flex-shrink-0">
                                       →
                                     </span>
@@ -1320,10 +1277,10 @@ const RoleSuggestion = () => {
                       {resumeData.preparationPlan.personality_alignment
                         .personality_tips && (
                         <div className="rounded-lg border border-slate-600/40 p-4">
-                          <h5 className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
+                          <h5 className="mb-2 text-xs font-semibold uppercase tracking-wider text-secondary">
                             Tips
                           </h5>
-                          <p className="text-xs text-slate-700 leading-relaxed">
+                          <p className="text-xs text-body leading-relaxed">
                             {
                               resumeData.preparationPlan.personality_alignment
                                 .personality_tips
@@ -1353,7 +1310,7 @@ const RoleSuggestion = () => {
                               <h5 className="mb-2 text-sm font-semibold text-emerald-200">
                                 {strength.strength}
                               </h5>
-                              <p className="text-xs text-slate-700 leading-relaxed">
+                              <p className="text-xs text-body leading-relaxed">
                                 <strong>How to Highlight:</strong>{" "}
                                 {strength.how_to_highlight}
                               </p>
@@ -1381,7 +1338,7 @@ const RoleSuggestion = () => {
                               <h5 className="mb-2 text-sm font-semibold text-rose-200">
                                 {area.weakness}
                               </h5>
-                              <p className="text-xs text-slate-700 leading-relaxed">
+                              <p className="text-xs text-body leading-relaxed">
                                 <strong>Action Plan:</strong> {area.action_plan}
                               </p>
                             </div>
@@ -1413,7 +1370,7 @@ const RoleSuggestion = () => {
                               {items.map((item, idx) => (
                                 <li
                                   key={idx}
-                                  className="flex gap-2 text-xs text-slate-700"
+                                  className="flex gap-2 text-xs text-body"
                                 >
                                   <span className="text-amber-400 flex-shrink-0">
                                     ✓
@@ -1458,14 +1415,14 @@ const RoleSuggestion = () => {
                       Your Journey
                     </h2>
                   </div>
-                  <p className="text-lg text-slate-700">
+                  <p className="text-lg text-body">
                     Timeline and motivation for success
                   </p>
                 </div>
 
                 {resumeData.preparationPlan.estimated_readiness_timeline && (
                   <div className="relative mb-6 rounded-xl border border-rose-500/25 bg-rose-500/5 p-6">
-                    <h4 className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-rose-300">
+                    <h4 className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em]">
                       <svg
                         className="h-5 w-5"
                         fill="none"
@@ -1481,7 +1438,7 @@ const RoleSuggestion = () => {
                       </svg>
                       Estimated Readiness Timeline
                     </h4>
-                    <p className="text-sm text-slate-700 leading-relaxed">
+                    <p className="text-sm text-body leading-relaxed">
                       {resumeData.preparationPlan.estimated_readiness_timeline}
                     </p>
                   </div>
@@ -1489,7 +1446,7 @@ const RoleSuggestion = () => {
 
                 {resumeData.preparationPlan.motivation_summary && (
                   <div className="rounded-xl border border-pink-500/25 bg-pink-500/8 p-6">
-                    <h4 className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-pink-300">
+                    <h4 className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] ">
                       <svg
                         className="h-5 w-5"
                         fill="none"
@@ -1505,7 +1462,7 @@ const RoleSuggestion = () => {
                       </svg>
                       Your Success Message
                     </h4>
-                    <p className="text-sm italic leading-relaxed text-pink-200">
+                    <p className="text-sm italic leading-relaxed">
                       "{resumeData.preparationPlan.motivation_summary}"
                     </p>
                   </div>
@@ -1539,7 +1496,7 @@ const RoleSuggestion = () => {
                       Interview Preparation
                     </h2>
                   </div>
-                  <p className="text-lg text-slate-700">
+                  <p className="text-lg text-body">
                     Key strategies for successful interviews
                   </p>
                 </div>
@@ -1584,7 +1541,7 @@ const RoleSuggestion = () => {
                               key={idx}
                               className="rounded-lg border border-cyan-500/25 p-4"
                             >
-                              <p className="text-sm font-semibold text-cyan-100">
+                              <p className="text-sm font-semibold">
                                 {idx + 1}. {question}
                               </p>
                             </div>
@@ -1596,10 +1553,10 @@ const RoleSuggestion = () => {
 
                 {resumeData.interview_preparation.best_answers_outline && (
                   <div className="rounded-xl border border-purple-500/25 bg-purple-500/5 p-5">
-                    <h4 className="mb-2 text-xs font-bold uppercase tracking-[0.14em] text-purple-300">
+                    <h4 className="mb-2 text-xs font-bold uppercase tracking-[0.14em]">
                       Answering Strategy
                     </h4>
-                    <p className="text-slate-700 text-sm leading-relaxed">
+                    <p className="text-body text-sm leading-relaxed">
                       {resumeData.interview_preparation.best_answers_outline}
                     </p>
                   </div>
@@ -1634,7 +1591,7 @@ const RoleSuggestion = () => {
                         Resume Enhancements
                       </h2>
                     </div>
-                    <p className="text-lg text-slate-700">
+                    <p className="text-lg text-body">
                       Section-by-section improvements
                     </p>
                   </div>
@@ -1646,28 +1603,28 @@ const RoleSuggestion = () => {
                         className="rounded-xl border border-emerald-500/20 bg-emerald-500/5 p-6"
                       >
                         <div className="mb-4 flex items-start justify-between gap-3">
-                          <h4 className="text-sm font-bold uppercase tracking-[0.14em] text-emerald-300">
+                          <h4 className="text-sm font-bold uppercase tracking-[0.14em]">
                             {improvement.section}
                           </h4>
-                          <div className="rounded-full border border-slate-600/60 px-3 py-1 text-[11px] uppercase tracking-[0.12em] text-slate-700">
+                          <div className="rounded-full border border-slate-600/60 px-3 py-1 text-[11px] uppercase tracking-[0.12em]">
                             Improvement #{idx + 1}
                           </div>
                         </div>
 
                         <div className="mb-4 rounded-lg border border-slate-600/40 p-4">
-                          <h5 className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
+                          <h5 className="mb-2 text-xs font-semibold uppercase tracking-[0.14em]">
                             Current Gap
                           </h5>
-                          <p className="mt-1 text-sm text-slate-700">
+                          <p className="mt-1 text-sm text-body">
                             {improvement.current_gap}
                           </p>
                         </div>
 
                         <div className="rounded-lg border border-emerald-500/25 p-4">
-                          <h5 className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-emerald-300">
+                          <h5 className="mb-2 text-xs font-semibold uppercase tracking-[0.14em]">
                             Recommended Improvement
                           </h5>
-                          <p className="text-sm leading-relaxed text-emerald-100">
+                          <p className="text-sm leading-relaxed ">
                             {improvement.improvement}
                           </p>
                         </div>
@@ -1703,7 +1660,7 @@ const RoleSuggestion = () => {
                       Success Metrics
                     </h2>
                   </div>
-                  <p className="text-lg text-slate-700">
+                  <p className="text-lg text-body">
                     Milestones for achieving your career goals
                   </p>
                 </div>
@@ -1714,7 +1671,7 @@ const RoleSuggestion = () => {
                       <div className="h-2 w-2 rounded-full bg-yellow-400"></div>
                       Skill Readiness
                     </h4>
-                    <p className="text-sm text-slate-700 leading-relaxed">
+                    <p className="text-sm text-body leading-relaxed">
                       {resumeData.success_metrics.skill_readiness}
                     </p>
                   </div>
@@ -1726,7 +1683,7 @@ const RoleSuggestion = () => {
                       <div className="h-2 w-2 rounded-full bg-amber-400"></div>
                       Experience Requirements
                     </h4>
-                    <p className="text-sm text-slate-700 leading-relaxed">
+                    <p className="text-sm text-body leading-relaxed">
                       {resumeData.success_metrics.experience_requirements}
                     </p>
                   </div>
@@ -1743,10 +1700,7 @@ const RoleSuggestion = () => {
                       <ul className="space-y-2">
                         {resumeData.success_metrics.confidence_checklist.map(
                           (item, idx) => (
-                            <li
-                              key={idx}
-                              className="flex gap-3 text-sm text-orange-100"
-                            >
+                            <li key={idx} className="flex gap-3 text-sm">
                               <span className="flex-shrink-0 font-bold text-orange-300">
                                 ✓
                               </span>
@@ -1787,7 +1741,7 @@ const RoleSuggestion = () => {
                     Upload & Analyze
                   </h2>
                 </div>
-                <p className="max-w-2xl text-lg text-slate-700">
+                <p className="max-w-2xl text-lg text-body">
                   Enhance your analysis with targeted role and job description
                   matching
                 </p>
@@ -1829,7 +1783,7 @@ const RoleSuggestion = () => {
                       />
                       <div className="absolute inset-0 bg-gradient-to-r from-violet-600/10 to-cyan-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                     </div>
-                    <p className="mt-3 flex items-center gap-2 text-sm text-slate-500">
+                    <p className="mt-3 flex items-center gap-2 text-sm text-secondary">
                       <svg
                         className="h-4 w-4 text-violet-400"
                         fill="none"
@@ -1883,7 +1837,7 @@ const RoleSuggestion = () => {
                       />
                       <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/10 to-violet-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                     </div>
-                    <p className="mt-3 flex items-center gap-2 text-sm text-slate-500">
+                    <p className="mt-3 flex items-center gap-2 text-sm text-secondary">
                       <svg
                         className="h-4 w-4 text-cyan-400"
                         fill="none"
@@ -1947,7 +1901,7 @@ const RoleSuggestion = () => {
                         </h3>
                       </div>
 
-                      <p className="mx-auto mb-8 max-w-2xl text-lg text-slate-700">
+                      <p className="mx-auto mb-8 max-w-2xl text-lg text-body">
                         Your resume "{uploadedFile.name}" has been uploaded
                         successfully. Click the button below to start the
                         AI-powered role-fit analysis and get personalized career
@@ -2011,7 +1965,7 @@ const RoleSuggestion = () => {
                       {isLoading && (
                         <div className="mt-8 space-y-6">
                           <div className="relative">
-                            <div className="flex items-center justify-between text-sm text-slate-500 mb-2">
+                            <div className="flex items-center justify-between text-sm text-secondary mb-2">
                               <span>Analysis Progress</span>
                               <span>{loadingProgress}%</span>
                             </div>
@@ -2035,7 +1989,7 @@ const RoleSuggestion = () => {
                                   <p className="text-white font-medium text-lg">
                                     {loadingStage}
                                   </p>
-                                  <p className="text-slate-500 text-sm mt-1">
+                                  <p className="text-secondary text-sm mt-1">
                                     Our AI is working hard to provide you with
                                     the best insights
                                   </p>
@@ -2071,7 +2025,7 @@ const RoleSuggestion = () => {
                                 <h3 className="mb-2 bg-gradient-to-r from-white via-indigo-200 to-purple-200 bg-clip-text text-lg font-semibold text-transparent">
                                   While You Wait - Chat with our AI Assistant!
                                 </h3>
-                                <p className="text-slate-700 text-sm leading-relaxed mb-4">
+                                <p className="text-body text-sm leading-relaxed mb-4">
                                   Analysis takes 2-3 minutes. Don't just wait -
                                   make the most of this time! Chat with our AI
                                   assistant about your career goals, get
@@ -2106,7 +2060,7 @@ const RoleSuggestion = () => {
                                         </svg>
                                       </div>
                                     </div>
-                                    <p className="text-slate-700 text-sm font-medium">
+                                    <p className="text-body text-sm font-medium">
                                       Look for the{" "}
                                       <span className="text-purple-300 font-semibold">
                                         colorful chat bubble
@@ -2151,7 +2105,7 @@ const RoleSuggestion = () => {
                                 <h4 className="text-purple-200 font-semibold mb-2">
                                   Did you know?
                                 </h4>
-                                <p className="text-purple-100/80 text-sm leading-relaxed">
+                                <p className="text-body text-sm leading-relaxed">
                                   Our AI analyzes over 50+ career factors
                                   including skills, experience patterns,
                                   industry trends, and role compatibility to
@@ -2232,7 +2186,7 @@ const RoleSuggestion = () => {
                   </div>
                   <button
                     onClick={handleErrorClose}
-                    className="flex-shrink-0 text-slate-500 hover:text-white transition-colors duration-200 focus:outline-none"
+                    className="flex-shrink-0 text-secondary hover:text-white transition-colors duration-200 focus:outline-none"
                     aria-label="Close alert"
                   >
                     <svg

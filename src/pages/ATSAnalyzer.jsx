@@ -59,7 +59,7 @@ const DocumentQualityAnalyzer = () => {
           <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
             <button
               onClick={() => (window.location.href = "/")}
-              className="group inline-flex w-fit items-center gap-2 rounded-full border border-slate-600 px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:border-cyan-300 hover:bg-slate-700 cursor-pointer"
+              className="group inline-flex w-fit items-center gap-2 rounded-full border border-slate-600 px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:border-cyan-300 cursor-pointer"
               style={{
                 pointerEvents: "auto",
                 position: "relative",

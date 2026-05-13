@@ -39,12 +39,24 @@
 
 /* CSS Variables */
 :root {
+  /* Font Family & Weights */
   --font-tinos: "Tinos", Georgia, serif;
   --font-tinos-weight-regular: 400;
   --font-tinos-weight-bold: 700;
+
+  /* Background & Global Colors */
   --bg-color: #e2dfd2;
   --text-color: #0f172a;
   --muted-text-color: rgba(15, 23, 42, 0.7);
+
+  /* Typography Color Hierarchy */
+  --color-h1: #2c2416; /* Deep warm brown - H1 Heading */
+  --color-h2: #3d3426; /* Rich dark brown - H2 Heading */
+  --color-h3: #5a4e3c; /* Medium warm brown - H3 Sub-heading */
+  --color-body: #6b5f4e; /* Warm taupe - Body text */
+  --color-secondary: #8a7f6e; /* Light taupe - Secondary / captions */
+  --color-link: #7a6340; /* Toasted caramel - Links / CTAs */
+  --color-accent: #5c7a5f; /* Muted sage - Optional green accent */
 }
 
 /* Apply Tinos to all heading elements globally */
@@ -62,6 +74,7 @@ h6 {
 h1 {
   font-family: var(--font-tinos);
   font-weight: 900;
+  color: var(--color-h1);
 }
 
 h2,
@@ -71,6 +84,111 @@ h5,
 h6 {
   font-family: var(--font-tinos);
   font-weight: 700;
+}
+
+h2 {
+  color: var(--color-h2);
+}
+
+h3 {
+  color: var(--color-h3);
+}
+
+h4,
+h5,
+h6 {
+  color: var(--color-h3);
+}
+
+/* Typography Color Utility Classes */
+
+/* Heading levels */
+.text-h1 {
+  color: var(--color-h1);
+  font-family: var(--font-tinos);
+  font-weight: 900;
+}
+
+.text-h2 {
+  color: var(--color-h2);
+  font-family: var(--font-tinos);
+  font-weight: 700;
+}
+
+.text-h3 {
+  color: var(--color-h3);
+  font-family: var(--font-tinos);
+  font-weight: 700;
+}
+
+/* Text body and semantic text */
+.text-body {
+  color: var(--color-body);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.text-caption {
+  color: var(--color-secondary);
+  font-size: 0.875rem;
+}
+
+/* Links and CTAs */
+.text-link,
+a {
+  color: var(--color-link);
+  transition: opacity 0.2s ease-in-out;
+}
+
+.text-link:hover,
+a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.text-cta {
+  color: var(--color-link);
+  font-weight: 700;
+  transition: all 0.2s ease-in-out;
+}
+
+.text-cta:hover {
+  opacity: 0.9;
+}
+
+/* Accent color */
+.text-accent {
+  color: var(--color-accent);
+}
+
+/* Interactive states for links/CTAs */
+.text-link:focus-visible,
+.text-cta:focus-visible {
+  outline: 2px solid var(--color-link);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.text-link:active {
+  opacity: 0.7;
+}
+
+/* Optional: Light theme overrides for specific color contexts */
+.dark .text-h1,
+[data-theme="dark"] .text-h1 {
+  color: var(--color-h1);
+}
+
+.dark .text-h2,
+[data-theme="dark"] .text-h2 {
+  color: var(--color-h2);
+}
+
+.dark .text-link,
+[data-theme="dark"] .text-link {
+  color: var(--color-link);
 }
 
 /* Optional: Apply to title and legend elements */

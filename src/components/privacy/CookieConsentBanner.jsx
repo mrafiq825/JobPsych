@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { PrivacyManager } from "@utils/securityAudit";
-import NavigationButton from "@components/buttons/NavigationButton";
 import {
   XMarkIcon,
   ShieldCheckIcon,

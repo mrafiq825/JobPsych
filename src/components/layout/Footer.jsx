@@ -1,5 +1,4 @@
 import React from "react";
-import NavigationButton from "@components/buttons/NavigationButton";
 
 const Footer = () => {
   return (
@@ -86,7 +85,7 @@ const Footer = () => {
                   to: "/interview-prepai",
                 },
               ].map((item, index) => (
-                <NavigationButton
+                <button
                   key={index}
                   to={item.to}
                   className="group flex items-center w-full p-3  hover:bg-slate-600/40 rounded-lg border border-slate-600/30 hover:border-indigo-500/50 transition-all duration-300 text-gray-300 hover:text-white cursor-pointer"
@@ -106,7 +105,7 @@ const Footer = () => {
                       d="M9 5l7 7-7 7"
                     />
                   </svg>
-                </NavigationButton>
+                </button>
               ))}
             </div>
           </div>
@@ -153,26 +152,26 @@ const Footer = () => {
               <span className="mx-2">•</span>
               Your data remains private and protected.
               <span className="mx-2">•</span>
-              <NavigationButton
+              <button
                 to="/privacy-policy"
                 className="text-indigo-400 hover:text-indigo-300 transition-colors duration-300 inline-block cursor-pointer"
               >
                 Privacy Policy
-              </NavigationButton>
+              </button>
               <span className="mx-2">•</span>
-              <NavigationButton
+              <button
                 to="/terms-of-service"
                 className="text-indigo-400 hover:text-indigo-300 transition-colors duration-300 inline-block cursor-pointer"
               >
                 Terms of Service
-              </NavigationButton>
+              </button>
               <span className="mx-2">•</span>
-              <NavigationButton
+              <button
                 to="/security-audit"
                 className="text-indigo-400 hover:text-indigo-300 transition-colors duration-300 inline-block cursor-pointer"
               >
                 Security Audit
-              </NavigationButton>
+              </button>
             </p>
           </div>
         </div>

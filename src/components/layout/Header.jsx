@@ -4,7 +4,6 @@ import {
   interviewPrepFeatures,
 } from "@data/roleSuggetionsFeatures";
 import { atsAnalyzerFeatures } from "@data/atsAnalyzerFeatures";
-import NavigationButton from "@components/buttons/NavigationButton";
 
 function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -75,7 +74,7 @@ function Header() {
             <div className="absolute inset-0 rounded-lg xs:rounded-xl bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-emerald-500/20 opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
             <div className="absolute inset-0 rounded-lg xs:rounded-xl bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-50"></div>
-            <NavigationButton
+            <button
               to="/"
               className="flex items-center space-x-1.5 xs:space-x-2 sm:space-x-3 bg-transparent border-0 group flex-shrink-0 relative z-10"
             >
@@ -102,7 +101,7 @@ function Header() {
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 opacity-0 group-hover:opacity-100 group-hover:animate-shimmer transition-opacity duration-500"></div>
                 </h1>
               </div>
-            </NavigationButton>
+            </button>
 
             <div className="hidden md:flex items-center space-x-1.5 xs:space-x-2 sm:space-x-3 lg:space-x-4 flex-shrink-0 relative z-10">
               <button

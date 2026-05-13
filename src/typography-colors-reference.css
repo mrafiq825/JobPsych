@@ -1,0 +1,174 @@
+/* TYPOGRAPHY COLOR QUICK REFERENCE
+   
+   This file shows all typography colors and their usage at a glance.
+   Reference this when implementing new components or updating existing ones.
+*/
+
+/* ================================================================
+   COLOR SWATCHES
+   ================================================================ */
+
+/* H1 Heading - Deep Warm Brown */
+.color-swatch-h1 {
+  background-color: #2c2416;
+  color: white;
+  padding: 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-family: "Tinos", Georgia, serif;
+}
+
+/* H2 Heading - Rich Dark Brown */
+.color-swatch-h2 {
+  background-color: #3d3426;
+  color: white;
+  padding: 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-family: "Tinos", Georgia, serif;
+}
+
+/* H3 Sub-heading - Medium Warm Brown */
+.color-swatch-h3 {
+  background-color: #5a4e3c;
+  color: white;
+  padding: 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-family: "Tinos", Georgia, serif;
+}
+
+/* Body Text - Warm Taupe */
+.color-swatch-body {
+  background-color: #6b5f4e;
+  color: white;
+  padding: 16px;
+  border-radius: 8px;
+  font-family: "Tinos", Georgia, serif;
+}
+
+/* Secondary / Captions - Light Taupe */
+.color-swatch-secondary {
+  background-color: #8a7f6e;
+  color: white;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: "Tinos", Georgia, serif;
+}
+
+/* Links / CTAs - Toasted Caramel */
+.color-swatch-link {
+  background-color: #7a6340;
+  color: white;
+  padding: 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+  font-family: "Tinos", Georgia, serif;
+}
+
+/* Accent - Muted Sage */
+.color-swatch-accent {
+  background-color: #5c7a5f;
+  color: white;
+  padding: 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-family: "Tinos", Georgia, serif;
+}
+
+/* ================================================================
+   TYPOGRAPHY EXAMPLES
+   ================================================================ */
+
+/* Example heading hierarchy */
+.demo-h1-heading {
+  font-family: "Tinos", Georgia, serif;
+  font-weight: 900;
+  font-size: 2.25rem;
+  color: var(--color-h1);
+  margin: 24px 0 16px;
+}
+
+.demo-h2-heading {
+  font-family: "Tinos", Georgia, serif;
+  font-weight: 700;
+  font-size: 1.875rem;
+  color: var(--color-h2);
+  margin: 20px 0 12px;
+}
+
+.demo-h3-heading {
+  font-family: "Tinos", Georgia, serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--color-h3);
+  margin: 16px 0 8px;
+}
+
+/* Example body text */
+.demo-body-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-body);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Example secondary text */
+.demo-secondary-text {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--color-secondary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* ================================================================
+   UTILITY CLASS REFERENCE
+   ================================================================ */
+
+/* Quick lookup table for developers */
+:root {
+  /* All colors are defined in src/index.css */
+  /* Reference:
+  
+     Heading Colors (use on <h1>, <h2>, <h3> elements automatically):
+     - --color-h1:        #2c2416  (Deep warm brown)
+     - --color-h2:        #3d3426  (Rich dark brown)
+     - --color-h3:        #5a4e3c  (Medium warm brown)
+     
+     Text Colors (use utility classes below):
+     - --color-body:      #6b5f4e  (Warm taupe)
+     - --color-secondary: #8a7f6e  (Light taupe)
+     - --color-link:      #7a6340  (Toasted caramel)
+     - --color-accent:    #5c7a5f  (Muted sage)
+  */
+}
+
+/* ================================================================
+   USAGE PATTERNS
+   ================================================================ */
+
+/*
+PATTERN 1: Automatic heading styling
+<h1>Main Title</h1>          → Uses --color-h1: #2c2416
+<h2>Section</h2>             → Uses --color-h2: #3d3426
+<h3>Subsection</h3>          → Uses --color-h3: #5a4e3c
+
+PATTERN 2: Body text with utility class
+<p className="text-body">Content</p>           → Uses --color-body: #6b5f4e
+<p className="text-secondary">Helper</p>       → Uses --color-secondary: #8a7f6e
+<p className="text-caption">Caption</p>        → Uses --color-secondary: #8a7f6e
+
+PATTERN 3: Interactive elements
+<a href="#">Link</a>                            → Uses --color-link: #7a6340
+<button className="text-cta">Action</button>   → Uses --color-link: #7a6340
+
+PATTERN 4: Accent highlights
+<span className="text-accent">Badge</span>     → Uses --color-accent: #5c7a5f
+
+PATTERN 5: Form labels
+<label className="text-h3">Field Label</label> → Uses --color-h3: #5a4e3c
+<span className="text-caption">Hint</span>     → Uses --color-secondary: #8a7f6e
+*/
