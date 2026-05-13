@@ -10,7 +10,6 @@ import {
   CheckCircleIcon,
   XCircleIcon,
 } from "@heroicons/react/24/outline";
-import NavigationButton from "@components/buttons/NavigationButton";
 
 const SecurityAuditDashboard = () => {
   const [securityReport, setSecurityReport] = useState(null);
@@ -77,13 +76,13 @@ const SecurityAuditDashboard = () => {
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="mb-8">
-          <NavigationButton
+          <button
             to="/"
             className="inline-flex items-center gap-2 cursor-pointer"
           >
             <ShieldCheckIcon className="h-5 w-5" />
             <span>Back to Home</span>
-          </NavigationButton>
+          </button>
         </div>
         <div className="bg-slate-800/50 backdrop-blur-xl shadow-2xl rounded-2xl overflow-hidden border border-slate-700/50">
           <div className="px-6 py-8 sm:px-10">

@@ -1,5 +1,4 @@
 import React from "react";
-import NavigationButton from "@components/buttons/NavigationButton";
 import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 
 const TermsOfService = () => {
@@ -17,13 +16,13 @@ const TermsOfService = () => {
       <div className="relative z-10 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="mb-8">
-            <NavigationButton
+            <button
               to="/"
               className="inline-flex items-center px-4 py-2 bg-slate-800/70 hover:bg-slate-700/70 border border-slate-600/50 hover:border-indigo-500/50 rounded-lg text-gray-300 hover:text-white transition-all duration-300 backdrop-blur-sm cursor-pointer"
             >
               <ArrowLeftIcon className="w-4 h-4 mr-2" />
               Back to Home
-            </NavigationButton>
+            </button>
           </div>
 
           <div className="bg-slate-800/50 backdrop-blur-xl shadow-2xl rounded-2xl border border-slate-700/50 overflow-hidden">
