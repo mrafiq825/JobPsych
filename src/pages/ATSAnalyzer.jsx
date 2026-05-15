@@ -9,19 +9,19 @@ const DocumentQualityAnalyzer = () => {
       title: "Signal Strength Scoring",
       description:
         "Measure clarity, relevance, and decision impact with weighted scoring.",
-      tone: "from-cyan-400 to-emerald-400",
+      color: "bg-cyan-400",
     },
     {
       title: "Gap Detection",
       description:
         "Pinpoint weak or missing sections before your document reaches reviewers.",
-      tone: "from-emerald-400 to-lime-400",
+      color: "bg-emerald-400",
     },
     {
       title: "Rewrite Direction",
       description:
         "Get tactical recommendations to improve narrative flow and readability.",
-      tone: "from-teal-400 to-cyan-400",
+      color: "bg-teal-400",
     },
   ];
 
@@ -108,7 +108,7 @@ const DocumentQualityAnalyzer = () => {
 
               <h2 className="mt-5 text-3xl font-black leading-tight text-white sm:text-4xl lg:text-5xl">
                 Turn good documents
-                <span className="block bg-gradient-to-r from-cyan-300 via-emerald-300 to-lime-300 bg-clip-text text-transparent">
+                <span className="block text-cyan-300">
                   into interview magnets.
                 </span>
               </h2>
@@ -122,14 +122,13 @@ const DocumentQualityAnalyzer = () => {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <button
                   onClick={handleStartAnalysis}
-                  className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-xl bg-gradient-to-r from-cyan-500 via-emerald-500 to-lime-500 px-6 py-3.5 text-base font-bold text-slate-950 shadow-2xl shadow-emerald-900/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-cyan-500/25 cursor-pointer"
+                  className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-xl bg-cyan-500 px-6 py-3.5 text-base font-bold text-slate-950 shadow-2xl shadow-emerald-900/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-cyan-500/25 cursor-pointer"
                   style={{
                     pointerEvents: "auto",
                     position: "relative",
                     zIndex: 10,
                   }}
                 >
-                  <span className="absolute inset-0 bg-gradient-to-r from-lime-500 via-emerald-500 to-cyan-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                   <span className="relative">Start Document Analysis</span>
                   <svg
                     className="relative h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
@@ -158,9 +157,7 @@ const DocumentQualityAnalyzer = () => {
                   key={item.title}
                   className="rounded-2xl border border-slate-700/70 p-4"
                 >
-                  <div
-                    className={`h-1 w-14 rounded-full bg-gradie ${item.tone}`}
-                  />
+                  <div className={`h-1 w-14 rounded-full ${item.color}`} />
                   <h3 className="mt-3 text-sm font-extrabold text-white">
                     {item.title}
                   </h3>
@@ -199,7 +196,7 @@ const DocumentQualityAnalyzer = () => {
                     key={tip}
                     className="flex items-start gap-2 rounded-xl border border-slate-700/70 px-3 py-2.5"
                   >
-                    <span className="mt-1 inline-flex h-2.5 w-2.5 flex-shrink-0 rounded-full bg-gradient-to-r from-cyan-300 to-emerald-300" />
+                    <span className="mt-1 inline-flex h-2.5 w-2.5 flex-shrink-0 rounded-full bg-cyan-300" />
                     <span className="text-sm leading-relaxed text-slate-200">
                       {tip}
                     </span>
@@ -208,7 +205,7 @@ const DocumentQualityAnalyzer = () => {
               </ul>
             </div>
 
-            <div className="rounded-3xl border border-lime-400/25 bg-gradient-to-br from-emerald-500/20 via-cyan-500/15  p-5 shadow-2xl backdrop-blur-xl sm:p-6">
+            <div className="rounded-3xl border border-lime-400/25 bg-emerald-500/20 p-5 shadow-2xl backdrop-blur-xl sm:p-6">
               <p className="text-base font-bold text-white">
                 Ready for final polish?
               </p>

@@ -71,17 +71,17 @@ function Header() {
             `}
             style={{ backgroundColor: "var(--bg-color)" }}
           >
-            <div className="absolute inset-0 rounded-lg xs:rounded-xl bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-emerald-500/20 opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+            <div className="absolute inset-0 rounded-lg xs:rounded-xl bg-blue-500/20 opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
-            <div className="absolute inset-0 rounded-lg xs:rounded-xl bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-50"></div>
+            <div className="absolute inset-0 rounded-lg xs:rounded-xl bg-white/5 opacity-50"></div>
             <button
               to="/"
               className="flex items-center space-x-1.5 xs:space-x-2 sm:space-x-3 bg-transparent border-0 group flex-shrink-0 relative z-10"
             >
               <div className="flex items-center relative overflow-visible cursor-pointer">
-                <div className="absolute -inset-2 bg-gradient-to-r from-blue-600/30 to-purple-600/30 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
+                <div className="absolute -inset-2 bg-blue-600/30 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
 
-                <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-purple-500 to-emerald-500 rounded-full opacity-0 group-hover:opacity-75 transition-opacity duration-300 animate-spin-slow"></div>
+                <div className="absolute -inset-1 bg-blue-500 rounded-full opacity-0 group-hover:opacity-75 transition-opacity duration-300 animate-spin-slow"></div>
 
                 <div className="relative z-10 flex justify-center items-center h-8 w-8 xs:h-9 xs:w-9 sm:h-10 sm:w-10 md:h-12 md:w-12 p-0.5 xs:p-1 transition-all duration-500 group-hover:scale-110">
                   <img
@@ -91,14 +91,14 @@ function Header() {
                   />
                 </div>
                 <h1 className="ml-1.5 xs:ml-2 text-lg xs:text-xl sm:text-2xl font-bold transition-all duration-500 tracking-tight cursor-pointer relative">
-                  <span className="hidden xs:inline bg-gradient-to-r from-indigo-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent group-hover:from-blue-400 group-hover:via-indigo-400 group-hover:to-purple-400 transition-all duration-500">
+                  <span className="hidden xs:inline text-indigo-400 transition-all duration-500">
                     JobPsych
                   </span>
-                  <span className="xs:hidden bg-gradient-to-r from-indigo-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent group-hover:from-blue-400 group-hover:via-indigo-400 group-hover:to-purple-400 transition-all duration-500">
+                  <span className="xs:hidden text-indigo-400 transition-all duration-500">
                     JobPsych
                   </span>
 
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 opacity-0 group-hover:opacity-100 group-hover:animate-shimmer transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 bg-white/20 -skew-x-12 opacity-0 group-hover:opacity-100 group-hover:animate-shimmer transition-opacity duration-500"></div>
                 </h1>
               </div>
             </button>
@@ -107,11 +107,11 @@ function Header() {
               <button
                 type="button"
                 onClick={() => setShowFeatures(true)}
-                className="relative px-3 xs:px-4 sm:px-5 lg:px-6 py-1.5 xs:py-2 sm:py-2.5 lg:py-3 text-xs xs:text-sm sm:text-base font-semibold text-emerald-200 bg-gradient-to-r from-emerald-800/70 to-emerald-700/70 hover:from-emerald-700/80 hover:to-emerald-600/80 rounded-lg xs:rounded-xl transition-all duration-500 cursor-pointer shadow-md hover:shadow-lg border border-emerald-600/50 hover:border-emerald-500/70 transform hover:scale-105 hover:-translate-y-0.5 group overflow-hidden"
+                className="relative px-3 xs:px-4 sm:px-5 lg:px-6 py-1.5 xs:py-2 sm:py-2.5 lg:py-3 text-xs xs:text-sm sm:text-base font-semibold text-emerald-200 bg-emerald-800/70 rounded-lg xs:rounded-xl transition-all duration-500 cursor-pointer shadow-md hover:shadow-lg border border-emerald-600/50 hover:border-emerald-500/70 transform hover:scale-105 hover:-translate-y-0.5 group overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/20 to-blue-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-emerald-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 opacity-0 group-hover:opacity-100 group-hover:animate-shimmer transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-white/10 -skew-x-12 opacity-0 group-hover:opacity-100 group-hover:animate-shimmer transition-opacity duration-500"></div>
 
                 <span className="hidden sm:inline relative z-10">Features</span>
               </button>
@@ -122,10 +122,10 @@ function Header() {
                   onClick={() =>
                     window.scrollTo({ top: 0, behavior: "smooth" })
                   }
-                  className="ml-1 xs:ml-2 p-1.5 xs:p-2 rounded-full bg-gradient-to-r from-indigo-800/70 to-purple-800/70 hover:from-indigo-700/80 hover:to-purple-700/80 shadow-md transition-all duration-500 cursor-pointer border border-indigo-600/50 hover:border-purple-500/70 flex items-center justify-center transform hover:scale-110 hover:-translate-y-1 hover:rotate-12 group relative overflow-hidden"
+                  className="ml-1 xs:ml-2 p-1.5 xs:p-2 rounded-full bg-indigo-800/70 shadow-md transition-all duration-500 cursor-pointer border border-indigo-600/50 hover:border-purple-500/70 flex items-center justify-center transform hover:scale-110 hover:-translate-y-1 hover:rotate-12 group relative overflow-hidden"
                   aria-label="Scroll to top"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-indigo-400/20 to-purple-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"></div>
+                  <div className="absolute inset-0 bg-indigo-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"></div>
 
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -152,10 +152,10 @@ function Header() {
                 id="mobile-nav-hamburger"
                 type="button"
                 aria-label="Open mobile menu"
-                className="relative p-1.5 xs:p-2 rounded-lg xs:rounded-xl bg-gradient-to-r from-indigo-800/70 to-purple-800/70 shadow-md border border-indigo-600/50 flex items-center justify-center hover:from-indigo-700/80 hover:to-purple-700/80 hover:border-purple-500/70 transition-all duration-500 transform hover:scale-110 group overflow-hidden"
+                className="relative p-1.5 xs:p-2 rounded-lg xs:rounded-xl bg-indigo-800/70 shadow-md border border-indigo-600/50 flex items-center justify-center hover:border-purple-500/70 transition-all duration-500 transform hover:scale-110 group overflow-hidden"
                 onClick={() => setMobileDropdownOpen((open) => !open)}
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-indigo-400/20 to-purple-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg xs:rounded-xl"></div>
+                <div className="absolute inset-0 bg-indigo-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg xs:rounded-xl"></div>
 
                 <svg
                   className={`h-5 w-5 xs:h-6 xs:w-6 text-indigo-200 relative z-10 transition-all duration-300 ${
@@ -218,9 +218,9 @@ function Header() {
               borderColor: "rgba(15,23,42,0.06)",
             }}
           >
-            <div className="absolute inset-0 rounded-2xl xs:rounded-3xl bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-emerald-500/20 opacity-20 animate-pulse pointer-events-none"></div>
+            <div className="absolute inset-0 rounded-2xl xs:rounded-3xl bg-blue-500/20 opacity-20 animate-pulse pointer-events-none"></div>
 
-            <div className="absolute inset-0 rounded-2xl xs:rounded-3xl bg-gradient-to-br from-transparent via-white/3 to-transparent pointer-events-none"></div>
+            <div className="absolute inset-0 rounded-2xl xs:rounded-3xl bg-white/3 pointer-events-none"></div>
 
             <button
               className="absolute top-3 xs:top-4 right-3 xs:right-4 text-slate-700 hover:text-slate-900 text-xl xs:text-2xl font-bold focus:outline-none cursor-pointer z-10 transition-all duration-300 hover:scale-110 hover:rotate-90 rounded-full w-8 h-8 xs:w-10 xs:h-10 flex items-center justify-center"
@@ -237,8 +237,8 @@ function Header() {
               Career Readiness & Interview Success
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 xs:gap-4 sm:gap-4 lg:gap-6 relative z-10">
-              <div className="bg-gradient-to-br from-emerald-900/60 via-emerald-800/60 to-green-900/60 rounded-xl xs:rounded-2xl p-3 xs:p-4 sm:p-4 lg:p-6 shadow-xl border border-emerald-700/60 flex flex-col transform hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-500/20 group relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/10 to-green-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl xs:rounded-2xl"></div>
+              <div className="bg-emerald-900/60 rounded-xl xs:rounded-2xl p-3 xs:p-4 sm:p-4 lg:p-6 shadow-xl border border-emerald-700/60 flex flex-col transform hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-500/20 group relative overflow-hidden">
+                <div className="absolute inset-0 bg-emerald-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl xs:rounded-2xl"></div>
 
                 <h3 className="text-sm xs:text-base sm:text-base lg:text-lg font-bold text-emerald-300 mb-2 xs:mb-3 sm:mb-3 lg:mb-4 flex items-center gap-1 xs:gap-2 relative z-10">
                   Career Path Exploration Module
@@ -264,8 +264,8 @@ function Header() {
                   ))}
                 </ul>
               </div>
-              <div className="bg-gradient-to-br from-purple-900/60 via-purple-800/60 to-pink-900/60 rounded-xl xs:rounded-2xl p-3 xs:p-4 sm:p-4 lg:p-6 shadow-xl border border-purple-700/60 flex flex-col transform hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 group relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-400/10 to-pink-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl xs:rounded-2xl"></div>
+              <div className="bg-purple-900/60 rounded-xl xs:rounded-2xl p-3 xs:p-4 sm:p-4 lg:p-6 shadow-xl border border-purple-700/60 flex flex-col transform hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 group relative overflow-hidden">
+                <div className="absolute inset-0 bg-purple-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl xs:rounded-2xl"></div>
 
                 <h3 className="text-sm xs:text-base sm:text-base lg:text-lg font-bold text-purple-300 mb-2 xs:mb-3 sm:mb-3 lg:mb-4 flex items-center gap-1 xs:gap-2 relative z-10">
                   Professional Document Structure and Content Analysis Module
@@ -291,8 +291,8 @@ function Header() {
                   ))}
                 </ul>
               </div>
-              <div className="bg-gradient-to-br from-blue-900/60 via-blue-800/60 to-cyan-900/60 rounded-xl xs:rounded-2xl p-3 xs:p-4 sm:p-4 lg:p-6 shadow-xl border border-blue-700/60 flex flex-col transform hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 group relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-400/10 to-cyan-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl xs:rounded-2xl"></div>
+              <div className="bg-blue-900/60 rounded-xl xs:rounded-2xl p-3 xs:p-4 sm:p-4 lg:p-6 shadow-xl border border-blue-700/60 flex flex-col transform hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 group relative overflow-hidden">
+                <div className="absolute inset-0 bg-blue-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl xs:rounded-2xl"></div>
 
                 <h3 className="text-sm xs:text-base sm:text-base lg:text-lg font-bold text-blue-300 mb-2 xs:mb-3 sm:mb-3 lg:mb-4 flex items-center gap-1 xs:gap-2 relative z-10">
                   AI-Assisted Interview Practice Module

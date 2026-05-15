@@ -53,7 +53,7 @@ const HeroSection = ({ resumeData }) => {
               <span className="text-white">AI-Based </span>
               <span className="relative inline-block  ml-2">
                 Career Readiness and Interview Preparation System
-                <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-indigo-400 to-transparent rounded-full"></div>
+                <div className="absolute -bottom-2 left-0 right-0 h-1 bg-indigo-400 rounded-full"></div>
               </span>
             </div>
             <div className="mt-4 text-slate-300 text-3xl sm:text-4xl md:text-5xl font-light">
@@ -122,7 +122,7 @@ const HeroSection = ({ resumeData }) => {
                   ></div>
 
                   <div
-                    className={`relative z-10 mb-0 inline-flex p-3 rounded-lg bg-gradient-to-br ${card.color} text-white/20 group-hover:text-white/40 transition-all duration-300`}
+                    className={`relative z-10 mb-0 inline-flex p-3 rounded-lg ${card.accentBg} text-white/20 group-hover:text-white/40 transition-all duration-300`}
                   ></div>
 
                   <div className="relative z-10">
@@ -140,7 +140,7 @@ const HeroSection = ({ resumeData }) => {
                     </p>
                   </div>
                   <div
-                    className={`absolute top-0 right-0 w-20 h-20 opacity-0 group-hover:opacity-100 bg-gradient-to-br ${card.color} rounded-full blur-2xl -z-10 transition-opacity duration-300`}
+                    className={`absolute top-0 right-0 w-20 h-20 opacity-0 group-hover:opacity-100 ${card.accentBg} rounded-full blur-2xl -z-10 transition-opacity duration-300`}
                   ></div>
                 </div>
               );
@@ -153,8 +153,8 @@ const HeroSection = ({ resumeData }) => {
                 label: "Discover Your Ideal Roles",
                 href: "/role-suggestions",
                 icon: RocketLaunchIcon,
-                color: "from-blue-600 to-cyan-600",
-                hoverColor: "from-blue-700 to-cyan-700",
+                bg: "bg-blue-600",
+                hoverBg: "bg-blue-700",
                 textColor: "text-blue-300",
                 borderColor: "border-blue-400/40",
               },
@@ -162,8 +162,8 @@ const HeroSection = ({ resumeData }) => {
                 label: "Improve Document Clarity",
                 href: "/ats-analyzer",
                 icon: DocumentCheckIcon,
-                color: "from-emerald-600 to-teal-600",
-                hoverColor: "from-emerald-700 to-teal-700",
+                bg: "bg-emerald-600",
+                hoverBg: "bg-emerald-700",
                 textColor: "text-emerald-300",
                 borderColor: "border-emerald-400/40",
               },
@@ -171,8 +171,8 @@ const HeroSection = ({ resumeData }) => {
                 label: "Ace Your Interview",
                 href: "/interview-prepai",
                 icon: SparklesIcon,
-                color: "from-purple-600 to-pink-600",
-                hoverColor: "from-purple-700 to-pink-700",
+                bg: "bg-purple-600",
+                hoverBg: "bg-purple-700",
                 textColor: "text-purple-300",
                 borderColor: "border-purple-400/40",
               },
@@ -182,18 +182,13 @@ const HeroSection = ({ resumeData }) => {
                 <button
                   key={btn.label}
                   onClick={() => (window.location.href = btn.href)}
-                  className={`group relative px-8 py-4 rounded-xl font-bold text-white overflow-hidden border ${btn.borderColor} transition-all duration-300 hover:shadow-2xl hover:scale-105 flex items-center gap-3 hover:-translate-y-1 cursor-pointer`}
-                  style={{
-                    background: `linear-gradient(135deg, var(--color-start), var(--color-end))`,
-                    "--color-start": "rgb(59, 130, 246)",
-                    "--color-end": "rgb(34, 211, 238)",
-                  }}
+                  className={`group relative px-8 py-4 rounded-xl font-bold text-white overflow-hidden border ${btn.borderColor} ${btn.bg} transition-all duration-300 hover:shadow-2xl hover:scale-105 flex items-center gap-3 hover:-translate-y-1 cursor-pointer`}
                 >
                   <div
-                    className={`absolute inset-0 bg-gradient-to-r ${btn.hoverColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                    className={`absolute inset-0 ${btn.hoverBg} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
                   ></div>
 
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-30 bg-gradient-to-r from-transparent via-white to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-30 bg-white/30 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
 
                   <div className="relative z-10 flex items-center gap-2">
                     <BtnIcon className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
@@ -231,12 +226,12 @@ const HeroSection = ({ resumeData }) => {
                     >
                       <div className="absolute top-4 right-4">
                         <div
-                          className={`relative w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg transform group-hover:scale-110 transition-transform duration-300 bg-gradient-to-br ${
+                          className={`relative w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg transform group-hover:scale-110 transition-transform duration-300 ${
                             role.matchPercentage >= 80
-                              ? "from-emerald-500 to-green-600"
+                              ? "bg-emerald-500"
                               : role.matchPercentage >= 60
-                                ? "from-yellow-500 to-amber-600"
-                                : "from-orange-500 to-red-600"
+                                ? "bg-yellow-500"
+                                : "bg-orange-500"
                           }`}
                         >
                           <span>{role.matchPercentage}</span>
@@ -264,7 +259,7 @@ const HeroSection = ({ resumeData }) => {
                         </div>
                       </div>
 
-                      <div className="absolute inset-0 opacity-0 group-hover:opacity-10 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-2xl -z-10 transition-opacity duration-300"></div>
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-10 bg-indigo-500/10 rounded-2xl -z-10 transition-opacity duration-300"></div>
                     </div>
                   ))}
               </div>

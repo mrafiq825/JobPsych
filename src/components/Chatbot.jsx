@@ -68,20 +68,20 @@ const Chatbot = () => {
             : "translate-y-16 opacity-0 scale-75"
         }`}
       >
-        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 animate-ping opacity-20"></div>
-        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 animate-pulse opacity-30 scale-110"></div>
-        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300 animate-pulse opacity-20 scale-125"></div>
+        <div className="absolute inset-0 rounded-full bg-indigo-500 animate-ping opacity-20"></div>
+        <div className="absolute inset-0 rounded-full bg-indigo-400 animate-pulse opacity-30 scale-110"></div>
+        <div className="absolute inset-0 rounded-full bg-indigo-300 animate-pulse opacity-20 scale-125"></div>
 
-        <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-red-400 to-pink-400 rounded-full flex items-center justify-center animate-bounce shadow-lg">
+        <div className="absolute -top-1 -right-1 w-4 h-4 bg-red-400 rounded-full flex items-center justify-center animate-bounce shadow-lg">
           <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
         </div>
 
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="group relative bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-indigo-700 hover:via-purple-700 hover:to-pink-700 text-white p-4 rounded-full shadow-2xl hover:shadow-3xl transform hover:scale-110 transition-all duration-300 ease-out cursor-pointer border-2 border-white/20 backdrop-blur-sm"
+          className="group relative bg-indigo-600 text-white p-4 rounded-full shadow-2xl hover:shadow-3xl transform hover:scale-110 transition-all duration-300 ease-out cursor-pointer border-2 border-white/20 backdrop-blur-sm"
           aria-label="Open AI Assistant"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-indigo-400/40 via-purple-400/40 to-pink-400/40 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div className="absolute inset-0 bg-indigo-400/40 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
           <div className="relative z-10 flex items-center justify-center">
             {isOpen ? (
@@ -128,7 +128,7 @@ const Chatbot = () => {
             : "translate-y-8 opacity-0 scale-95 pointer-events-none"
         }`}
       >
-        <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white p-4 rounded-t-2xl shadow-xl">
+        <div className="bg-indigo-600 text-white p-4 rounded-t-2xl shadow-xl">
           <div className="flex items-center space-x-3">
             <div className="relative">
               <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
@@ -152,7 +152,7 @@ const Chatbot = () => {
             </div>
 
             <div className="flex-1 min-w-0">
-              <h3 className="font-bold text-lg truncate bg-gradient-to-r from-white to-purple-100 bg-clip-text text-transparent">
+              <h3 className="font-bold text-lg truncate text-white">
                 JobPsych AI
               </h3>
               <p className="text-sm opacity-90 truncate">
@@ -209,7 +209,7 @@ const Chatbot = () => {
               <div
                 className={`max-w-[85%] p-3 rounded-2xl shadow-sm ${
                   message.sender === "user"
-                    ? "bg-gradient-to-r from-indigo-500 to-purple-600 text-white ml-4"
+                    ? "bg-indigo-500 text-white ml-4"
                     : message.isError
                       ? "bg-red-50 text-red-800 border border-red-200"
                       : "bg-gray-50 text-gray-800 mr-4 border border-gray-200"

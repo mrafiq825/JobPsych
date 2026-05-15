@@ -14,8 +14,7 @@ export const enhancedPlans = [
     ],
 
     buttonText: "Start Free Analysis",
-    buttonStyle:
-      "bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700",
+    buttonStyle: "bg-indigo-600 text-white hover:bg-indigo-700",
     popular: true,
   },
   {
@@ -31,8 +30,7 @@ export const enhancedPlans = [
     ],
 
     buttonText: "Try InterviewPrep AI",
-    buttonStyle:
-      "bg-gradient-to-r from-blue-500 to-cyan-600 text-white hover:from-blue-600 hover:to-cyan-700",
+    buttonStyle: "bg-blue-500 text-white hover:bg-blue-600",
     popular: false,
   },
   {
@@ -50,8 +48,7 @@ export const enhancedPlans = [
     ],
 
     buttonText: "Start ATS Analysis",
-    buttonStyle:
-      "bg-gradient-to-r from-purple-500 to-pink-600 text-white hover:from-purple-600 hover:to-pink-700",
+    buttonStyle: "bg-purple-500 text-white hover:bg-purple-600",
     popular: false,
   },
 ];

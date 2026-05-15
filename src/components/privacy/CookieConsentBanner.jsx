@@ -47,9 +47,9 @@ const CookieConsentBanner = () => {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 animate-slide-up">
-      <div className="absolute inset-0 bg-transparent backdrop-blur-sm"></div>{" "}
-      <div className="relative bg-gradient-to-r from-slate-800/95 via-slate-800/98 to-slate-900/95 backdrop-blur-xl border-t border-slate-700/50 shadow-2xl">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent"></div>
+      <div className="absolute inset-0 bg-transparent backdrop-blur-sm"></div>
+      <div className="relative bg-slate-900/95 backdrop-blur-xl border-t border-slate-700/50 shadow-2xl">
+        <div className="absolute top-0 left-0 right-0 h-px bg-indigo-500/50"></div>
         <div className="absolute -top-20 left-1/4 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl"></div>
         <div className="absolute -top-20 right-1/4 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
@@ -63,7 +63,7 @@ const CookieConsentBanner = () => {
           <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 pr-10 sm:pr-12">
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-2">
-                <h3 className="text-lg font-bold bg-gradient-to-r from-indigo-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
+                <h3 className="text-lg font-bold text-indigo-400">
                   Cookie Preferences
                 </h3>
                 <div className="flex items-center space-x-1">
@@ -147,7 +147,7 @@ const CookieConsentBanner = () => {
                   <Cog6ToothIcon className="w-4 h-4" />
                   {showDetails ? "Hide Details" : "Customize"}
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/0 via-indigo-500/10 to-purple-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
 
               <button
@@ -159,13 +159,13 @@ const CookieConsentBanner = () => {
 
               <button
                 onClick={handleAccept}
-                className="group relative px-5 py-2.5 text-sm font-medium text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 rounded-lg transition-all duration-300 cursor-pointer shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 overflow-hidden"
+                className="group relative px-5 py-2.5 text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-500 rounded-lg transition-all duration-300 cursor-pointer shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 overflow-hidden"
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
                   <ShieldCheckIcon className="w-4 h-4" />
                   Accept All
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-indigo-400/0 via-white/20 to-purple-400/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
             </div>
           </div>

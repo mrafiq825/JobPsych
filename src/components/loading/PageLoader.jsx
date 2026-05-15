@@ -33,15 +33,15 @@ const PageLoader = () => {
           <div className="absolute inset-8 rounded-full border-2 border-transparent border-b-purple-400 border-l-indigo-300 animate-spin animation-reverse-slow"></div>
 
           {/* Inner pulsing circle */}
-          <div className="absolute inset-16 rounded-full bg-gradient-to-r from-indigo-500 to-cyan-500 opacity-20 animate-pulse"></div>
+          <div className="absolute inset-16 rounded-full bg-indigo-500/20 opacity-20 animate-pulse"></div>
 
           {/* Center glowing orb */}
-          <div className="relative w-12 h-12 rounded-full bg-gradient-to-br from-indigo-400 to-cyan-400 shadow-lg shadow-indigo-500/50 animate-pulse"></div>
+          <div className="relative w-12 h-12 rounded-full bg-indigo-400 shadow-lg shadow-indigo-500/50 animate-pulse"></div>
         </div>
 
         {/* Animated loading text */}
         <div className="space-y-4">
-          <h3 className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-cyan-400 to-purple-400 animate-pulse">
+          <h3 className="text-xl font-semibold text-indigo-400 animate-pulse">
             Preparing Your Experience
           </h3>
           <p className="text-gray-400 font-medium text-sm tracking-widest">
@@ -54,7 +54,7 @@ const PageLoader = () => {
           {[0, 1, 2].map((i) => (
             <div
               key={i}
-              className="w-2 h-2 rounded-full bg-gradient-to-r from-indigo-400 to-cyan-400 animate-bounce"
+              className="w-2 h-2 rounded-full bg-indigo-400 animate-bounce"
               style={{
                 animationDelay: `${i * 0.15}s`,
               }}

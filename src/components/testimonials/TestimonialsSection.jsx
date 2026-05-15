@@ -36,7 +36,7 @@ const TestimonialsSection = () => {
     <section className="relative pt-6 pb-10 sm:pt-10 sm:pb-24 page-force-light">
       <div className="absolute inset-0 bg-transparent">
         <div className="absolute inset-0 opacity-20">
-          <div className="h-full w-full bg-gradient-to-br from-indigo-500/10 to-blue-500/10"></div>
+          <div className="h-full w-full bg-indigo-500/10"></div>
         </div>
       </div>
 
@@ -94,7 +94,7 @@ const TestimonialsSection = () => {
                           borderColor: "rgba(15,23,42,0.06)",
                         }}
                       >
-                        <div className="absolute top-4 left-4 right-4 px-3 py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-white text-xs sm:text-sm font-semibold border border-indigo-500/30 text-center">
+                        <div className="absolute top-4 left-4 right-4 px-3 py-2 bg-blue-600 rounded-full text-white text-xs sm:text-sm font-semibold border border-indigo-500/30 text-center">
                           {testimonial.category}
                         </div>
 

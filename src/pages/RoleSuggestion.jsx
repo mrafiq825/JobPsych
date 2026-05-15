@@ -338,9 +338,9 @@ const RoleSuggestion = () => {
   return (
     <div className="relative min-h-screen flex flex-col overflow-x-hidden page-force-light">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(34,211,238,0.18),transparent_35%),radial-gradient(circle_at_85%_15%,rgba(251,113,133,0.15),transparent_34%),radial-gradient(circle_at_40%_90%,rgba(129,140,248,0.14),transparent_36%)]"></div>
-        <div className="absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-cyan-400/10 to-transparent"></div>
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(148,163,184,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(148,163,184,0.08)_1px,transparent_1px)] bg-[size:32px_32px] opacity-10"></div>
+        <div className="absolute inset-0 bg-transparent"></div>
+        <div className="absolute inset-x-0 top-0 h-64 bg-cyan-400/10"></div>
+        <div className="absolute inset-0 bg-transparent opacity-10"></div>
       </div>
 
       <header className="mb-6 rounded-2xl border border-slate-700/80 p-4 shadow-2xl backdrop-blur-xl sm:p-6">
@@ -400,9 +400,7 @@ const RoleSuggestion = () => {
                   style={{ fontFamily: "'Tinos', serif" }}
                 >
                   Reimagine Your
-                  <span className="block bg-gradient-to-r from-cyan-300 via-indigo-300 to-rose-300 bg-clip-text text-transparent">
-                    Next Career Move
-                  </span>
+                  <span className="block text-cyan-300">Next Career Move</span>
                 </h1>
                 <p className="max-w-2xl text-lg leading-relaxed text-body md:text-xl">
                   Upload once, then get an AI-guided role map with fit scores,
@@ -424,7 +422,7 @@ const RoleSuggestion = () => {
                       key={item}
                       className="flex items-start gap-3 rounded-xl border border-slate-700/70  p-3"
                     >
-                      <span className="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-r from-cyan-500 to-indigo-500 text-xs font-black text-white">
+                      <span className="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-cyan-500 text-xs font-black text-white">
                         {index + 1}
                       </span>
                       <p className="text-sm text-secondary">{item}</p>
@@ -438,7 +436,7 @@ const RoleSuggestion = () => {
           <div className="relative">
             <div className="relative rounded-3xl border border-slate-700/60  p-8 shadow-2xl backdrop-blur-xl">
               <div className="text-center mb-8">
-                <div className="mb-4 inline-flex items-center gap-3 rounded-2xl border border-cyan-300/30 bg-gradient-to-r from-cyan-500/20 to-indigo-500/20 p-3">
+                <div className="mb-4 inline-flex items-center gap-3 rounded-2xl border border-cyan-300/30 bg-cyan-500/20 p-3">
                   <svg
                     className="h-8 w-8 text-white"
                     fill="none"
@@ -468,10 +466,10 @@ const RoleSuggestion = () => {
                     key={index}
                     className="group relative overflow-hidden rounded-2xl border border-slate-600/50 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/45 hover:shadow-xl hover:shadow-cyan-500/10"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-rose-500/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                    <div className="absolute inset-0 bg-cyan-500/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
                     <div className="relative flex items-start gap-4">
                       <div className="flex-shrink-0">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-r from-cyan-600 to-indigo-600 shadow-lg">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-600 shadow-lg">
                           <span className="text-white font-bold text-sm">
                             {index + 1}
                           </span>
@@ -483,7 +481,7 @@ const RoleSuggestion = () => {
                         </p>
                       </div>
                     </div>
-                    <div className="absolute bottom-0 left-0 h-1 origin-left scale-x-0 transform bg-gradient-to-r from-cyan-500 to-rose-500 transition-transform duration-300 group-hover:scale-x-100"></div>
+                    <div className="absolute bottom-0 left-0 h-1 origin-left scale-x-0 transform bg-cyan-500 transition-transform duration-300 group-hover:scale-x-100"></div>
                   </div>
                 ))}
               </div>
@@ -495,7 +493,7 @@ const RoleSuggestion = () => {
               {resumeData ? (
                 <div className="p-8">
                   <div className="text-center mb-8">
-                    <div className="inline-flex items-center gap-3 bg-gradient-to-r from-emerald-600 to-teal-600 p-3 rounded-2xl mb-4">
+                    <div className="inline-flex items-center gap-3 bg-emerald-600 p-3 rounded-2xl mb-4">
                       <svg
                         className="h-8 w-8 text-white"
                         fill="none"
@@ -530,8 +528,8 @@ const RoleSuggestion = () => {
                 <div className="p-8 md:p-16 text-center">
                   <div className="max-w-4xl mx-auto space-y-8">
                     <div className="relative">
-                      <div className="absolute inset-0 bg-gradient-to-r from-violet-600 to-cyan-600 rounded-full blur-2xl opacity-20 animate-pulse"></div>
-                      <div className="relative bg-gradient-to-r from-violet-600 to-cyan-600 p-6 rounded-3xl inline-block">
+                      <div className="absolute inset-0 bg-violet-600 rounded-full blur-2xl opacity-20 animate-pulse"></div>
+                      <div className="relative bg-violet-600 p-6 rounded-3xl inline-block">
                         <svg
                           className="h-20 w-20 text-white"
                           fill="none"
@@ -552,7 +550,7 @@ const RoleSuggestion = () => {
                       <h3 className="text-4xl md:text-5xl font-black text-white leading-tight">
                         Discover Your
                         <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-400">
+                        <span className="text-violet-400">
                           Career Potential
                         </span>
                       </h3>
@@ -572,7 +570,7 @@ const RoleSuggestion = () => {
             <div className="relative">
               <div className="relative  backdrop-blur-xl border border-slate-700/50 rounded-3xl p-8 shadow-2xl">
                 <div className="text-center mb-12">
-                  <div className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-indigo-600 p-3 rounded-2xl mb-4">
+                  <div className="inline-flex items-center gap-3 bg-blue-600 p-3 rounded-2xl mb-4">
                     <svg
                       className="h-8 w-8 text-white"
                       fill="none"
@@ -600,32 +598,32 @@ const RoleSuggestion = () => {
                     {
                       label: "Overall",
                       value: resumeData.resumeScore.overall_score,
-                      color: "from-violet-600 to-purple-600",
+                      color: "bg-violet-600",
                     },
                     {
                       label: "Technical",
                       value: resumeData.resumeScore.technical_score,
-                      color: "from-cyan-600 to-blue-600",
+                      color: "bg-cyan-600",
                     },
                     {
                       label: "Experience",
                       value: resumeData.resumeScore.experience_score,
-                      color: "from-emerald-600 to-teal-600",
+                      color: "bg-emerald-600",
                     },
                     {
                       label: "Education",
                       value: resumeData.resumeScore.education_score,
-                      color: "from-rose-600 to-pink-600",
+                      color: "bg-rose-600",
                     },
                     {
                       label: "Communication",
                       value: resumeData.resumeScore.communication_score,
-                      color: "from-amber-600 to-orange-600",
+                      color: "bg-amber-600",
                     },
                   ].map((score, idx) => (
                     <div key={idx} className="text-center">
                       <div
-                        className={`relative w-24 h-24 mx-auto mb-4 bg-gradient-to-r ${score.color} rounded-2xl flex items-center justify-center shadow-lg`}
+                        className={`relative w-24 h-24 mx-auto mb-4 ${score.color} rounded-2xl flex items-center justify-center shadow-lg`}
                       >
                         <div className="text-3xl font-black text-white">
                           {Math.round(score.value)}
@@ -731,7 +729,7 @@ const RoleSuggestion = () => {
             <div className="relative">
               <div className="relative backdrop-blur-xl border border-slate-700/50 rounded-3xl p-8 shadow-2xl">
                 <div className="text-center mb-12">
-                  <div className="inline-flex items-center gap-3 bg-gradient-to-r from-pink-600 to-rose-600 p-3 rounded-2xl mb-4">
+                  <div className="inline-flex items-center gap-3 bg-pink-600 p-3 rounded-2xl mb-4">
                     <svg
                       className="h-8 w-8 text-white"
                       fill="none"
@@ -769,7 +767,7 @@ const RoleSuggestion = () => {
                           </div>
                           <div className="w-full rounded-full h-2 border border-slate-600/30">
                             <div
-                              className="bg-gradient-to-r from-cyan-500 to-blue-500 h-2 rounded-full transition-all duration-500"
+                              className="bg-cyan-500 h-2 rounded-full transition-all duration-500"
                               style={{ width: `${score}%` }}
                             ></div>
                           </div>
@@ -812,7 +810,7 @@ const RoleSuggestion = () => {
                           <div className="flex-1">
                             <div className="w-full rounded-full h-2 border border-slate-600/30">
                               <div
-                                className="bg-gradient-to-r from-amber-500 to-orange-500 h-2 rounded-full transition-all duration-500"
+                                className="bg-amber-500 h-2 rounded-full transition-all duration-500"
                                 style={{
                                   width: `${resumeData.personalityInsights.leadership_potential}%`,
                                 }}
@@ -838,7 +836,7 @@ const RoleSuggestion = () => {
                           <div className="flex-1">
                             <div className="w-full rounded-full h-2 border border-slate-600/30">
                               <div
-                                className="bg-gradient-to-r from-teal-500 to-cyan-500 h-2 rounded-full transition-all duration-500"
+                                className="bg-teal-500 h-2 rounded-full transition-all duration-500"
                                 style={{
                                   width: `${resumeData.personalityInsights.team_player_score}%`,
                                 }}
@@ -892,10 +890,10 @@ const RoleSuggestion = () => {
                   {roleRecommendations.map((role, index) => {
                     const isBestMatch = index === 0;
                     const gradientSet = [
-                      "from-cyan-500 via-blue-500 to-indigo-500",
-                      "from-emerald-500 via-teal-500 to-cyan-500",
-                      "from-rose-500 via-orange-500 to-amber-500",
-                      "from-violet-500 via-fuchsia-500 to-rose-500",
+                      "bg-cyan-500",
+                      "bg-emerald-500",
+                      "bg-rose-500",
+                      "bg-violet-500",
                     ];
                     const gradient = gradientSet[index % gradientSet.length];
                     const matchScore = Math.max(
@@ -913,7 +911,7 @@ const RoleSuggestion = () => {
                         }`}
                       >
                         <div
-                          className={`absolute left-0 top-0 h-full w-1.5 bg-gradient-to-b ${gradient}`}
+                          className={`absolute left-0 top-0 h-full w-1.5 ${gradient}`}
                         ></div>
 
                         {isBestMatch && (
@@ -951,7 +949,7 @@ const RoleSuggestion = () => {
 
                         <div className="mb-5 h-2 overflow-hidden rounded-full">
                           <div
-                            className={`h-full rounded-full bg-gradient-to-r ${gradient} transition-all duration-700`}
+                            className={`h-full rounded-full ${gradient} transition-all duration-700`}
                             style={{ width: `${matchScore}%` }}
                           ></div>
                         </div>
@@ -1165,7 +1163,7 @@ const RoleSuggestion = () => {
                     </div>
                     <div className="h-3 w-full rounded-full border border-slate-600/30">
                       <div
-                        className="h-3 rounded-full bg-gradient-to-r from-orange-500 via-amber-400 to-yellow-400 transition-all duration-500"
+                        className="h-3 rounded-full bg-orange-500 transition-all duration-500"
                         style={{
                           width: `${resumeData.preparationPlan.role_fit_score}%`,
                         }}
@@ -1781,7 +1779,7 @@ const RoleSuggestion = () => {
                         disabled={isLoading}
                         autoComplete="off"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-r from-violet-600/10 to-cyan-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                      <div className="absolute inset-0 bg-violet-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                     </div>
                     <p className="mt-3 flex items-center gap-2 text-sm text-secondary">
                       <svg
@@ -1835,7 +1833,7 @@ const RoleSuggestion = () => {
                         disabled={isLoading}
                         autoComplete="off"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/10 to-violet-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                      <div className="absolute inset-0 bg-cyan-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                     </div>
                     <p className="mt-3 flex items-center gap-2 text-sm text-secondary">
                       <svg
@@ -1858,7 +1856,7 @@ const RoleSuggestion = () => {
               </div>
 
               <div className="relative">
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-600/5 to-indigo-600/5"></div>
+                <div className="absolute inset-0 rounded-2xl bg-cyan-600/5"></div>
                 <div className="relative">
                   <ResumeUpload
                     onFileUpload={handleFileUpload}
@@ -1911,9 +1909,9 @@ const RoleSuggestion = () => {
                       <button
                         onClick={analyzeResume}
                         disabled={isLoading}
-                        className="group relative cursor-pointer overflow-hidden rounded-2xl border border-emerald-300/30 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 px-12 py-4 text-xl font-bold text-white shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-emerald-500/25 disabled:cursor-not-allowed disabled:opacity-50 disabled:transform-none"
+                        className="group relative cursor-pointer overflow-hidden rounded-2xl border border-emerald-300/30 bg-emerald-600 px-12 py-4 text-xl font-bold text-white shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-emerald-500/25 disabled:cursor-not-allowed disabled:opacity-50 disabled:transform-none"
                       >
-                        <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 via-teal-600 to-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div className="absolute inset-0 bg-emerald-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         <div className="relative flex items-center gap-3">
                           {isLoading ? (
                             <>
@@ -1937,7 +1935,7 @@ const RoleSuggestion = () => {
                                     d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                                   ></path>
                                 </svg>
-                                <div className="absolute -inset-1 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full opacity-60 animate-pulse"></div>
+                                <div className="absolute -inset-1 bg-purple-400 rounded-full opacity-60 animate-pulse"></div>
                               </div>
                               <span>Analyzing Role Fit...</span>
                             </>
@@ -1971,10 +1969,10 @@ const RoleSuggestion = () => {
                             </div>
                             <div className="w-full rounded-full h-3 overflow-hidden">
                               <div
-                                className="bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 h-full rounded-full transition-all duration-1000 ease-out relative"
+                                className="bg-emerald-500 h-full rounded-full transition-all duration-1000 ease-out relative"
                                 style={{ width: `${loadingProgress}%` }}
                               >
-                                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent animate-pulse"></div>
+                                <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
                               </div>
                             </div>
                           </div>
@@ -1983,7 +1981,7 @@ const RoleSuggestion = () => {
                             <div className="backdrop-blur-sm border border-slate-600/50 rounded-xl p-6">
                               <div className="flex items-center gap-4">
                                 <div className="relative">
-                                  <div className="absolute -inset-1 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full opacity-30 animate-ping"></div>
+                                  <div className="absolute -inset-1 bg-emerald-400 rounded-full opacity-30 animate-ping"></div>
                                 </div>
                                 <div className="flex-1">
                                   <p className="text-white font-medium text-lg">
@@ -1999,11 +1997,11 @@ const RoleSuggestion = () => {
                           )}
 
                           {/* Chatbot Encouragement Message */}
-                          <div className="bg-gradient-to-r from-indigo-800/30 via-purple-800/20 to-pink-800/30 border border-indigo-500/30 rounded-xl p-6 mt-6 animate-pulse">
+                          <div className="bg-indigo-800/30 border border-indigo-500/30 rounded-xl p-6 mt-6 animate-pulse">
                             <div className="flex items-start gap-4">
                               <div className="flex-shrink-0">
                                 <div className="relative">
-                                  <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center shadow-lg animate-bounce">
+                                  <div className="w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center shadow-lg animate-bounce">
                                     <svg
                                       className="w-6 h-6 text-white"
                                       fill="none"
@@ -2022,7 +2020,7 @@ const RoleSuggestion = () => {
                                 </div>
                               </div>
                               <div className="flex-1">
-                                <h3 className="mb-2 bg-gradient-to-r from-white via-indigo-200 to-purple-200 bg-clip-text text-lg font-semibold text-transparent">
+                                <h3 className="mb-2 text-white text-lg font-semibold">
                                   While You Wait - Chat with our AI Assistant!
                                 </h3>
                                 <p className="text-body text-sm leading-relaxed mb-4">
@@ -2043,10 +2041,10 @@ const RoleSuggestion = () => {
                                     Job search help
                                   </span>
                                 </div>
-                                <div className="p-4 bg-gradient-to-r from-slate-700/60 via-slate-600/40 to-slate-700/60 rounded-lg border border-indigo-400/50 shadow-lg">
+                                <div className="p-4 bg-slate-700/60 rounded-lg border border-indigo-400/50 shadow-lg">
                                   <div className="flex items-center gap-3">
                                     <div className="flex-shrink-0">
-                                      <div className="w-8 h-8 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full flex items-center justify-center animate-pulse">
+                                      <div className="w-8 h-8 bg-emerald-400 rounded-full flex items-center justify-center animate-pulse">
                                         <svg
                                           className="w-4 h-4 text-white"
                                           fill="currentColor"
@@ -2086,9 +2084,9 @@ const RoleSuggestion = () => {
                             ></div>
                           </div>
 
-                          <div className="bg-gradient-to-r from-purple-900/30 to-blue-900/30 border border-purple-500/20 rounded-xl p-6">
+                          <div className="bg-purple-900/30 border border-purple-500/20 rounded-xl p-6">
                             <div className="flex items-start gap-4">
-                              <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                              <div className="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
                                 <svg
                                   className="w-5 h-5 text-white"
                                   fill="currentColor"
@@ -2131,9 +2129,7 @@ const RoleSuggestion = () => {
             <div className="relative">
               <div
                 className={`absolute inset-0 ${
-                  alertType === "success"
-                    ? "bg-gradient-to-r from-emerald-600 to-green-600"
-                    : "bg-gradient-to-r from-red-600 to-rose-600"
+                  alertType === "success" ? "bg-emerald-600" : "bg-red-600"
                 } rounded-2xl blur-lg opacity-30 animate-pulse`}
               ></div>
               <div
