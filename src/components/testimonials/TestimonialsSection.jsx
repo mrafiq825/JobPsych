@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { testimonials } from "@/data/testimonials";
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 
 const TestimonialsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

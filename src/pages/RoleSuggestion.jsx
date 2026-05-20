@@ -1497,9 +1497,7 @@ const RoleSuggestion = () => {
                               key={idx}
                               className="rounded-lg border border-border-subtle p-4"
                             >
-                              <p className="text-sm text-emerald-100">
-                                {point}
-                              </p>
+                              <p className="text-sm">{point}</p>
                             </li>
                           ),
                         )}
