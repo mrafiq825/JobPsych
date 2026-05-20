@@ -52,29 +52,6 @@ VITE_RESUME_API=https://resume-api.jobpsych.com
 | `npm run test:memory`              | Memory profiling (`e2e/memory-leak-test.spec.js`)   |
 | `npm run test:qa`                  | Full QA suite (PowerShell)                          |
 
-**Load Testing**: `loadtest/` contains Artillery & K6 configs for performance validation.
-
-**Results**: See `PHASE-6-FINAL-QA-COMPLETE.md` for QA reports.
-
----
-
-## Security & Rate Limiting
-
-- **Server-Side Rate Limiting**: 5 resume analyses/day per IP (enforced backend)
-- **CSP & Headers**: Strict Content Security Policy, `X-Frame-Options: SAMEORIGIN`, `X-XSS-Protection`
-- **Error Handling**: Graceful 429 responses with user-friendly messages
-- **Privacy**: No raw resume data stored; analytics + insights only
-- **Compliance**: Privacy Policy, Terms of Service, Security Audit dashboard (`/security-audit`)
-
-**Rate Limit Details**:
-
-- Status: Server-side enforcement (client-side code removed Nov 2025)
-- Response: HTTP 429 with countdown to reset (midnight UTC)
-- UI: Toast notification with retry logic
-- Support: Contact `rafkhan9323@gmail.com` for quota increases
-
----
-
 ## Deployment
 
 ### Vercel
@@ -96,30 +73,5 @@ docker-compose up -d
 docker-compose logs -f
 docker-compose down
 ```
-
-### Other Platforms
-
-See **PRODUCTION-DEPLOYMENT-GUIDE.md** for Netlify, AWS, DigitalOcean, self-hosted guides.
-
-**Post-Deployment**: Verify pages load, test file uploads, check API connectivity, validate rate limiting, test mobile responsiveness. See deployment guide for full checklist.
-
----
-
-## Browser & Device Support
-
-- **Desktop**: Chrome 90+, Firefox 88+, Safari 14+, Edge 90+
-- **Mobile**: iOS Safari 14+, Chrome Mobile 90+
-- **Features**: ES6+, Fetch API, FormData, File API
-- **Responsive**: Mobile-first (sm/md/lg/xl/2xl breakpoints)
-
----
-
-## Design System
-
-**Colors**: Slate (bg), Indigo/Violet (primary), Cyan (secondary), Emerald (success), Amber (warning), Red (error)
-
-**Effects**: Glassmorphism (`backdrop-blur-xl bg-white/10`), gradients, soft shadows, animations (pulse, bounce, fade, slide)
-
-**Typography**: Tinos font (headers), system stack (body). See `FONT_FAMILY_DOCUMENTATION.md`.
 
 ---
