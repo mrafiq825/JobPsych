@@ -38,11 +38,11 @@ function Header() {
     <>
       <div className="fixed inset-0 pointer-events-none z-0">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-          <div className="absolute top-10 left-10 w-2 h-2 bg-blue-400 rounded-full animate-pulse opacity-60"></div>
-          <div className="absolute top-20 right-20 w-1 h-1 bg-purple-400 rounded-full animate-bounce opacity-40"></div>
-          <div className="absolute bottom-20 left-1/4 w-1.5 h-1.5 bg-emerald-400 rounded-full animate-ping opacity-50"></div>
-          <div className="absolute top-1/3 right-10 w-1 h-1 bg-cyan-400 rounded-full animate-pulse opacity-30"></div>
-          <div className="absolute bottom-10 right-1/3 w-2 h-2 bg-indigo-400 rounded-full animate-bounce opacity-40"></div>
+          <div className="absolute top-10 left-10 w-2 h-2 bg-card-clay rounded-full opacity-60"></div>
+          <div className="absolute top-20 right-20 w-1 h-1 bg-card-sand rounded-full opacity-40"></div>
+          <div className="absolute bottom-20 left-1/4 w-1.5 h-1.5 bg-card-ivory rounded-full opacity-50"></div>
+          <div className="absolute top-1/3 right-10 w-1 h-1 bg-card-linen rounded-full opacity-30"></div>
+          <div className="absolute bottom-10 right-1/3 w-2 h-2 bg-card-clay rounded-full opacity-40"></div>
         </div>
       </div>
 
@@ -54,7 +54,9 @@ function Header() {
       )}
       <header
         className={`fixed w-full top-0 z-50 py-1 xs:py-2 sm:py-3 transition-all duration-500 page-force-light ${
-          scrolled ? "backdrop-blur-xl" : "bg-transparent"
+          scrolled
+            ? "backdrop-blur-xl bg-card-primary border border-border-subtle shadow-sm"
+            : "bg-transparent"
         }`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -64,24 +66,30 @@ function Header() {
             className={`flex items-center justify-between rounded-lg xs:rounded-xl px-2 xs:px-3 sm:px-4 md:px-6 py-2 xs:py-2.5 sm:py-3 transition-all duration-500 relative overflow-hidden
               ${
                 scrolled
-                  ? "backdrop-blur-xl hover:shadow-2xl border border-slate-700/80 shadow-lg"
-                  : "backdrop-blur-lg border border-slate-700/30 hover:border-slate-600/50"
+                  ? "backdrop-blur-xl border border-border-subtle shadow-lg"
+                  : "backdrop-blur-lg border border-border-subtle hover:border-border-mid"
               }
-              ${isHovered ? "transform scale-[1.02] shadow-2xl" : ""}
+              ${isHovered ? "transform scale-[1.02] shadow-xl" : ""}
             `}
-            style={{ backgroundColor: "var(--bg-color)" }}
+            style={{ backgroundColor: "var(--card-primary)" }}
           >
-            <div className="absolute inset-0 rounded-lg xs:rounded-xl bg-blue-500/20 opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+            <div
+              className="absolute inset-0 rounded-lg xs:rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+              style={{ backgroundColor: "rgba(214, 210, 196, 0.8)" }}
+            ></div>
 
-            <div className="absolute inset-0 rounded-lg xs:rounded-xl bg-white/5 opacity-50"></div>
+            <div className="absolute inset-0 rounded-lg xs:rounded-xl bg-white/10 opacity-50"></div>
             <button
               to="/"
               className="flex items-center space-x-1.5 xs:space-x-2 sm:space-x-3 bg-transparent border-0 group flex-shrink-0 relative z-10"
             >
               <div className="flex items-center relative overflow-visible cursor-pointer">
-                <div className="absolute -inset-2 bg-blue-600/30 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
+                <div
+                  className="absolute -inset-2 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse"
+                  style={{ backgroundColor: "rgba(200, 191, 170, 0.3)" }}
+                ></div>
 
-                <div className="absolute -inset-1 bg-blue-500 rounded-full opacity-0 group-hover:opacity-75 transition-opacity duration-300 animate-spin-slow"></div>
+                <div className="absolute -inset-1 bg-card-sand rounded-full opacity-0 group-hover:opacity-75 transition-opacity duration-300 animate-spin-slow"></div>
 
                 <div className="relative z-10 flex justify-center items-center h-8 w-8 xs:h-9 xs:w-9 sm:h-10 sm:w-10 md:h-12 md:w-12 p-0.5 xs:p-1 transition-all duration-500 group-hover:scale-110">
                   <img
@@ -91,10 +99,10 @@ function Header() {
                   />
                 </div>
                 <h1 className="ml-1.5 xs:ml-2 text-lg xs:text-xl sm:text-2xl font-bold transition-all duration-500 tracking-tight cursor-pointer relative">
-                  <span className="hidden xs:inline text-indigo-400 transition-all duration-500">
+                  <span className="hidden xs:inline text-h2 transition-all duration-500">
                     JobPsych
                   </span>
-                  <span className="xs:hidden text-indigo-400 transition-all duration-500">
+                  <span className="xs:hidden text-h2 transition-all duration-500">
                     JobPsych
                   </span>
 
@@ -107,9 +115,12 @@ function Header() {
               <button
                 type="button"
                 onClick={() => setShowFeatures(true)}
-                className="relative px-3 xs:px-4 sm:px-5 lg:px-6 py-1.5 xs:py-2 sm:py-2.5 lg:py-3 text-xs xs:text-sm sm:text-base font-semibold text-emerald-200 bg-emerald-800/70 rounded-lg xs:rounded-xl transition-all duration-500 cursor-pointer shadow-md hover:shadow-lg border border-emerald-600/50 hover:border-emerald-500/70 transform hover:scale-105 hover:-translate-y-0.5 group overflow-hidden"
+                className="relative px-3 xs:px-4 sm:px-5 lg:px-6 py-1.5 xs:py-2 sm:py-2.5 lg:py-3 text-xs xs:text-sm sm:text-base font-semibold btn btn-accent rounded-lg xs:rounded-xl transition-all duration-500 cursor-pointer shadow-md hover:shadow-lg transform hover:scale-105 hover:-translate-y-0.5 group overflow-hidden"
               >
-                <div className="absolute inset-0 bg-emerald-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{ backgroundColor: "rgba(200, 191, 170, 0.2)" }}
+                ></div>
 
                 <div className="absolute inset-0 bg-white/10 -skew-x-12 opacity-0 group-hover:opacity-100 group-hover:animate-shimmer transition-opacity duration-500"></div>
 
@@ -122,10 +133,13 @@ function Header() {
                   onClick={() =>
                     window.scrollTo({ top: 0, behavior: "smooth" })
                   }
-                  className="ml-1 xs:ml-2 p-1.5 xs:p-2 rounded-full bg-indigo-800/70 shadow-md transition-all duration-500 cursor-pointer border border-indigo-600/50 hover:border-purple-500/70 flex items-center justify-center transform hover:scale-110 hover:-translate-y-1 hover:rotate-12 group relative overflow-hidden"
+                  className="ml-1 xs:ml-2 p-1.5 xs:p-2 rounded-full btn btn-dark shadow-md transition-all duration-500 cursor-pointer border border-border-subtle hover:border-border-mid flex items-center justify-center transform hover:scale-110 group relative overflow-hidden"
                   aria-label="Scroll to top"
                 >
-                  <div className="absolute inset-0 bg-indigo-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"></div>
+                  <div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"
+                    style={{ backgroundColor: "rgba(214, 210, 196, 0.2)" }}
+                  ></div>
 
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -133,7 +147,8 @@ function Header() {
                     viewBox="0 0 24 24"
                     strokeWidth={2}
                     stroke="currentColor"
-                    className="h-4 w-4 xs:h-5 xs:w-5 text-indigo-200 relative z-10 transition-all duration-300 group-hover:text-white"
+                    className="h-4 w-4 xs:h-5 xs:w-5 relative z-10 transition-all duration-300 group-hover:text-white"
+                    style={{ color: "var(--btn-light-text)" }}
                     aria-hidden="true"
                   >
                     <title>Scroll to top</title>
@@ -152,15 +167,19 @@ function Header() {
                 id="mobile-nav-hamburger"
                 type="button"
                 aria-label="Open mobile menu"
-                className="relative p-1.5 xs:p-2 rounded-lg xs:rounded-xl bg-indigo-800/70 shadow-md border border-indigo-600/50 flex items-center justify-center hover:border-purple-500/70 transition-all duration-500 transform hover:scale-110 group overflow-hidden"
+                className="relative p-1.5 xs:p-2 rounded-lg xs:rounded-xl btn btn-dark shadow-md border border-border-subtle flex items-center justify-center hover:border-border-mid transition-all duration-500 transform hover:scale-110 group overflow-hidden"
                 onClick={() => setMobileDropdownOpen((open) => !open)}
               >
-                <div className="absolute inset-0 bg-indigo-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg xs:rounded-xl"></div>
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg xs:rounded-xl"
+                  style={{ backgroundColor: "rgba(122, 99, 64, 0.2)" }}
+                ></div>
 
                 <svg
-                  className={`h-5 w-5 xs:h-6 xs:w-6 text-indigo-200 relative z-10 transition-all duration-300 ${
+                  className={`h-5 w-5 xs:h-6 xs:w-6 relative z-10 transition-all duration-300 ${
                     mobileDropdownOpen ? "rotate-90" : ""
                   }`}
+                  style={{ color: "var(--btn-light-text)" }}
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -181,6 +200,7 @@ function Header() {
                   style={{
                     minHeight: "100px",
                     backgroundColor: "var(--bg-color)",
+                    borderColor: "var(--border-subtle)",
                   }}
                 >
                   <div
@@ -197,7 +217,12 @@ function Header() {
                         setShowFeatures(true);
                         setMobileDropdownOpen(false);
                       }}
-                      className="flex items-center justify-center gap-3 px-4 py-3 text-base font-bold text-white bg-emerald-600 hover:bg-emerald-500 rounded-lg border-2 border-emerald-400 transition-all duration-300"
+                      className="flex items-center justify-center gap-3 px-4 py-3 text-base font-bold rounded-lg border transition-all duration-300"
+                      style={{
+                        backgroundColor: "var(--card-dark)",
+                        color: "var(--btn-dark-text)",
+                        borderColor: "var(--border-subtle)",
+                      }}
                     >
                       <span>Features</span>
                     </button>
@@ -218,12 +243,15 @@ function Header() {
               borderColor: "rgba(15,23,42,0.06)",
             }}
           >
-            <div className="absolute inset-0 rounded-2xl xs:rounded-3xl bg-blue-500/20 opacity-20 animate-pulse pointer-events-none"></div>
+            <div
+              className="absolute inset-0 rounded-2xl xs:rounded-3xl opacity-20 animate-pulse pointer-events-none"
+              style={{ backgroundColor: "rgba(214, 210, 196, 0.24)" }}
+            ></div>
 
             <div className="absolute inset-0 rounded-2xl xs:rounded-3xl bg-white/3 pointer-events-none"></div>
 
             <button
-              className="absolute top-3 xs:top-4 right-3 xs:right-4 text-slate-700 hover:text-slate-900 text-xl xs:text-2xl font-bold focus:outline-none cursor-pointer z-10 transition-all duration-300 hover:scale-110 hover:rotate-90 rounded-full w-8 h-8 xs:w-10 xs:h-10 flex items-center justify-center"
+              className="absolute top-3 xs:top-4 right-3 xs:right-4 text-body hover:text-h2 text-xl xs:text-2xl font-bold focus:outline-none cursor-pointer z-10 transition-all duration-300 hover:scale-110 hover:rotate-90 rounded-full w-8 h-8 xs:w-10 xs:h-10 flex items-center justify-center btn btn-light"
               onClick={() => setShowFeatures(false)}
               aria-label="Close features modal"
               style={{ backgroundColor: "transparent", border: "none" }}
@@ -237,10 +265,13 @@ function Header() {
               Career Readiness & Interview Success
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 xs:gap-4 sm:gap-4 lg:gap-6 relative z-10">
-              <div className="bg-emerald-900/60 rounded-xl xs:rounded-2xl p-3 xs:p-4 sm:p-4 lg:p-6 shadow-xl border border-emerald-700/60 flex flex-col transform hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-500/20 group relative overflow-hidden">
-                <div className="absolute inset-0 bg-emerald-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl xs:rounded-2xl"></div>
+              <div className="bg-card-sand rounded-xl xs:rounded-2xl p-3 xs:p-4 sm:p-4 lg:p-6 shadow-xl border border-border-subtle flex flex-col transform hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-black/10 group relative overflow-hidden">
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl xs:rounded-2xl"
+                  style={{ backgroundColor: "rgba(200, 191, 170, 0.12)" }}
+                ></div>
 
-                <h3 className="text-sm xs:text-base sm:text-base lg:text-lg font-bold text-emerald-300 mb-2 xs:mb-3 sm:mb-3 lg:mb-4 flex items-center gap-1 xs:gap-2 relative z-10">
+                <h3 className="text-sm xs:text-base sm:text-base lg:text-lg font-bold text-h3 mb-2 xs:mb-3 sm:mb-3 lg:mb-4 flex items-center gap-1 xs:gap-2 relative z-10">
                   Career Path Exploration Module
                 </h3>
                 <ul className="space-y-1 xs:space-y-2 sm:space-y-2 lg:space-y-3 relative z-10">
@@ -253,10 +284,10 @@ function Header() {
                         {f.icon}
                       </span>
                       <div>
-                        <div className="font-semibold text-xs xs:text-sm sm:text-sm lg:text-sm text-emerald-200 group-hover/item:text-emerald-100 transition-colors duration-300">
+                        <div className="font-semibold text-xs xs:text-sm sm:text-sm lg:text-sm text-h4 group-hover/item:text-h2 transition-colors duration-300">
                           {f.title}
                         </div>
-                        <div className="text-slate-300 text-xs xs:text-xs sm:text-xs lg:text-xs leading-tight group-hover/item:text-slate-200 transition-colors duration-300">
+                        <div className="text-secondary text-xs xs:text-xs sm:text-xs lg:text-xs leading-tight group-hover/item:text-body transition-colors duration-300">
                           {f.description}
                         </div>
                       </div>
@@ -264,10 +295,13 @@ function Header() {
                   ))}
                 </ul>
               </div>
-              <div className="bg-purple-900/60 rounded-xl xs:rounded-2xl p-3 xs:p-4 sm:p-4 lg:p-6 shadow-xl border border-purple-700/60 flex flex-col transform hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 group relative overflow-hidden">
-                <div className="absolute inset-0 bg-purple-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl xs:rounded-2xl"></div>
+              <div className="bg-card-linen rounded-xl xs:rounded-2xl p-3 xs:p-4 sm:p-4 lg:p-6 shadow-xl border border-border-subtle flex flex-col transform hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-black/10 group relative overflow-hidden">
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl xs:rounded-2xl"
+                  style={{ backgroundColor: "rgba(214, 210, 196, 0.16)" }}
+                ></div>
 
-                <h3 className="text-sm xs:text-base sm:text-base lg:text-lg font-bold text-purple-300 mb-2 xs:mb-3 sm:mb-3 lg:mb-4 flex items-center gap-1 xs:gap-2 relative z-10">
+                <h3 className="text-sm xs:text-base sm:text-base lg:text-lg font-bold text-h3 mb-2 xs:mb-3 sm:mb-3 lg:mb-4 flex items-center gap-1 xs:gap-2 relative z-10">
                   Professional Document Structure and Content Analysis Module
                 </h3>
                 <ul className="space-y-1 xs:space-y-2 sm:space-y-2 lg:space-y-3 relative z-10">
@@ -280,10 +314,10 @@ function Header() {
                         {f.icon}
                       </span>
                       <div>
-                        <div className="font-semibold text-xs xs:text-sm sm:text-sm lg:text-sm text-purple-200 group-hover/item:text-purple-100 transition-colors duration-300">
+                        <div className="font-semibold text-xs xs:text-sm sm:text-sm lg:text-sm text-h4 group-hover/item:text-h2 transition-colors duration-300">
                           {f.title}
                         </div>
-                        <div className="text-slate-300 text-xs xs:text-xs sm:text-xs lg:text-xs leading-tight group-hover/item:text-slate-200 transition-colors duration-300">
+                        <div className="text-secondary text-xs xs:text-xs sm:text-xs lg:text-xs leading-tight group-hover/item:text-body transition-colors duration-300">
                           {f.description}
                         </div>
                       </div>
@@ -291,10 +325,13 @@ function Header() {
                   ))}
                 </ul>
               </div>
-              <div className="bg-blue-900/60 rounded-xl xs:rounded-2xl p-3 xs:p-4 sm:p-4 lg:p-6 shadow-xl border border-blue-700/60 flex flex-col transform hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 group relative overflow-hidden">
-                <div className="absolute inset-0 bg-blue-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl xs:rounded-2xl"></div>
+              <div className="bg-card-clay rounded-xl xs:rounded-2xl p-3 xs:p-4 sm:p-4 lg:p-6 shadow-xl border border-border-subtle flex flex-col transform hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-black/10 group relative overflow-hidden">
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl xs:rounded-2xl"
+                  style={{ backgroundColor: "rgba(214, 210, 196, 0.18)" }}
+                ></div>
 
-                <h3 className="text-sm xs:text-base sm:text-base lg:text-lg font-bold text-blue-300 mb-2 xs:mb-3 sm:mb-3 lg:mb-4 flex items-center gap-1 xs:gap-2 relative z-10">
+                <h3 className="text-sm xs:text-base sm:text-base lg:text-lg font-bold text-h3 mb-2 xs:mb-3 sm:mb-3 lg:mb-4 flex items-center gap-1 xs:gap-2 relative z-10">
                   AI-Assisted Interview Practice Module
                 </h3>
                 <ul className="space-y-1 xs:space-y-2 sm:space-y-2 lg:space-y-3 relative z-10">
@@ -307,10 +344,10 @@ function Header() {
                         {f.icon}
                       </span>
                       <div>
-                        <div className="font-semibold text-xs xs:text-sm sm:text-sm lg:text-sm text-blue-200 group-hover/item:text-blue-100 transition-colors duration-300">
+                        <div className="font-semibold text-xs xs:text-sm sm:text-sm lg:text-sm text-h4 group-hover/item:text-h2 transition-colors duration-300">
                           {f.title}
                         </div>
-                        <div className="text-slate-300 text-xs xs:text-xs sm:text-xs lg:text-xs leading-tight group-hover/item:text-slate-200 transition-colors duration-300">
+                        <div className="text-secondary text-xs xs:text-xs sm:text-xs lg:text-xs leading-tight group-hover/item:text-body transition-colors duration-300">
                           {f.description}
                         </div>
                       </div>

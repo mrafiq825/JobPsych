@@ -98,6 +98,12 @@
 /* Add custom glow to center orb */
 .loading-orb {
   animation: glow 2s ease-in-out infinite;
+  box-shadow: 0 0 24px rgba(200, 191, 170, 0.35);
+}
+
+.page-loader-panel {
+  background-color: var(--card-primary);
+  border: 1px solid var(--border-subtle);
 }
 
 /* Smooth text animation */

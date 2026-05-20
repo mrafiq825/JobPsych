@@ -114,22 +114,22 @@ function ResumeUpload({
   };
 
   return (
-    <div className="max-w-xl mx-auto p-6 rounded-xl shadow-lg border border-slate-600">
-      <h2 className="text-2xl font-semibold text-white mb-6 text-center">
+    <div className="max-w-xl mx-auto p-6 section-surface">
+      <h2 className="text-2xl font-semibold text-h1 mb-6 text-center">
         Review Your Resume with AI-Powered Insights
       </h2>
 
       {isPremium && (
-        <div className="mb-4 bg-gradient-to-r from-amber-500/20 to-yellow-500/20 border border-amber-500/30 rounded-lg p-3">
+        <div className="mb-4 rounded-2xl border border-border-subtle bg-card-sand p-3">
           <div className="flex items-center justify-center space-x-2">
             <svg
-              className="h-5 w-5 text-amber-400"
+              className="h-5 w-5 text-h2"
               fill="currentColor"
               viewBox="0 0 20 20"
             >
               <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
             </svg>
-            <span className="text-sm font-medium text-amber-300">
+            <span className="text-sm font-medium text-h2">
               Premium Analysis Enabled
             </span>
           </div>
@@ -137,12 +137,12 @@ function ResumeUpload({
       )}
 
       <div
-        className={`relative p-10 border-2 border-dashed rounded-xl text-center cursor-pointer ${
+        className={`relative p-10 rounded-xl text-center cursor-pointer section-surface transition-all duration-300 ${
           isLoading
-            ? " border-slate-500 cursor-not-allowed"
+            ? "border-border-subtle cursor-not-allowed opacity-80"
             : selectedFile
-              ? " border-indigo-400"
-              : "border-slate-500 hover:border-indigo-400 hover:bg-indigo-500/10"
+              ? "border-border-mid"
+              : "border-border-subtle hover:border-border-mid hover:bg-card-primary"
         }`}
         onClick={openFileDialog}
         onDrop={handleDrop}
@@ -160,28 +160,32 @@ function ResumeUpload({
 
         {isLoading ? (
           <div className="flex flex-col items-center">
-            <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-indigo-400"></div>
-            <p className="mt-4 text-base text-indigo-300">
-              Processing resume...
-            </p>
+            <div
+              className="animate-spin rounded-full h-10 w-10 border-b-2"
+              style={{
+                borderBottomColor: "rgba(214, 177, 118, 0.95)",
+                borderColor: "rgba(253, 245, 230, 0.55)",
+              }}
+            ></div>
+            <p className="mt-4 text-base text-h2">Processing resume...</p>
           </div>
         ) : selectedFile ? (
           <>
-            <DocumentIcon className="mx-auto h-12 w-12 text-indigo-400" />
-            <p className="mt-4 text-base font-medium text-indigo-300">
+            <DocumentIcon className="mx-auto h-12 w-12 text-h2" />
+            <p className="mt-4 text-base font-medium text-h2">
               {selectedFile.name}
             </p>
-            <p className="mt-2 text-xs text-slate-400">
+            <p className="mt-2 text-xs text-body">
               {(selectedFile.size / 1024).toFixed(1)} KB
             </p>
           </>
         ) : (
           <>
-            <CloudArrowUpIcon className="mx-auto h-12 w-12 text-slate-400" />
-            <p className="mt-4 text-base text-slate-300">
+            <CloudArrowUpIcon className="mx-auto h-12 w-12 text-h3" />
+            <p className="mt-4 text-base text-body">
               Upload candidate's resume (drag & drop or click here)
             </p>
-            <p className="mt-2 text-xs text-slate-400">
+            <p className="mt-2 text-xs text-secondary">
               Accepts PDF, DOC, and DOCX formats
             </p>
           </>
@@ -189,10 +193,10 @@ function ResumeUpload({
       </div>
 
       <div className="mt-4 text-center space-y-2">
-        <p className="text-xs text-slate-400">
+        <p className="text-xs text-body">
           Our AI will analyze the resume and help you prepare for the interview
         </p>
-        <p className="text-xs text-indigo-400">
+        <p className="text-xs text-h4">
           Get instant insights and tailored interview questions
         </p>
       </div>

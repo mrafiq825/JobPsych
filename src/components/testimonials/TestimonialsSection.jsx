@@ -11,7 +11,7 @@ const TestimonialsSection = () => {
 
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
+    }, 6000);
 
     return () => clearInterval(interval);
   }, [autoScroll]);
@@ -32,167 +32,106 @@ const TestimonialsSection = () => {
     setAutoScroll(false);
     setCurrentIndex(index);
   };
-  return (
-    <section className="relative pt-6 pb-10 sm:pt-10 sm:pb-24 page-force-light">
-      <div className="absolute inset-0 bg-transparent">
-        <div className="absolute inset-0 opacity-20">
-          <div className="h-full w-full bg-indigo-500/10"></div>
-        </div>
-      </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center mb-10 sm:mb-16">
-          <h3 className="text-base font-semibold leading-7 text-indigo-400 uppercase tracking-wide">
+  return (
+    <section className="relative py-10 sm:py-16 page-force-light bg-card-ivory">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl text-center mb-12 sm:mb-16">
+          <h3 className="text-sm font-semibold uppercase tracking-[0.32em] text-h4 mb-3">
             Success Stories
           </h3>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            See How Our AI-Based System Transforms
+          <h2 className="text-3xl font-semibold tracking-tight text-h2 sm:text-4xl lg:text-5xl">
+            See how our AI-Based system transforms
             <br />
-            <span className="text-indigo-300">
+            <span className="text-h1">
               Career Readiness & Interview Success
             </span>
           </h2>
-          <p className="mt-6 text-lg leading-8 text-gray-300">
-            Real stories from professionals who've transformed their careers
-            using our comprehensive AI-Based Career Readiness and Interview
-            Preparation System, featuring Career Path Exploration, Professional
-            Document Analysis, and AI-Assisted Interview Practice.
+          <p className="mt-6 max-w-2xl mx-auto text-base leading-8 text-body sm:text-lg">
+            Real stories from professionals who have built confidence, improved
+            documents, and found career clarity through intelligent interview
+            preparation.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <div className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-full shadow-lg border border-blue-500/30 transition-all duration-300">
-              Career Path Exploration
-            </div>
-
-            <div className="inline-flex items-center px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium rounded-full shadow-lg border border-emerald-500/30 transition-all duration-300">
-              Professional Document Analysis
-            </div>
-            <div className="inline-flex items-center px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white text-sm font-medium rounded-full shadow-lg border border-purple-500/30 transition-all duration-300">
-              AI-Assisted Interview Practice
-            </div>
+            {[
+              "Career Path Exploration",
+              "Professional Document Analysis",
+              "AI-Assisted Interview Practice",
+            ].map((label) => (
+              <div
+                key={label}
+                className="inline-flex items-center px-4 py-2 rounded-full bg-card-sand text-h4 text-sm font-semibold border border-border-subtle"
+              >
+                {label}
+              </div>
+            ))}
           </div>
         </div>
 
         <div className="mx-auto max-w-7xl">
           <div className="relative">
-            {/* Carousel Container */}
-            <div className="relative overflow-hidden">
-              <div className="flex transition-transform duration-500 ease-out">
+            <div className="relative overflow-hidden min-h-[34rem]">
+              <div className="relative">
                 {testimonials.map((testimonial, index) => (
                   <div
                     key={index}
-                    className={`w-full flex-shrink-0 transition-opacity duration-500 ${
+                    className={`w-full transition-opacity duration-500 ${
                       index === currentIndex
-                        ? "opacity-100"
-                        : "opacity-0 absolute"
+                        ? "opacity-100 relative"
+                        : "opacity-0 absolute inset-0"
                     }`}
                   >
                     <div className="mx-auto max-w-3xl">
-                      <div
-                        className="relative rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border pt-16"
-                        style={{
-                          backgroundColor: "var(--bg-color)",
-                          borderColor: "rgba(15,23,42,0.06)",
-                        }}
-                      >
-                        <div className="absolute top-4 left-4 right-4 px-3 py-2 bg-blue-600 rounded-full text-white text-xs sm:text-sm font-semibold border border-indigo-500/30 text-center">
-                          {testimonial.category}
-                        </div>
-
-                        <div className="flex items-center space-x-4 mb-6">
+                      <div className="section-surface p-10 pt-16 rounded-[2rem] shadow-2xl transition-all duration-300">
+                        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-8">
                           <div className="relative w-16 h-16">
-                            <div className="absolute inset-0 bg-indigo-500 rounded-full opacity-30 blur-sm"></div>
+                            <div className="absolute inset-0 rounded-full bg-card-sand opacity-60" />
                             <img
                               src={testimonial.image}
                               alt={testimonial.name}
-                              className="relative w-16 h-16 rounded-full object-cover border-2 border-indigo-500/30"
+                              className="relative w-16 h-16 rounded-full object-cover border border-border-subtle"
                             />
                           </div>
-                          <div>
-                            <h4
-                              className="font-semibold"
-                              style={{ color: "var(--text-color)" }}
-                            >
+                          <div className="space-y-1">
+                            <h4 className="text-2xl font-semibold text-h2">
                               {testimonial.name}
                             </h4>
-                            <p
-                              className="text-sm"
-                              style={{ color: "var(--muted-text-color)" }}
-                            >
+                            <p className="text-sm text-h3">
                               {testimonial.role}
                             </p>
-                            <p
-                              className="text-sm"
-                              style={{ color: "var(--muted-text-color)" }}
-                            >
+                            <p className="text-sm text-secondary">
                               {testimonial.company}
                             </p>
                           </div>
                         </div>
-                        <blockquote
-                          className="mb-6 text-lg leading-relaxed"
-                          style={{ color: "var(--muted-text-color)" }}
-                        >
-                          "{testimonial.quote}"
-                        </blockquote>
 
-                        <div
-                          className="flex items-center justify-between mt-6 pt-6 border-t"
-                          style={{ borderColor: "rgba(15,23,42,0.06)" }}
-                        >
-                          <div className="bg-emerald-500/20 px-3 py-1 rounded-full border-0">
-                            <span className="text-emerald-400 text-sm font-medium">
-                              {testimonial.result}
-                            </span>
-                          </div>
-                          <div className="bg-indigo-500/20 px-3 py-1 rounded-full border-0">
-                            <span className="text-indigo-400 text-sm font-medium">
-                              {testimonial.highlight}
-                            </span>
-                          </div>
-                        </div>
+                        <blockquote className="mb-8 max-w-2xl text-xl leading-relaxed text-body mx-auto">
+                          “{testimonial.quote}”
+                        </blockquote>
                       </div>
                     </div>
                   </div>
                 ))}
               </div>
-
-              {/* Navigation Buttons */}
-              <button
-                onClick={handlePrev}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 sm:-translate-x-16 z-10 p-2 sm:p-3 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-slate-900"
-                aria-label="Previous testimonial"
-              >
-                <ChevronLeftIcon className="w-5 h-5 sm:w-6 sm:h-6" />
-              </button>
-
-              <button
-                onClick={handleNext}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 sm:translate-x-16 z-10 p-2 sm:p-3 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-slate-900"
-                aria-label="Next testimonial"
-              >
-                <ChevronRightIcon className="w-5 h-5 sm:w-6 sm:h-6" />
-              </button>
             </div>
 
-            {/* Carousel Indicators/Dots */}
-            <div className="flex items-center justify-center gap-2 mt-8">
+            <div className="flex items-center justify-center gap-3 mt-10">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => handleDotClick(index)}
-                  className={`transition-all duration-300 rounded-full focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-slate-900 ${
+                  className={`transition-all duration-300 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 ${
                     index === currentIndex
-                      ? "bg-indigo-500 w-3 h-3 sm:w-4 sm:h-4"
-                      : "bg-slate-600 hover:bg-slate-500 w-2 h-2 sm:w-3 sm:h-3"
+                      ? "bg-card-dark w-4 h-4"
+                      : "bg-card-sand w-3 h-3 hover:bg-card-clay"
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />
               ))}
             </div>
 
-            {/* Auto-scroll indicator */}
             <div className="flex items-center justify-center mt-6">
-              <span className="text-sm text-slate-400">
+              <span className="text-sm text-caption">
                 {currentIndex + 1} / {testimonials.length}
               </span>
             </div>

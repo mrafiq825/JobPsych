@@ -540,19 +540,7 @@ function Toast({
                     <button
                       key={index}
                       onClick={action.onClick}
-                      className={`
-                        px-4 py-2 text-sm font-semibold rounded-xl 
-                        transition-all duration-300 transform hover:scale-105 active:scale-95
-                        shadow-lg hover:shadow-xl
-                        ${
-                          action.variant === "primary"
-                            ? `${config.progressBg} text-white hover:opacity-90 shadow-lg ring-2 ring-white/50`
-                            : `${config.buttonHover} ${config.titleColor} border-2 ${config.borderColor} bg-white/70`
-                        }
-                        focus:outline-none focus:ring-4 focus:ring-offset-2 ${
-                          config.ringColor
-                        }
-                      `}
+                      className={`btn ${action.variant === "primary" ? "btn-primary" : "btn-light"} px-4 py-2 text-sm`}
                     >
                       {action.label}
                     </button>
@@ -566,19 +554,10 @@ function Toast({
                 <button
                   type="button"
                   onClick={handleClose}
-                  className={`
-                    ${config.buttonHover} rounded-full p-2.5 
-                    transition-all duration-300 transform hover:scale-110 hover:rotate-90 active:scale-90
-                    shadow-lg hover:shadow-xl border-2 border-transparent hover:border-current/20
-                    focus:outline-none focus:ring-4 focus:ring-offset-2 ${config.ringColor}
-                    bg-white/70 backdrop-blur-sm
-                  `}
+                  className={`btn btn-light rounded-full p-2.5 transition-all duration-300 transform hover:scale-110 hover:rotate-90 active:scale-90`}
                 >
                   <span className="sr-only">Close</span>
-                  <XMarkIcon
-                    className={`h-5 w-5 ${config.iconColor}`}
-                    aria-hidden="true"
-                  />
+                  <XMarkIcon className={`h-5 w-5`} aria-hidden="true" />
                 </button>
               </div>
             )}

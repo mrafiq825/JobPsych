@@ -84,7 +84,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "interview-prepai",
+        path: "interview-prep",
         element: (
           <Suspense fallback={<PageLoader />}>
             <InterviewPrepAI />

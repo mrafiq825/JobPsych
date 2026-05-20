@@ -78,7 +78,7 @@ const Chatbot = () => {
 
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="group relative bg-indigo-600 text-white p-4 rounded-full shadow-2xl hover:shadow-3xl transform hover:scale-110 transition-all duration-300 ease-out cursor-pointer border-2 border-white/20 backdrop-blur-sm"
+          className="group btn btn-dark rounded-full p-4 shadow-2xl hover:shadow-3xl transform hover:scale-110 transition-all duration-300 ease-out cursor-pointer border-2 border-white/20"
           aria-label="Open AI Assistant"
         >
           <div className="absolute inset-0 bg-indigo-400/40 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -128,7 +128,13 @@ const Chatbot = () => {
             : "translate-y-8 opacity-0 scale-95 pointer-events-none"
         }`}
       >
-        <div className="bg-indigo-600 text-white p-4 rounded-t-2xl shadow-xl">
+        <div
+          className="card card-plain p-4 rounded-t-2xl shadow-xl"
+          style={{
+            background: "var(--card-dark)",
+            color: "var(--btn-dark-text)",
+          }}
+        >
           <div className="flex items-center space-x-3">
             <div className="relative">
               <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
@@ -198,7 +204,10 @@ const Chatbot = () => {
           </div>
         </div>
 
-        <div className="bg-white/95 backdrop-blur-sm h-96 overflow-y-auto p-4 space-y-4 shadow-xl border-x border-b border-gray-200/50">
+        <div
+          className="card p-4 h-96 overflow-y-auto space-y-4 shadow-xl border-x border-b"
+          style={{ background: "var(--card-primary)" }}
+        >
           {chatMessages.map((message) => (
             <div
               key={message.id}
@@ -289,7 +298,10 @@ const Chatbot = () => {
           <div ref={messagesEndRef} />
         </div>
 
-        <div className="bg-white/95 backdrop-blur-sm p-4 rounded-b-2xl shadow-xl border-x border-b border-gray-200/50">
+        <div
+          className="card p-4 rounded-b-2xl shadow-xl border-x border-b"
+          style={{ background: "var(--card-primary)" }}
+        >
           <div className="flex space-x-3">
             <div className="flex-1 relative">
               <input
@@ -326,7 +338,7 @@ const Chatbot = () => {
             <button
               onClick={handleSendMessage}
               disabled={!inputValue.trim() || isLoading}
-              className="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 disabled:from-gray-300 disabled:to-gray-400 text-white p-3 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 disabled:cursor-not-allowed disabled:transform-none disabled:opacity-50"
+              className="btn btn-primary rounded-full p-3 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 disabled:opacity-50"
             >
               {isLoading ? (
                 <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>

@@ -39,24 +39,78 @@
 
 /* CSS Variables */
 :root {
-  /* Font Family & Weights */
+  /* Warm Parchment Design System (from AGENTS.md) */
+  /* Backgrounds */
+  --bg: #e2dfd2;
+
+  --card-primary: #f5f2ea;
+  --card-linen: #ece9de;
+  --card-sand: #d6d2c4;
+  --card-ivory: #fff8ee;
+  --card-clay: #c8bfaa;
+  --card-dark: #3d3426;
+
+  /* Typography */
+  --h1: #2c2416;
+  --h2: #3d3426;
+  --h3: #5a4e3c;
+  --h4: #6b5f4e;
+
+  --lead: #5a4e3c;
+  --body: #6b5f4e;
+
+  --span: #7a6340;
+  --link: #7a6340;
+
+  --caption: #8a7f6e;
+  --placeholder: #b0a494;
+
+  /* Buttons */
+  --btn-primary: #5a4e3c;
+  --btn-primary-text: #f0ebe0;
+  --btn-primary-hover: #3d3426;
+  --btn-primary-active: #2c2416;
+
+  --btn-accent: #7a6340;
+  --btn-accent-text: #fff8ee;
+
+  --btn-dark: #2c2416;
+  --btn-dark-text: #e8dfc8;
+
+  --btn-light: #f5f2ea;
+  --btn-light-text: #3d3426;
+
+  --btn-disabled: #c8bfaa;
+  --btn-disabled-text: #a09080;
+
+  --btn-danger: #8c3a2a;
+  --btn-danger-text: #fce8e4;
+
+  --btn-success: #4a6b3a;
+  --btn-success-text: #eaf4e2;
+
+  /* Borders */
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-mid: rgba(0, 0, 0, 0.13);
+  --divider: rgba(0, 0, 0, 0.1);
+
+  /* Existing variables (kept for compatibility) */
   --font-tinos: "Tinos", Georgia, serif;
   --font-tinos-weight-regular: 400;
   --font-tinos-weight-bold: 700;
 
-  /* Background & Global Colors */
-  --bg-color: #e2dfd2;
+  /* Map legacy names to the new design system tokens */
+  --bg-color: var(--bg);
   --text-color: #0f172a;
   --muted-text-color: rgba(15, 23, 42, 0.7);
 
-  /* Typography Color Hierarchy */
-  --color-h1: #2c2416; /* Deep warm brown - H1 Heading */
-  --color-h2: #3d3426; /* Rich dark brown - H2 Heading */
-  --color-h3: #5a4e3c; /* Medium warm brown - H3 Sub-heading */
-  --color-body: #6b5f4e; /* Warm taupe - Body text */
-  --color-secondary: #8a7f6e; /* Light taupe - Secondary / captions */
-  --color-link: #7a6340; /* Toasted caramel - Links / CTAs */
-  --color-accent: #5c7a5f; /* Muted sage - Optional green accent */
+  --color-h1: var(--h1);
+  --color-h2: var(--h2);
+  --color-h3: var(--h3);
+  --color-body: var(--body);
+  --color-secondary: var(--caption);
+  --color-link: var(--link);
+  --color-accent: #5c7a5f;
 }
 
 /* Apply Tinos to all heading elements globally */
@@ -398,6 +452,139 @@ body {
   }
 }
 
+/* Button and Card components using the Warm Parchment tokens */
+.btn {
+  font-family: var(--font-tinos);
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 0.6rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background-color 0.18s ease;
+  border: 1px solid transparent;
+}
+
+.btn:disabled {
+  background: var(--btn-disabled);
+  color: var(--btn-disabled-text);
+  cursor: not-allowed;
+  opacity: 0.9;
+}
+
+.btn-primary {
+  background: var(--btn-primary);
+  color: var(--btn-primary-text);
+  border-color: rgba(0, 0, 0, 0.06);
+}
+.btn-primary:hover:not(:disabled) {
+  background: var(--btn-primary-hover);
+  transform: translateY(-2px);
+}
+.btn-accent {
+  background: var(--btn-accent);
+  color: var(--btn-accent-text);
+}
+.btn-dark {
+  background: var(--btn-dark);
+  color: var(--btn-dark-text);
+}
+.btn-light {
+  background: var(--btn-light);
+  color: var(--btn-light-text);
+  border-color: var(--border-subtle);
+}
+
+.btn-secondary {
+  background: var(--btn-accent);
+  color: var(--btn-accent-text);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+.btn-secondary:hover:not(:disabled) {
+  background: var(--btn-primary-hover);
+}
+
+.btn-hero {
+  min-width: 12rem;
+  border-radius: 1.5rem;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 18px 40px rgba(45, 35, 25, 0.14);
+}
+.btn-hero:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.section-surface {
+  background: var(--card-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 40px rgba(45, 35, 25, 0.08);
+}
+
+.section-surface-strong {
+  background: var(--card-linen);
+  border: 1px solid var(--border-mid);
+  border-radius: 1.5rem;
+}
+
+.section-label-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  background: var(--card-sand);
+  color: var(--h4);
+  font-weight: 700;
+  border: 1px solid var(--border-subtle);
+}
+
+.section-stat-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 0.85rem;
+  border-radius: 999px;
+  background: var(--card-clay);
+  color: var(--btn-dark-text);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.hero-card {
+  background: rgba(226, 223, 210, 0.94);
+  color: var(--h2);
+  border: 1px solid rgba(120, 100, 70, 0.12);
+}
+.hero-card-strong {
+  background: rgba(244, 239, 225, 0.98);
+  color: var(--h2);
+  border: 1px solid rgba(120, 100, 70, 0.18);
+}
+
+.card {
+  background: var(--card-primary);
+  color: var(--body);
+  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+  padding: 1rem;
+  box-shadow: 0 6px 18px rgba(45, 35, 25, 0.06);
+}
+
+.card-plain {
+  background: var(--card-linen);
+  border-color: var(--border-mid);
+}
+
+.card-accent {
+  background: linear-gradient(180deg, var(--card-ivory), var(--card-sand));
+  border-color: var(--border-mid);
+}
+
 @keyframes float {
   0%,
   100% {
@@ -482,6 +669,39 @@ body {
 /* Custom gradient backgrounds */
 .bg-error-gradient {
   background: linear-gradient(135deg, #fef2f2 0%, #ffffff 50%, #fee2e2 100%);
+}
+
+/* Warm parchment palette backgrounds */
+.bg-card-primary {
+  background-color: var(--card-primary);
+}
+
+.bg-card-linen {
+  background-color: var(--card-linen);
+}
+
+.bg-card-sand {
+  background-color: var(--card-sand);
+}
+
+.bg-card-ivory {
+  background-color: var(--card-ivory);
+}
+
+.bg-card-clay {
+  background-color: var(--card-clay);
+}
+
+.bg-card-dark {
+  background-color: var(--card-dark);
+}
+
+.border-border-subtle {
+  border-color: var(--border-subtle);
+}
+
+.border-border-mid {
+  border-color: var(--border-mid);
 }
 
 .bg-warning-gradient {

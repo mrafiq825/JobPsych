@@ -7,27 +7,24 @@ const FAQDropdown = ({ question, answer, type = "general" }) => {
     switch (type) {
       case "career":
         return {
-          bgColor: "bg-blue-900/30 hover:bg-blue-800/40",
-          borderColor: "border-blue-500/30",
-          accentColor: "bg-blue-500",
+          label: "Career Path Exploration",
+          badgeClasses:
+            "bg-card-clay text-btn-dark-text border border-border-subtle",
         };
       case "document":
         return {
-          bgColor: "bg-emerald-900/30 hover:bg-emerald-800/40",
-          borderColor: "border-emerald-500/30",
-          accentColor: "bg-emerald-500",
+          label: "Professional Document Analysis",
+          badgeClasses: "bg-card-sand text-h4 border border-border-subtle",
         };
       case "interview":
         return {
-          bgColor: "bg-purple-900/30 hover:bg-purple-800/40",
-          borderColor: "border-purple-500/30",
-          accentColor: "bg-purple-500",
+          label: "Interview Practice",
+          badgeClasses: "bg-card-ivory text-h4 border border-border-subtle",
         };
       default:
         return {
-          bgColor: "bg-indigo-900/30 hover:bg-indigo-800/40",
-          borderColor: "border-indigo-500/30",
-          accentColor: "bg-indigo-500",
+          label: "General",
+          badgeClasses: "bg-card-primary text-h4 border border-border-subtle",
         };
     }
   };
@@ -35,50 +32,31 @@ const FAQDropdown = ({ question, answer, type = "general" }) => {
   const styles = getTypeStyles();
 
   return (
-    <div
-      className={`backdrop-blur-sm rounded-2xl shadow-lg border transition-all duration-300 hover:shadow-xl ${styles.borderColor}`}
-      style={{ backgroundColor: "var(--bg-color)" }}
-    >
+    <div className="rounded-3xl card transition-all duration-300 hover:shadow-xl overflow-hidden">
       <button
-        className={`w-full flex items-center justify-between px-6 py-5 rounded-2xl focus:outline-none transition-all duration-300 cursor-pointer ${
-          open ? styles.bgColor : ""
-        }`}
+        type="button"
+        className="w-full flex items-center justify-between px-6 py-5 rounded-t-3xl focus:outline-none transition-all duration-300 cursor-pointer"
         style={{
-          backgroundColor: open ? undefined : "var(--bg-color)",
+          backgroundColor: open ? "var(--card-ivory)" : "var(--card-primary)",
           color: "var(--text-color)",
         }}
         onClick={() => setOpen((prev) => !prev)}
         aria-expanded={open}
       >
         <div className="flex items-center space-x-3 flex-1">
-          <span className="text-lg font-semibold text-white text-left leading-tight">
+          <span className="text-lg font-semibold text-left leading-tight text-h2">
             {question}
           </span>
         </div>
-        <div className="flex items-center space-x-2 ml-4">
-          {type === "career" && (
-            <span className="px-2 py-1 0 text-xs font-medium rounded-full">
-              Career Path Exploration
-            </span>
-          )}
-          {type === "document" && (
-            <span className="px-2 py-1 text-xs font-medium rounded-full">
-              Professional Document Analysis
-            </span>
-          )}
-          {type === "interview" && (
-            <span className="px-2 py-1 text-xs font-medium rounded-full">
-              Interview Practice
-            </span>
-          )}
-          {type === "general" && (
-            <span className="px-2 py-1  text-xs font-medium rounded-full">
-              General
-            </span>
-          )}
+        <div className="flex items-center space-x-3 ml-4">
+          <span
+            className={`px-3 py-1 rounded-full text-xs font-semibold ${styles.badgeClasses}`}
+          >
+            {styles.label}
+          </span>
           <svg
             className={`h-6 w-6 ml-2 transform transition-transform duration-300 ${open ? "rotate-180" : ""}`}
-            style={{ color: "var(--muted-text-color)" }}
+            style={{ color: "var(--caption)" }}
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -92,6 +70,7 @@ const FAQDropdown = ({ question, answer, type = "general" }) => {
           </svg>
         </div>
       </button>
+
       <div
         className={`transition-all duration-500 overflow-hidden ${
           open ? "max-h-[800px] opacity-100" : "max-h-0 opacity-0"
@@ -100,64 +79,54 @@ const FAQDropdown = ({ question, answer, type = "general" }) => {
       >
         {open && (
           <div
-            className={`px-6 pb-6 leading-relaxed rounded-b-2xl border-t ${styles.borderColor}`}
+            className="px-6 pb-6 leading-relaxed rounded-b-3xl border-t"
             style={{
-              backgroundColor: "var(--bg-color)",
+              borderColor: "var(--border-subtle)",
+              backgroundColor: "var(--card-linen)",
               color: "var(--text-color)",
             }}
           >
-            <div className="pt-4">
+            <div className="pt-4 space-y-4">
               {type === "interview" && (
-                <div className="mb-3 flex items-center space-x-2">
-                  <div className="w-2 h-2  rounded-full animate-pulse"></div>
-                  <span className="text-sm font-medium ">
-                    Interview Practice Feature
-                  </span>
+                <div className="flex items-center gap-2 text-sm font-medium text-h4">
+                  <span className="w-2 h-2 rounded-full bg-card-clay" />
+                  <span>Interview Practice Feature</span>
                 </div>
               )}
-              <div className="prose prose-sm max-w-none">{answer}</div>
-              {type === "career" && (
-                <div className="mt-4 p-3  rounded-lg border ">
-                  <p className="text-sm  font-medium mb-1">Pro Tip:</p>
-                  <p className="text-sm ">
-                    Use Career Path Exploration Module to get AI-guided role
-                    discovery that prepares you for your career transition and
-                    matches your skills and aspirations!
-                  </p>
-                </div>
-              )}
-              {type === "document" && (
-                <div className="mt-4 p-3 rounded-lg border">
-                  <p className="text-sm  font-medium mb-1">Pro Tip:</p>
+              <div className="prose prose-sm max-w-none text-body">
+                {answer}
+              </div>
+              <div className="mt-4 rounded-2xl border border-border-subtle bg-card-primary p-4 text-sm text-body">
+                <p className="font-semibold mb-1">Pro Tip:</p>
+                {type === "career" && (
                   <p>
-                    Use the Professional Document Structure and Content Analysis
-                    Module to ensure interview readiness with resume
-                    optimization that identifies gaps and enhances content for
-                    maximum impact!
+                    Use Career Path Exploration to discover AI-guided role
+                    recommendations that match your skills, goals, and the next
+                    step in your career journey.
                   </p>
-                </div>
-              )}
-              {type === "interview" && (
-                <div className="mt-4 p-3 rounded-lg border ">
-                  <p className="text-sm ">Pro Tip:</p>
-                  <p className="text-sm ">
-                    Use the AI-Assisted Interview Practice Module to build
-                    complete interview readiness through AI-powered practice,
-                    intelligent feedback, and confidence-building preparation!
+                )}
+                {type === "document" && (
+                  <p>
+                    Use Professional Document Analysis to refine your resume and
+                    cover letter with expert guidance for stronger interview
+                    readiness.
                   </p>
-                </div>
-              )}
-              {type === "general" && (
-                <div className="mt-4 p-3  rounded-lg border">
-                  <p className="text-sm  font-medium mb-1">Pro Tip:</p>
-                  <p className="text-sm">
-                    Our comprehensive AI-Based Career Readiness and Interview
-                    Preparation System ensures you're fully prepared for every
-                    stage of your career journey: discover roles, improve
-                    documents quality, and master interviews with confidence!
+                )}
+                {type === "interview" && (
+                  <p>
+                    Use AI-Assisted Interview Practice to simulate real
+                    conversations, get feedback, and build confidence for every
+                    stage of your career preparation.
                   </p>
-                </div>
-              )}
+                )}
+                {type === "general" && (
+                  <p>
+                    Our AI-Based system combines role discovery, document
+                    optimization, and interview practice to keep you ready for
+                    every step of your career journey.
+                  </p>
+                )}
+              </div>
             </div>
           </div>
         )}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { PrivacyManager } from "@utils/securityAudit";
 import {
   XMarkIcon,
@@ -55,7 +56,7 @@ const CookieConsentBanner = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
           <button
             onClick={handleClose}
-            className="absolute top-2 right-2 sm:top-4 sm:right-4 z-10 p-2 text-gray-400 hover:text-white hover:bg-slate-700/80 rounded-lg transition-all duration-300 cursor-pointer shadow-lg border border-slate-600/30 hover:border-slate-500/50"
+            className="absolute top-2 right-2 sm:top-4 sm:right-4 z-10 btn btn-light p-2 transition-all duration-300 cursor-pointer shadow-lg"
             aria-label="Close cookie banner"
           >
             <XMarkIcon className="w-5 h-5" />
@@ -141,7 +142,7 @@ const CookieConsentBanner = () => {
             <div className="flex flex-col sm:flex-row lg:flex-col gap-2 w-full lg:w-auto">
               <button
                 onClick={handleCustomize}
-                className="group relative px-5 py-2.5 text-sm font-medium text-gray-300 bg-slate-700/50 hover:bg-slate-600/50 border border-slate-600/50 hover:border-indigo-500/50 rounded-lg transition-all duration-300 cursor-pointer overflow-hidden"
+                className="group btn btn-light px-5 py-2.5 text-sm font-medium transition-all duration-300 cursor-pointer overflow-hidden"
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
                   <Cog6ToothIcon className="w-4 h-4" />
@@ -152,14 +153,14 @@ const CookieConsentBanner = () => {
 
               <button
                 onClick={handleDecline}
-                className="px-5 py-2.5 text-sm font-medium text-gray-300 bg-slate-700/50 hover:bg-slate-600/50 border border-slate-600/50 hover:border-slate-500/50 rounded-lg transition-all duration-300 cursor-pointer"
+                className="btn btn-light px-5 py-2.5 text-sm font-medium"
               >
                 Only Essential
               </button>
 
               <button
                 onClick={handleAccept}
-                className="group relative px-5 py-2.5 text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-500 rounded-lg transition-all duration-300 cursor-pointer shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 overflow-hidden"
+                className="group btn btn-primary px-5 py-2.5 text-sm font-medium"
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
                   <ShieldCheckIcon className="w-4 h-4" />
@@ -174,19 +175,19 @@ const CookieConsentBanner = () => {
               <span className="w-1 h-1 bg-indigo-400 rounded-full"></span>
               Learn more:
             </span>
-            <NavigationButton
+            <Link
               to="/privacy-policy"
               className="text-indigo-400 hover:text-indigo-300 transition-colors duration-300 cursor-pointer"
             >
               Privacy Policy
-            </NavigationButton>
+            </Link>
             <span className="text-slate-600">•</span>
-            <NavigationButton
+            <Link
               to="/terms-of-service"
               className="text-indigo-400 hover:text-indigo-300 transition-colors duration-300 cursor-pointer"
             >
               Terms of Service
-            </NavigationButton>
+            </Link>
           </div>
         </div>
       </div>

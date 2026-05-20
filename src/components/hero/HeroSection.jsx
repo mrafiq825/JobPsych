@@ -20,53 +20,61 @@ const HeroSection = ({ resumeData }) => {
     <section
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden page-force-light"
-      style={{ backgroundColor: "var(--bg-color)" }}
+      style={{ backgroundColor: "var(--bg)" }}
     >
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-indigo-500/5 rounded-full blur-3xl animate-pulse"></div>
         <div
-          className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl animate-pulse"
-          style={{ animationDelay: "1s" }}
+          className="absolute -top-40 -right-40 w-80 h-80 rounded-full blur-3xl animate-pulse"
+          style={{ backgroundColor: "rgba(244, 219, 177, 0.24)" }}
         ></div>
         <div
-          className="absolute top-1/2 left-1/3 w-60 h-60 bg-blue-500/3 rounded-full blur-3xl animate-pulse"
-          style={{ animationDelay: "2s" }}
+          className="absolute -bottom-40 -left-40 w-80 h-80 rounded-full blur-3xl animate-pulse"
+          style={{
+            backgroundColor: "rgba(222, 201, 169, 0.22)",
+            animationDelay: "1s",
+          }}
+        ></div>
+        <div
+          className="absolute top-1/2 left-1/3 w-60 h-60 rounded-full blur-3xl animate-pulse"
+          style={{
+            backgroundColor: "rgba(233, 220, 201, 0.28)",
+            animationDelay: "2s",
+          }}
         ></div>
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 pt-16 pb-8 sm:pt-24 sm:pb-12 md:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl text-center">
-          <div className="mb-8 inline-flex items-center gap-3 px-6 py-3 rounded-full border border-indigo-500/20 text-slate-300 text-xs font-semibold tracking-widest uppercase hover:border-indigo-500/50 backdrop-blur-sm transition-all duration-300 hover:bg-slate-800/70">
+          <div className="mb-8 inline-flex items-center gap-3 px-6 py-3 rounded-full border border-border-subtle bg-card-sand text-h4 text-xs font-semibold tracking-[0.28em] uppercase text-opacity-90 transition-colors duration-300 hover:border-border-mid hover:bg-card-ivory">
             <SparklesIcon
-              className="h-4 w-4 text-indigo-400 animate-spin"
+              className="h-4 w-4 text-h2 animate-spin"
               style={{ animationDuration: "3s" }}
             />
             <span>Career Readiness & Interview Success</span>
             <SparklesIcon
-              className="h-4 w-4 text-indigo-400 animate-spin"
+              className="h-4 w-4 text-h2 animate-spin"
               style={{ animationDuration: "3s", animationDirection: "reverse" }}
             />
           </div>
 
-          <h1 className="relative mb-8 text-6xl sm:text-7xl md:text-8xl font-black tracking-tighter leading-tight">
+          <h1 className="relative mb-8 text-5xl sm:text-6xl md:text-7xl xl:text-8xl font-black tracking-tight leading-tight text-h1">
             <div className="relative inline-block">
-              <span className="text-white">AI-Based </span>
-              <span className="relative inline-block  ml-2">
-                Career Readiness and Interview Preparation System
-                <div className="absolute -bottom-2 left-0 right-0 h-1 bg-indigo-400 rounded-full"></div>
-              </span>
+              <span className="text-h2">AI-Based</span>
             </div>
-            <div className="mt-4 text-slate-300 text-3xl sm:text-4xl md:text-5xl font-light">
-              Discover roles, documents quality improvement, and master
-              interviews
+            <div className="mt-4 text-left">
+              <span className="block text-4xl sm:text-5xl md:text-6xl font-black">
+                Career Readiness and Interview Preparation
+              </span>
+              <span className="block text-4xl sm:text-5xl md:text-6xl font-black text-h1">
+                System
+              </span>
+              <div className="mt-4 h-1 w-24 rounded-full opacity-90 bg-card-clay"></div>
             </div>
           </h1>
 
-          <p className="mt-8 text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Our comprehensive AI-based system ensures you're fully prepared for
-            every stage of your career journey. From role discovery and
-            documents quality improvement to interview mastery get ready to
-            succeed with confidence.
+          <p className="mt-6 text-lg sm:text-xl text-body max-w-3xl mx-auto leading-relaxed tracking-wide">
+            Our comprehensive AI system helps you discover better roles, elevate
+            your documents, and build the confidence to own every interview.
           </p>
 
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -75,11 +83,7 @@ const HeroSection = ({ resumeData }) => {
                 title: "Career Path Exploration Module",
                 description:
                   "Prepare for your career transition with AI-guided role discovery that matches your skills and aspirations",
-
-                borderColor: "border-blue-500/30",
-                hoverBorder: "hover:border-blue-500/60",
-                accentBg: "bg-blue-500/20",
-                lightBg: "bg-blue-500/5",
+                accentStyle: { backgroundColor: "rgba(209, 189, 152, 0.18)" },
                 index: 0,
               },
               {
@@ -87,60 +91,51 @@ const HeroSection = ({ resumeData }) => {
                   "Professional Document Structure and Content Analysis Module",
                 description:
                   "Ensure interview readiness with resume optimization that identifies gaps and enhances content for maximum impact",
-
-                borderColor: "border-emerald-500/30",
-                hoverBorder: "hover:border-emerald-500/60",
-                accentBg: "bg-emerald-500/20",
-                lightBg: "bg-emerald-500/5",
+                accentStyle: { backgroundColor: "rgba(196, 186, 164, 0.16)" },
                 index: 1,
               },
               {
                 title: "AI-Assisted Interview Practice Module",
                 description:
                   "Build complete interview readiness through AI-powered practice, intelligent feedback, and confidence-building preparation",
-
-                borderColor: "border-purple-500/30",
-                hoverBorder: "hover:border-purple-500/60",
-                accentBg: "bg-purple-500/20",
-                lightBg: "bg-purple-500/5",
+                accentStyle: { backgroundColor: "rgba(221, 206, 229, 0.18)" },
                 index: 2,
               },
             ].map((card) => {
               return (
                 <div
                   key={card.title}
-                  className={`group relative overflow-hidden p-8 rounded-2xl border ${card.borderColor} ${card.hoverBorder} transition-all duration-300 backdrop-blur-sm cursor-pointer ${
+                  className={`group relative overflow-hidden rounded-[2rem] section-surface p-8 transition-all duration-300 ${
                     activeCard === card.index
-                      ? "border-opacity-100 shadow-2xl scale-105"
-                      : "border-opacity-50 hover:shadow-xl"
+                      ? "section-surface-strong scale-[1.03] shadow-2xl"
+                      : "hover:border-border-mid hover:shadow-xl"
                   }`}
-                  style={{ backgroundColor: "var(--bg-color)" }}
                   onMouseEnter={() => setActiveCard(card.index)}
                 >
                   <div
-                    className={`absolute inset-0 opacity-0 group-hover:opacity-100 ${card.lightBg} transition-opacity duration-300`}
-                  ></div>
-
-                  <div
-                    className={`relative z-10 mb-0 inline-flex p-3 rounded-lg ${card.accentBg} text-white/20 group-hover:text-white/40 transition-all duration-300`}
-                  ></div>
+                    className="relative z-10 mb-4 inline-flex items-center gap-3 rounded-full px-4 py-2 text-h4 font-semibold transition-all duration-300"
+                    style={card.accentStyle}
+                  >
+                    <span className="text-xs uppercase tracking-[0.24em] text-h2">
+                      {card.index === 0
+                        ? "Explore"
+                        : card.index === 1
+                          ? "Review"
+                          : "Practice"}
+                    </span>
+                  </div>
 
                   <div className="relative z-10">
-                    <h3
-                      className="text-xl font-bold mb-3 text-left group-hover:text-indigo-300 transition-colors duration-300"
-                      style={{ color: "var(--text-color)" }}
-                    >
+                    <h3 className="text-xl font-semibold mb-3 text-h1 group-hover:text-h2 transition-colors duration-300">
                       {card.title}
                     </h3>
-                    <p
-                      className="text-sm leading-relaxed text-left group-hover:text-slate-200 transition-colors duration-300"
-                      style={{ color: "var(--muted-text-color)" }}
-                    >
+                    <p className="text-sm leading-relaxed text-body group-hover:text-h4 transition-colors duration-300">
                       {card.description}
                     </p>
                   </div>
                   <div
-                    className={`absolute top-0 right-0 w-20 h-20 opacity-0 group-hover:opacity-100 ${card.accentBg} rounded-full blur-2xl -z-10 transition-opacity duration-300`}
+                    className="absolute top-0 right-0 w-24 h-24 opacity-0 group-hover:opacity-100 rounded-full blur-3xl -z-10 transition-opacity duration-300"
+                    style={card.accentStyle}
                   ></div>
                 </div>
               );
@@ -153,47 +148,30 @@ const HeroSection = ({ resumeData }) => {
                 label: "Discover Your Ideal Roles",
                 href: "/role-suggestions",
                 icon: RocketLaunchIcon,
-                bg: "bg-blue-600",
-                hoverBg: "bg-blue-700",
-                textColor: "text-blue-300",
-                borderColor: "border-blue-400/40",
               },
               {
                 label: "Improve Document Clarity",
                 href: "/ats-analyzer",
                 icon: DocumentCheckIcon,
-                bg: "bg-emerald-600",
-                hoverBg: "bg-emerald-700",
-                textColor: "text-emerald-300",
-                borderColor: "border-emerald-400/40",
               },
               {
                 label: "Ace Your Interview",
-                href: "/interview-prepai",
+                href: "/interview-prep",
                 icon: SparklesIcon,
-                bg: "bg-purple-600",
-                hoverBg: "bg-purple-700",
-                textColor: "text-purple-300",
-                borderColor: "border-purple-400/40",
               },
             ].map((btn) => {
               const BtnIcon = btn.icon;
               return (
                 <button
                   key={btn.label}
+                  type="button"
                   onClick={() => (window.location.href = btn.href)}
-                  className={`group relative px-8 py-4 rounded-xl font-bold text-white overflow-hidden border ${btn.borderColor} ${btn.bg} transition-all duration-300 hover:shadow-2xl hover:scale-105 flex items-center gap-3 hover:-translate-y-1 cursor-pointer`}
+                  className="group btn btn-accent btn-hero rounded-[1.5rem] font-semibold text-sm sm:text-base overflow-hidden transition-all duration-300 hover:scale-[1.03]"
                 >
-                  <div
-                    className={`absolute inset-0 ${btn.hoverBg} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
-                  ></div>
-
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-30 bg-white/30 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-
-                  <div className="relative z-10 flex items-center gap-2">
-                    <BtnIcon className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
-                    <span className="font-semibold">{btn.label}</span>
-                    <ArrowRightIcon className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300 ml-1" />
+                  <div className="relative z-10 flex items-center gap-3">
+                    <BtnIcon className="h-5 w-5 text-h2 transition-transform duration-300 group-hover:scale-110" />
+                    <span>{btn.label}</span>
+                    <ArrowRightIcon className="h-4 w-4 text-h2 transition-transform duration-300 ml-1 group-hover:translate-x-1" />
                   </div>
                 </button>
               );
@@ -203,14 +181,12 @@ const HeroSection = ({ resumeData }) => {
           {resumeData?.roleRecommendations?.length > 0 && (
             <div className="mt-24 space-y-8">
               <div className="relative">
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 text-center">
-                  <span className="text-indigo-300">
-                    Roles You're Ready For
-                  </span>
+                <h2 className="text-4xl md:text-5xl font-bold text-h1 mb-4 text-center">
+                  <span className="text-h2">Roles You're Ready For</span>
                   <br />
                   Career Opportunities Matched to Your Profile
                 </h2>
-                <p className="text-center text-slate-300 mt-4 text-lg max-w-2xl mx-auto">
+                <p className="text-center text-body mt-4 text-lg max-w-2xl mx-auto">
                   AI-analyzed career paths aligned with your skills, experience,
                   and readiness level
                 </p>
@@ -222,16 +198,16 @@ const HeroSection = ({ resumeData }) => {
                   .map((role, index) => (
                     <div
                       key={index}
-                      className="group relative p-8 bg-slate-800/50 rounded-2xl border border-slate-700/50 hover:border-indigo-500/50 hover:shadow-2xl hover:scale-105 backdrop-blur-sm overflow-hidden transition-all duration-300"
+                      className="group relative p-8 bg-card-primary rounded-[1.75rem] border border-border-subtle hover:border-border-mid hover:shadow-xl hover:scale-[1.02] overflow-hidden transition-all duration-300"
                     >
                       <div className="absolute top-4 right-4">
                         <div
-                          className={`relative w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg transform group-hover:scale-110 transition-transform duration-300 ${
+                          className={`relative w-16 h-16 rounded-full flex items-center justify-center font-bold text-lg shadow-lg transform group-hover:scale-110 transition-transform duration-300 ${
                             role.matchPercentage >= 80
-                              ? "bg-emerald-500"
+                              ? "bg-card-dark text-btn-dark-text"
                               : role.matchPercentage >= 60
-                                ? "bg-yellow-500"
-                                : "bg-orange-500"
+                                ? "bg-card-clay text-h1"
+                                : "bg-card-sand text-h1"
                           }`}
                         >
                           <span>{role.matchPercentage}</span>
@@ -242,24 +218,27 @@ const HeroSection = ({ resumeData }) => {
                       </div>
 
                       <div>
-                        <h3 className="text-2xl font-bold text-white mb-3 pr-20 group-hover:text-indigo-300 transition-colors duration-300">
+                        <h3 className="text-2xl font-semibold text-h1 mb-3 pr-20 group-hover:text-h2 transition-colors duration-300">
                           {role.roleName}
                         </h3>
-                        <p className="text-slate-300 text-sm leading-relaxed group-hover:text-slate-200 mb-5 transition-colors duration-300">
+                        <p className="text-body text-sm leading-relaxed group-hover:text-h4 mb-5 transition-colors duration-300">
                           {role.reasoning}
                         </p>
 
                         <div className="flex flex-wrap gap-2 mt-6">
-                          <span className="px-3 py-1 bg-slate-700/50 text-slate-200 rounded-full text-xs font-medium border border-slate-600/50 group-hover:border-indigo-400/50 transition-colors duration-300">
+                          <span className="px-3 py-1 bg-card-sand text-h2 rounded-full text-xs font-medium border border-border-subtle group-hover:border-border-mid transition-colors duration-300">
                             {role.careerLevel}
                           </span>
-                          <span className="px-3 py-1 bg-slate-700/50 text-slate-200 rounded-full text-xs font-medium border border-slate-600/50 group-hover:border-indigo-400/50 transition-colors duration-300">
+                          <span className="px-3 py-1 bg-card-sand text-h2 rounded-full text-xs font-medium border border-border-subtle group-hover:border-border-mid transition-colors duration-300">
                             {role.industryFit} Fit
                           </span>
                         </div>
                       </div>
 
-                      <div className="absolute inset-0 opacity-0 group-hover:opacity-10 bg-indigo-500/10 rounded-2xl -z-10 transition-opacity duration-300"></div>
+                      <div
+                        className="absolute inset-0 opacity-0 group-hover:opacity-10 rounded-2xl -z-10 transition-opacity duration-300"
+                        style={{ backgroundColor: "rgba(255, 235, 179, 0.14)" }}
+                      ></div>
                     </div>
                   ))}
               </div>

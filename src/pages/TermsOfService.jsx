@@ -18,14 +18,17 @@ const TermsOfService = () => {
           <div className="mb-8">
             <button
               to="/"
-              className="inline-flex items-center px-4 py-2 bg-slate-800/70 hover:bg-slate-700/70 border border-slate-600/50 hover:border-indigo-500/50 rounded-lg text-gray-300 hover:text-white transition-all duration-300 backdrop-blur-sm cursor-pointer"
+              className="btn btn-light inline-flex items-center px-4 py-2"
             >
               <ArrowLeftIcon className="w-4 h-4 mr-2" />
               Back to Home
             </button>
           </div>
 
-          <div className="bg-slate-800/50 backdrop-blur-xl shadow-2xl rounded-2xl border border-slate-700/50 overflow-hidden">
+          <div
+            className="card card-plain shadow-2xl rounded-2xl border overflow-hidden"
+            style={{ background: "var(--card-primary)" }}
+          >
             <div className="px-6 py-8 sm:px-10">
               <h1 className="text-3xl font-bold bg-gradient-to-r from-indigo-400 via-purple-400 to-blue-400 bg-clip-text text-transparent mb-8 text-center">
                 Terms of Service
