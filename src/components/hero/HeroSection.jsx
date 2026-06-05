@@ -145,17 +145,17 @@ const HeroSection = ({ resumeData }) => {
           <div className="mt-20 flex flex-col sm:flex-row items-center justify-center gap-4 flex-wrap">
             {[
               {
-                label: "Discover Your Ideal Roles",
+                label: "Role Suggestions",
                 href: "/role-suggestions",
                 icon: RocketLaunchIcon,
               },
               {
-                label: "Improve Document Clarity",
+                label: "Resume Analyzer",
                 href: "/ats-analyzer",
                 icon: DocumentCheckIcon,
               },
               {
-                label: "Ace Your Interview",
+                label: "Interview Prep",
                 href: "/interview-prep",
                 icon: SparklesIcon,
               },
