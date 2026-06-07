@@ -36,16 +36,6 @@ function Header() {
 
   return (
     <>
-      <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-          <div className="absolute top-10 left-10 w-2 h-2 bg-card-clay rounded-full opacity-60"></div>
-          <div className="absolute top-20 right-20 w-1 h-1 bg-card-sand rounded-full opacity-40"></div>
-          <div className="absolute bottom-20 left-1/4 w-1.5 h-1.5 bg-card-ivory rounded-full opacity-50"></div>
-          <div className="absolute top-1/3 right-10 w-1 h-1 bg-card-linen rounded-full opacity-30"></div>
-          <div className="absolute bottom-10 right-1/3 w-2 h-2 bg-card-clay rounded-full opacity-40"></div>
-        </div>
-      </div>
-
       {!scrolled && (
         <div
           className="fixed w-full top-0 left-0 z-40 h-[56px] xs:h-[64px] sm:h-[72px] md:h-[80px] pointer-events-none"
@@ -77,8 +67,6 @@ function Header() {
               className="absolute inset-0 rounded-lg xs:rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none"
               style={{ backgroundColor: "rgba(214, 210, 196, 0.8)" }}
             ></div>
-
-            <div className="absolute inset-0 rounded-lg xs:rounded-xl bg-white/10 opacity-50"></div>
             <button
               to="/"
               className="flex items-center space-x-1.5 xs:space-x-2 sm:space-x-3 bg-transparent border-0 group flex-shrink-0 relative z-10"
@@ -105,12 +93,10 @@ function Header() {
                   <span className="xs:hidden text-h2 transition-all duration-500">
                     JobPsych
                   </span>
-
                   <div className="absolute inset-0 bg-white/20 -skew-x-12 opacity-0 group-hover:opacity-100 group-hover:animate-shimmer transition-opacity duration-500"></div>
                 </h1>
               </div>
             </button>
-
             <div className="hidden md:flex items-center space-x-1.5 xs:space-x-2 sm:space-x-3 lg:space-x-4 flex-shrink-0 relative z-10">
               <button
                 type="button"
@@ -121,12 +107,8 @@ function Header() {
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                   style={{ backgroundColor: "rgba(200, 191, 170, 0.2)" }}
                 ></div>
-
-                <div className="absolute inset-0 bg-white/10 -skew-x-12 opacity-0 group-hover:opacity-100 group-hover:animate-shimmer transition-opacity duration-500"></div>
-
                 <span className="hidden sm:inline relative z-10">Features</span>
               </button>
-
               {scrolled && (
                 <button
                   type="button"
@@ -140,7 +122,6 @@ function Header() {
                     className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"
                     style={{ backgroundColor: "rgba(214, 210, 196, 0.2)" }}
                   ></div>
-
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -161,7 +142,6 @@ function Header() {
                 </button>
               )}
             </div>
-
             <div className="md:hidden flex items-center relative z-10">
               <button
                 id="mobile-nav-hamburger"
@@ -233,7 +213,6 @@ function Header() {
           </div>
         </div>
       </header>
-
       {showFeatures && (
         <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/60 backdrop-blur-md px-2 xs:px-4 animate-fade-in">
           <div

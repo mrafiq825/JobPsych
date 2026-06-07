@@ -42,62 +42,57 @@ const HeroSection = ({ resumeData }) => {
           }}
         ></div>
       </div>
-
-      <div className="relative z-10 mx-auto max-w-7xl px-4 pt-16 pb-8 sm:pt-24 sm:pb-12 md:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 pt-4 pb-4 sm:pt-12 sm:pb-8 md:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl text-center">
-          <div className="mb-8 inline-flex items-center gap-3 px-6 py-3 rounded-full border border-border-subtle bg-card-sand text-h4 text-xs font-semibold tracking-[0.28em] uppercase text-opacity-90 transition-colors duration-300 hover:border-border-mid hover:bg-card-ivory">
+          <div className="mb-4 inline-flex items-center gap-3 px-6 py-3 rounded-full border border-border-subtle bg-card-sand text-h4 text-xs font-semibold tracking-[0.28em] uppercase text-opacity-90 transition-colors duration-300 hover:border-border-mid hover:bg-card-ivory">
             <SparklesIcon
               className="h-4 w-4 text-h2 animate-spin"
               style={{ animationDuration: "3s" }}
             />
-            <span>Career Readiness & Interview Success</span>
+            <span>Get Your Dream Job</span>
             <SparklesIcon
               className="h-4 w-4 text-h2 animate-spin"
               style={{ animationDuration: "3s", animationDirection: "reverse" }}
             />
           </div>
-
-          <h1 className="relative mb-8 text-5xl sm:text-6xl md:text-7xl xl:text-8xl font-black tracking-tight leading-tight text-h1">
+          <h1 className="relative mb-3 text-5xl sm:text-6xl md:text-7xl xl:text-8xl font-black tracking-tight leading-tight text-h1">
             <div className="relative inline-block">
-              <span className="text-h2">AI-Based</span>
+              <span className="text-h2">Land Your Next</span>
             </div>
-            <div className="mt-4 text-left">
+            <div className="mt-2 text-left">
               <span className="block text-4xl sm:text-5xl md:text-6xl font-black">
-                Career Readiness and Interview Preparation
+                Career Move
               </span>
               <span className="block text-4xl sm:text-5xl md:text-6xl font-black text-h1">
-                System
+                with Confidence
               </span>
-              <div className="mt-4 h-1 w-24 rounded-full opacity-90 bg-card-clay"></div>
             </div>
           </h1>
-
-          <p className="mt-6 text-lg sm:text-xl text-body max-w-3xl mx-auto leading-relaxed tracking-wide">
-            Our comprehensive AI system helps you discover better roles, elevate
-            your documents, and build the confidence to own every interview.
+          <p className="mt-1 text-lg sm:text-xl text-body max-w-3xl mx-auto leading-relaxed tracking-wide">
+            We guide you through every step of your journey. Discover roles that
+            fit your goals, craft a resume that stands out, and ace your
+            interviews with personalized preparation.
           </p>
-
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
               {
-                title: "Career Path Exploration Module",
+                title: "Explore Your Next Role",
                 description:
-                  "Prepare for your career transition with AI-guided role discovery that matches your skills and aspirations",
+                  "Find career opportunities that match your skills and ambitions. Discover roles you didn't know existed and see why you're the perfect fit.",
                 accentStyle: { backgroundColor: "rgba(209, 189, 152, 0.18)" },
                 index: 0,
               },
               {
-                title:
-                  "Professional Document Structure and Content Analysis Module",
+                title: "Optimize Your Resume",
                 description:
-                  "Ensure interview readiness with resume optimization that identifies gaps and enhances content for maximum impact",
+                  "Get honest feedback on your resume. Our AI identifies gaps, suggests improvements, and ensures your application gets noticed by the right people.",
                 accentStyle: { backgroundColor: "rgba(196, 186, 164, 0.16)" },
                 index: 1,
               },
               {
-                title: "AI-Assisted Interview Practice Module",
+                title: "Practice & Build Confidence",
                 description:
-                  "Build complete interview readiness through AI-powered practice, intelligent feedback, and confidence-building preparation",
+                  "Practice real interviews with AI that gives you instant feedback. Learn from mistakes, refine your answers, and walk into every interview prepared.",
                 accentStyle: { backgroundColor: "rgba(221, 206, 229, 0.18)" },
                 index: 2,
               },
@@ -113,7 +108,7 @@ const HeroSection = ({ resumeData }) => {
                   onMouseEnter={() => setActiveCard(card.index)}
                 >
                   <div
-                    className="relative z-10 mb-4 inline-flex items-center gap-3 rounded-full px-4 py-2 text-h4 font-semibold transition-all duration-300"
+                    className="relative z-10 mb-2 inline-flex items-center gap-3 rounded-full px-4 py-2 text-h4 font-semibold transition-all duration-300"
                     style={card.accentStyle}
                   >
                     <span className="text-xs uppercase tracking-[0.24em] text-h2">
@@ -126,7 +121,7 @@ const HeroSection = ({ resumeData }) => {
                   </div>
 
                   <div className="relative z-10">
-                    <h3 className="text-xl font-semibold mb-3 text-h1 group-hover:text-h2 transition-colors duration-300">
+                    <h3 className="text-xl font-semibold mb-0 text-h1 group-hover:text-h2 transition-colors duration-300">
                       {card.title}
                     </h3>
                     <p className="text-sm leading-relaxed text-body group-hover:text-h4 transition-colors duration-300">
@@ -142,20 +137,20 @@ const HeroSection = ({ resumeData }) => {
             })}
           </div>
 
-          <div className="mt-20 flex flex-col sm:flex-row items-center justify-center gap-4 flex-wrap">
+          <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3 flex-wrap">
             {[
               {
-                label: "Role Suggestions",
+                label: "Discover Roles",
                 href: "/role-suggestions",
                 icon: RocketLaunchIcon,
               },
               {
-                label: "Resume Analyzer",
+                label: "Improve Resume",
                 href: "/ats-analyzer",
                 icon: DocumentCheckIcon,
               },
               {
-                label: "Interview Prep",
+                label: "Practice Interviews",
                 href: "/interview-prep",
                 icon: SparklesIcon,
               },
@@ -179,20 +174,20 @@ const HeroSection = ({ resumeData }) => {
           </div>
 
           {resumeData?.roleRecommendations?.length > 0 && (
-            <div className="mt-24 space-y-8">
+            <div className="mt-16 space-y-6">
               <div className="relative">
-                <h2 className="text-4xl md:text-5xl font-bold text-h1 mb-4 text-center">
-                  <span className="text-h2">Roles You're Ready For</span>
+                <h2 className="text-4xl md:text-5xl font-bold text-h1 mb-2 text-center">
+                  <span className="text-h2">Opportunities Built for You</span>
                   <br />
-                  Career Opportunities Matched to Your Profile
+                  Your Next Career Move is Here
                 </h2>
-                <p className="text-center text-body mt-4 text-lg max-w-2xl mx-auto">
-                  AI-analyzed career paths aligned with your skills, experience,
-                  and readiness level
+                <p className="text-center text-body mt-2 text-lg max-w-2xl mx-auto">
+                  Based on your profile, these roles align perfectly with your
+                  skills, experience, and career goals
                 </p>
               </div>
 
-              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                 {resumeData.roleRecommendations
                   .slice(0, 3)
                   .map((role, index) => (
@@ -221,11 +216,11 @@ const HeroSection = ({ resumeData }) => {
                         <h3 className="text-2xl font-semibold text-h1 mb-3 pr-20 group-hover:text-h2 transition-colors duration-300">
                           {role.roleName}
                         </h3>
-                        <p className="text-body text-sm leading-relaxed group-hover:text-h4 mb-5 transition-colors duration-300">
+                        <p className="text-body text-sm leading-relaxed group-hover:text-h4 mb-3 transition-colors duration-300">
                           {role.reasoning}
                         </p>
 
-                        <div className="flex flex-wrap gap-2 mt-6">
+                        <div className="flex flex-wrap gap-1 mt-4">
                           <span className="px-3 py-1 bg-card-sand text-h2 rounded-full text-xs font-medium border border-border-subtle group-hover:border-border-mid transition-colors duration-300">
                             {role.careerLevel}
                           </span>
