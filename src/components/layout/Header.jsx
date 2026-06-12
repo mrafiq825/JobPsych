@@ -115,7 +115,7 @@ function Header() {
                   onClick={() =>
                     window.scrollTo({ top: 0, behavior: "smooth" })
                   }
-                  className="ml-1 xs:ml-2 p-1.5 xs:p-2 rounded-full btn btn-dark shadow-md transition-all duration-500 cursor-pointer border border-border-subtle hover:border-border-mid flex items-center justify-center transform hover:scale-110 group relative overflow-hidden"
+                  className="ml-1 xs:ml-2 p-1.5 xs:p-2 rounded-full btn shadow-md transition-all duration-500 cursor-pointer border border-border-subtle hover:border-border-mid flex items-center justify-center transform hover:scale-110 group relative overflow-hidden"
                   aria-label="Scroll to top"
                 >
                   <div

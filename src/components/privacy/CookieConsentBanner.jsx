@@ -49,7 +49,7 @@ const CookieConsentBanner = () => {
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 animate-slide-up">
       <div className="absolute inset-0 bg-transparent backdrop-blur-sm"></div>
-      <div className="relative bg-slate-900/95 backdrop-blur-xl border-t border-slate-700/50 shadow-2xl">
+      <div className="relative backdrop-blur-xl border-t border-slate-700/50 shadow-2xl">
         <div className="absolute top-0 left-0 right-0 h-px bg-indigo-500/50"></div>
         <div className="absolute -top-20 left-1/4 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl"></div>
         <div className="absolute -top-20 right-1/4 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl"></div>
@@ -86,7 +86,7 @@ const CookieConsentBanner = () => {
                 us—customize your preferences or accept all to continue.
               </p>
               {showDetails && (
-                <div className="bg-slate-700/30 backdrop-blur-sm border border-slate-600/50 rounded-xl p-4 mb-4 animate-fade-in">
+                <div className="backdrop-blur-sm border border-slate-600/50 rounded-xl p-4 mb-4 animate-fade-in">
                   <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
                     <Cog6ToothIcon className="w-5 h-5 text-indigo-400" />
                     Cookie Categories
@@ -133,7 +133,7 @@ const CookieConsentBanner = () => {
                     </div>
                   </div>
                   <p className="mt-3 text-xs text-gray-400">
-                    💡 You can modify these settings anytime in your browser
+                    You can modify these settings anytime in your browser
                     preferences.
                   </p>
                 </div>
