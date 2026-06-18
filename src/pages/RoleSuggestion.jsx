@@ -380,47 +380,48 @@ const RoleSuggestion = () => {
         <div className="absolute inset-0 bg-transparent opacity-10"></div>
       </div>
 
-      <header className="mb-6 rounded-2xl border border-border-subtle bg-card-primary p-4 shadow-sm sm:p-6">
-        <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-          <button
-            onClick={() => (window.location.href = "/")}
-            className="group inline-flex w-fit items-center gap-2 rounded-full border border-border-subtle bg-card-sand px-4 py-2 text-sm font-semibold text-h2 transition-all duration-300 hover:border-border-mid cursor-pointer"
-            style={{
-              pointerEvents: "auto",
-              position: "relative",
-              zIndex: 10,
-            }}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 transition-transform duration-300 group-hover:-translate-x-1"
-              viewBox="0 0 20 20"
-              fill="currentColor"
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pt-6 sm:px-6 lg:px-8">
+        <header className="mb-6 rounded-2xl border border-border-subtle bg-card-primary p-4 shadow-sm sm:p-6">
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+            <button
+              onClick={() => (window.location.href = "/")}
+              className="group inline-flex w-fit items-center gap-2 rounded-full border border-border-subtle bg-card-sand px-4 py-2 text-sm font-semibold text-h2 transition-all duration-300 hover:border-border-mid hover:bg-card-ivory cursor-pointer"
+              style={{
+                pointerEvents: "auto",
+                position: "relative",
+                zIndex: 10,
+              }}
             >
-              <path
-                fillRule="evenodd"
-                d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
-            Back to Home
-          </button>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-4 w-4 transition-transform duration-300 group-hover:-translate-x-1"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              Back to Home
+            </button>
 
-          <div className="text-left lg:text-center">
-            <p className="text-[0.65rem] uppercase tracking-[0.3em]">
-              AI-Powered Role Fit Analysis
-            </p>
-            <h1 className="mt-1 text-2xl font-black leading-tight text-h1 sm:text-3xl">
-              Role Match Studio
-            </h1>
-          </div>
+            <div className="text-left lg:text-center">
+              <p className="text-[0.65rem] uppercase tracking-[0.3em] text-h4">
+                Precision Career Lab
+              </p>
+              <h1 className="mt-1 text-2xl font-black leading-tight text-h1 sm:text-3xl">
+                Role Match Studio
+              </h1>
+            </div>
 
-          <div className="rounded-xl border border-border-subtle bg-card-ivory px-4 py-2 text-xs text-body">
-            Upload your resume to get AI-powered role fit insights and
-            personalized career recommendations
+            <div className="rounded-xl border border-border-subtle bg-card-sand px-4 py-2 text-xs text-h4">
+              Discover your ideal career path
+            </div>
           </div>
-        </div>
-      </header>
+        </header>
+      </div>
 
       <main className="relative z-10 flex-1 px-4">
         <div className="container mx-auto space-y-12 py-12">
