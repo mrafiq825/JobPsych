@@ -22,26 +22,6 @@ const HeroSection = ({ resumeData }) => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden page-force-light"
       style={{ backgroundColor: "var(--bg)" }}
     >
-      <div className="absolute inset-0 overflow-hidden">
-        <div
-          className="absolute -top-40 -right-40 w-80 h-80 rounded-full blur-3xl animate-pulse"
-          style={{ backgroundColor: "rgba(244, 219, 177, 0.24)" }}
-        ></div>
-        <div
-          className="absolute -bottom-40 -left-40 w-80 h-80 rounded-full blur-3xl animate-pulse"
-          style={{
-            backgroundColor: "rgba(222, 201, 169, 0.22)",
-            animationDelay: "1s",
-          }}
-        ></div>
-        <div
-          className="absolute top-1/2 left-1/3 w-60 h-60 rounded-full blur-3xl animate-pulse"
-          style={{
-            backgroundColor: "rgba(233, 220, 201, 0.28)",
-            animationDelay: "2s",
-          }}
-        ></div>
-      </div>
       <div className="relative z-10 mx-auto max-w-7xl px-4 pt-4 pb-4 sm:pt-12 sm:pb-8 md:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl text-center">
           <div className="mb-4 inline-flex items-center gap-3 px-6 py-3 rounded-full border border-border-subtle bg-card-sand text-h4 text-xs font-semibold tracking-[0.28em] uppercase text-opacity-90 transition-colors duration-300 hover:border-border-mid hover:bg-card-ivory">

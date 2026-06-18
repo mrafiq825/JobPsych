@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/logo.png" />
-    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="icon" type="image/png" href="/logo.png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>
@@ -177,12 +178,36 @@
       }
     </script>
 
-    <!-- Preconnect to essential domains -->
+    <!-- Google Fonts: Tinos — preload critical weights directly from gstatic CDN -->
+    <!-- The font is self-hosted via @font-face in index.css, so we preload the -->
+    <!-- exact WOFF2 files to eliminate render-blocking font swap flicker.      -->
+    <!-- Preconnect to gstatic for faster WOFF2 delivery -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link
+      rel="preload"
+      href="https://fonts.gstatic.com/s/tinos/v16/buEwpTfczT5H1H5Z1mIdx3s.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="https://fonts.gstatic.com/s/tinos/v16/buEvpTfczT5H1H5Z1mId_VvO6yB_.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <!-- Canonical URL for homepage -->
+    <link rel="canonical" href="https://jobpsych.vercel.app/" />
+
+    <!-- Preconnect to app domain -->
     <link rel="preconnect" href="https://jobpsych.vercel.app/" />
     <link rel="dns-prefetch" href="https://jobpsych.vercel.app/" />
-    <script type="module" crossorigin src="/assets/index-BfeGFkxD.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/react-vendor-DQNqtiBj.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-CM6xfh3X.css">
+    <script type="module" crossorigin src="/assets/index-BwmRXuHt.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/react-vendor-C7a8v_K8.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-IZAzuFwe.css">
   </head>
   <body>
     <noscript>

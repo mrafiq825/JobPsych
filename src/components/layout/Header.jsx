@@ -82,11 +82,13 @@ function Header() {
                 <div className="relative z-10 flex justify-center items-center h-8 w-8 xs:h-9 xs:w-9 sm:h-10 sm:w-10 md:h-12 md:w-12 p-0.5 xs:p-1 transition-all duration-500 group-hover:scale-110">
                   <img
                     src="/logo.png"
-                    alt="JobPsych Logo"
+                    alt="JobPsych - AI Career Readiness Platform Logo"
+                    width="40"
+                    height="40"
                     className="h-7 w-7 xs:h-8 xs:w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 object-contain transform transition-all duration-500 group-hover:rotate-12 group-hover:brightness-110 drop-shadow-lg"
                   />
                 </div>
-                <h1 className="ml-1.5 xs:ml-2 text-lg xs:text-xl sm:text-2xl font-bold transition-all duration-500 tracking-tight cursor-pointer relative">
+                <span className="ml-1.5 xs:ml-2 text-lg xs:text-xl sm:text-2xl font-bold transition-all duration-500 tracking-tight cursor-pointer relative">
                   <span className="hidden xs:inline text-h2 transition-all duration-500">
                     JobPsych
                   </span>
@@ -94,7 +96,7 @@ function Header() {
                     JobPsych
                   </span>
                   <div className="absolute inset-0 bg-white/20 -skew-x-12 opacity-0 group-hover:opacity-100 group-hover:animate-shimmer transition-opacity duration-500"></div>
-                </h1>
+                </span>
               </div>
             </button>
             <div className="hidden md:flex items-center space-x-1.5 xs:space-x-2 sm:space-x-3 lg:space-x-4 flex-shrink-0 relative z-10">

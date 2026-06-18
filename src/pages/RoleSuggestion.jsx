@@ -6,6 +6,7 @@ import NetworkError from "@components/error/NetworkError";
 import LoadingError from "@components/error/LoadingError";
 import { ToastContext } from "@components/toast/ToastContext";
 import { ROLE_SUGGESTION } from "../utils/api";
+import useSEO from "@hooks/useSEO";
 
 const RoleSuggestion = () => {
   const [resumeData, setResumeData] = useState(null);
@@ -26,6 +27,42 @@ const RoleSuggestion = () => {
   const [alertMessage, setAlertMessage] = useState("");
   const [alertType, setAlertType] = useState("");
   const { showWarning, showInfo } = useContext(ToastContext);
+
+  useSEO({
+    title: "AI Career Path Suggestions & Role Fit Analysis | JobPsych",
+    description:
+      "Discover AI-powered career path suggestions tailored to your resume. Upload your CV and get personalized role fit scores, career recommendations, and a clear roadmap to your next job with JobPsych.",
+    keywords:
+      "career path suggestions AI, AI job role matching, career exploration tool, resume role fit, career recommendations, AI career advisor, job role discovery, career transition AI, resume career match, career path planning tool",
+    canonical: "/role-suggestions",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://jobpsych.vercel.app/role-suggestions",
+      url: "https://jobpsych.vercel.app/role-suggestions",
+      name: "AI Career Path Suggestions & Role Fit Analysis | JobPsych",
+      isPartOf: { "@id": "https://jobpsych.vercel.app/#website" },
+      description:
+        "Upload your resume and get AI-powered career path suggestions with precision role-fit scoring, gap signals, and a personalized career roadmap.",
+      breadcrumb: {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://jobpsych.vercel.app/",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Career Path Suggestions",
+            item: "https://jobpsych.vercel.app/role-suggestions",
+          },
+        ],
+      },
+    },
+  });
 
   // Load persisted data on component mount
   useEffect(() => {

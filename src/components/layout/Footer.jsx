@@ -65,13 +65,13 @@ const Footer = () => {
                 },
                 {
                   label: "Interview Practice",
-                  to: "/interview-prepai",
+                  to: "/interview-prep",
                 },
               ].map((item, index) => (
-                <button
+                <a
                   key={index}
-                  type="button"
-                  className="group flex items-center w-full p-3 rounded-xl border border-border-subtle bg-card-linen text-body hover:bg-card-ivory transition-all duration-300"
+                  href={item.to}
+                  className="group flex items-center w-full p-3 rounded-xl border border-border-subtle bg-card-linen text-body hover:bg-card-ivory transition-all duration-300 no-underline"
                 >
                   <span className="text-sm font-medium">{item.label}</span>
                   <svg
@@ -87,7 +87,7 @@ const Footer = () => {
                       d="M9 5l7 7-7 7"
                     />
                   </svg>
-                </button>
+                </a>
               ))}
             </div>
           </div>
@@ -131,26 +131,19 @@ const Footer = () => {
               <span className="mx-2">•</span>
               Your data remains private and protected.
               <span className="mx-2">•</span>
-              <button
-                type="button"
+              <a
+                href="/privacy-policy"
                 className="text-link hover:text-h2 transition-colors duration-300"
               >
                 Privacy Policy
-              </button>
+              </a>
               <span className="mx-2">•</span>
-              <button
-                type="button"
+              <a
+                href="/terms-of-service"
                 className="text-link hover:text-h2 transition-colors duration-300"
               >
                 Terms of Service
-              </button>
-              <span className="mx-2">•</span>
-              <button
-                type="button"
-                className="text-link hover:text-h2 transition-colors duration-300"
-              >
-                Security Audit
-              </button>
+              </a>
             </p>
           </div>
         </div>

@@ -16,13 +16,13 @@ const TermsOfService = () => {
       <div className="relative z-10 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="mb-8">
-            <button
-              to="/"
+            <a
+              href="/"
               className="btn btn-light inline-flex items-center px-4 py-2"
             >
               <ArrowLeftIcon className="w-4 h-4 mr-2" />
               Back to Home
-            </button>
+            </a>
           </div>
 
           <div

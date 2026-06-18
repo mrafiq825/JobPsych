@@ -1,13 +1,15 @@
 @import "tailwindcss";
 
 /* Global Tinos Font Application */
+/* Regular weight — font-display:optional prevents FOUT on cold load   */
+/* Bold/Italic weights keep 'swap' so headings always render correctly  */
 @font-face {
   font-family: "Tinos";
   font-style: normal;
   font-weight: 400;
   src: url("https://fonts.gstatic.com/s/tinos/v16/buEwpTfczT5H1H5Z1mIdx3s.woff2")
     format("woff2");
-  font-display: swap;
+  font-display: optional;
 }
 
 @font-face {
@@ -25,7 +27,7 @@
   font-weight: 400;
   src: url("https://fonts.gstatic.com/s/tinos/v16/buE1pTfczT5H1H5Z1mIdQVeKfzUN-Q.woff2")
     format("woff2");
-  font-display: swap;
+  font-display: optional;
 }
 
 @font-face {
@@ -36,6 +38,7 @@
     format("woff2");
   font-display: swap;
 }
+
 
 /* CSS Variables */
 :root {

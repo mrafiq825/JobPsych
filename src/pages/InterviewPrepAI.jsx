@@ -1,8 +1,45 @@
 import React from "react";
 import useToast from "@/hooks/useToast";
+import useSEO from "@hooks/useSEO";
 
 const InterviewPrepAI = () => {
   const { showSuccess } = useToast();
+
+  useSEO({
+    title: "AI Mock Interview Practice & Coaching | JobPsych",
+    description:
+      "Practice job interviews with AI that gives real-time feedback. Simulate behavioral and technical rounds, refine your answers, and build interview confidence with JobPsych's AI interview coach.",
+    keywords:
+      "AI interview practice, mock interview AI, interview coaching online, AI interview simulator, behavioral interview practice, technical interview practice, interview confidence building, interview preparation AI, job interview simulator, interview feedback AI",
+    canonical: "/interview-prep",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://jobpsych.vercel.app/interview-prep",
+      url: "https://jobpsych.vercel.app/interview-prep",
+      name: "AI Mock Interview Practice & Coaching | JobPsych",
+      isPartOf: { "@id": "https://jobpsych.vercel.app/#website" },
+      description:
+        "AI-powered interview practice platform with scenario simulation, live feedback, and response refinement. Practice behavioral and technical interviews with instant AI coaching.",
+      breadcrumb: {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://jobpsych.vercel.app/",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "AI Interview Practice",
+            item: "https://jobpsych.vercel.app/interview-prep",
+          },
+        ],
+      },
+    },
+  });
 
   const interviewHighlights = [
     {

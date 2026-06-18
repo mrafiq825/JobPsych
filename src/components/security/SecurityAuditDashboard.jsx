@@ -10,12 +10,19 @@ import {
   CheckCircleIcon,
   XCircleIcon,
 } from "@heroicons/react/24/outline";
+import useSEO from "@hooks/useSEO";
 
 const SecurityAuditDashboard = () => {
   const [securityReport, setSecurityReport] = useState(null);
   const [securityStatus, setSecurityStatus] = useState(null);
   const [testInput, setTestInput] = useState("");
   const [validationResult, setValidationResult] = useState(null);
+
+  useSEO({
+    title: "Security Audit Dashboard | JobPsych",
+    description: "Internal security audit dashboard for JobPsych administrators.",
+    noIndex: true,
+  });
 
   useEffect(() => {
     // Get initial security status

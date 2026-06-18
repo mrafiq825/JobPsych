@@ -1,8 +1,45 @@
 import React from "react";
 import useToast from "@/hooks/useToast";
+import useSEO from "@hooks/useSEO";
 
 const DocumentQualityAnalyzer = () => {
   const { showSuccess } = useToast();
+
+  useSEO({
+    title: "ATS Resume Checker & Document Quality Analyzer | JobPsych",
+    description:
+      "Free AI-powered ATS resume checker. Get your resume ATS score, identify gaps, improve readability, and optimize for recruiters. Analyze your resume in seconds with JobPsych.",
+    keywords:
+      "ATS resume checker, ATS score checker, resume optimization tool, resume quality analyzer, resume ATS score, resume gap analysis, document quality analyzer, resume improvement AI, resume feedback tool, professional resume checker",
+    canonical: "/ats-analyzer",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://jobpsych.vercel.app/ats-analyzer",
+      url: "https://jobpsych.vercel.app/ats-analyzer",
+      name: "ATS Resume Checker & Document Quality Analyzer | JobPsych",
+      isPartOf: { "@id": "https://jobpsych.vercel.app/#website" },
+      description:
+        "AI-powered ATS resume checker and document quality analyzer. Get signal strength scoring, gap detection, and rewrite directions to turn your resume into an interview magnet.",
+      breadcrumb: {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://jobpsych.vercel.app/",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "ATS Resume Analyzer",
+            item: "https://jobpsych.vercel.app/ats-analyzer",
+          },
+        ],
+      },
+    },
+  });
 
   const analyzerHighlights = [
     {
